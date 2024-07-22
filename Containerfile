@@ -21,13 +21,17 @@ RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86
 # Add conda to path
 ENV PATH=$CONDA_DIR/bin:$PATH
 
-# Create a conda environment
-RUN conda create -n ai_env python=3.10 -y
+# Update conda and create environment
+RUN conda update -n base -c defaults conda && \
+    conda create -n ai_env python=3.10 -y && \
+    conda clean -afy
+
 ENV PATH /opt/conda/envs/ai_env/bin:$PATH
 
 # Activate conda environment and install PyTorch
 RUN echo "source activate ai_env" > ~/.bashrc && \
-    conda run -n ai_env pip install torch torchvision torchaudio
+    conda run -n ai_env conda install -y pytorch torchvision torchaudio pytorch-cuda=12.5 -c pytorch -c nvidia && \
+    conda clean -afy
 
 # Clone and build liboqs
 RUN git clone --branch main https://github.com/open-quantum-safe/liboqs.git && \
