@@ -50,7 +50,7 @@ This guide will help you set up a special computer environment for AI developmen
 
 1. Install WSL2 (Windows Subsystem for Linux):
    - Open the Microsoft Store
-   - Search for "Ubuntu" and install it
+   - Search for "Ubuntu" and install it (22.04 or 24.04 work best)
    - Follow the on-screen instructions to set it up
 
 2. Open Ubuntu from your Start menu
@@ -65,7 +65,7 @@ text
 4. Get the project files:
 
 git clone https://github.com/qompassai/K.O.
-cd kybers-octant
+cd K.O.
 
 5. Build the special environment:
 
