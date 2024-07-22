@@ -1,7 +1,10 @@
 # Kyber's Odyssey: Charting a course for secure research & innovation in a post-Crowdstrike world
 ## Authors
 
-Matt A. Porter, B.Sc, Dr. Marcheta J. Hill DO, Dr. Amiethab A. Aiyer MD
+Matt A. Porter, B.S<sup>1</sup>, Marcheta J. Hill, DO<sup>2</sup>, Dawn L. Laporte, MD<sup>3</sup>, Amiethab A. Aiyer, MD<sup>3</sup>
+<sup>1</sup>Qompass, Spokane, WA
+<sup>2</sup>Arnot Ogden Medical Center Emergency Medicine Residency Program, Elmira, NY
+<sup>3</sup>The Johns Hopkins University School of Medicine, Department of Orthopaedic Surgery, Baltimore, MD
 
 ## Abstract
 
