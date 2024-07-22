@@ -1,0 +1,59 @@
+openssl list -kem-algorithms
+  { 1.2.840.113549.1.1.1, 2.5.8.1.1, RSA, rsaEncryption } @ default
+  { 1.2.840.10045.2.1, EC, id-ecPublicKey } @ default
+  { 1.3.101.110, X25519 } @ default
+  { 1.3.101.111, X448 } @ default
+  frodo640aes @ oqsprovider
+  p256_frodo640aes @ oqsprovider
+  x25519_frodo640aes @ oqsprovider
+  frodo640shake @ oqsprovider
+  p256_frodo640shake @ oqsprovider
+  x25519_frodo640shake @ oqsprovider
+  frodo976aes @ oqsprovider
+  p384_frodo976aes @ oqsprovider
+  x448_frodo976aes @ oqsprovider
+  frodo976shake @ oqsprovider
+  p384_frodo976shake @ oqsprovider
+  x448_frodo976shake @ oqsprovider
+  frodo1344aes @ oqsprovider
+  p521_frodo1344aes @ oqsprovider
+  frodo1344shake @ oqsprovider
+  p521_frodo1344shake @ oqsprovider
+  kyber512 @ oqsprovider
+  p256_kyber512 @ oqsprovider
+  x25519_kyber512 @ oqsprovider
+  kyber768 @ oqsprovider
+  p384_kyber768 @ oqsprovider
+  x448_kyber768 @ oqsprovider
+  x25519_kyber768 @ oqsprovider
+  p256_kyber768 @ oqsprovider
+  kyber1024 @ oqsprovider
+  p521_kyber1024 @ oqsprovider
+  mlkem512 @ oqsprovider
+  p256_mlkem512 @ oqsprovider
+  x25519_mlkem512 @ oqsprovider
+  mlkem768 @ oqsprovider
+  p384_mlkem768 @ oqsprovider
+  x448_mlkem768 @ oqsprovider
+  x25519_mlkem768 @ oqsprovider
+  p256_mlkem768 @ oqsprovider
+  mlkem1024 @ oqsprovider
+  p521_mlkem1024 @ oqsprovider
+  p384_mlkem1024 @ oqsprovider
+  bikel1 @ oqsprovider
+  p256_bikel1 @ oqsprovider
+  x25519_bikel1 @ oqsprovider
+  bikel3 @ oqsprovider
+  p384_bikel3 @ oqsprovider
+  x448_bikel3 @ oqsprovider
+  bikel5 @ oqsprovider
+  p521_bikel5 @ oqsprovider
+  hqc128 @ oqsprovider
+  p256_hqc128 @ oqsprovider
+  x25519_hqc128 @ oqsprovider
+  hqc192 @ oqsprovider
+  p384_hqc192 @ oqsprovider
+  x448_hqc192 @ oqsprovider
+  hqc256 @ oqsprovider
+  p521_hqc256 @ oqsprovider
+
