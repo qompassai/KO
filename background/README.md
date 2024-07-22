@@ -24,6 +24,29 @@ As of 2023, TLS 1.3 with Diffie-Hellman (specifically X25519) is widely adopted 
 
 Note that full integration of Kyber into TLS is still ongoing and not yet standardized for widespread use.
 
+## Post-Quantum Cryptography and Generative AI
+
+The intersection of post-quantum cryptography (PQC) and generative AI (genAI) presents both challenges and opportunities in the field of cybersecurity.
+
+### Use Cases
+
+1. **Enhanced Cryptographic Systems**: Quantum computing combined with AI can potentially create more sophisticated cryptographic systems that are resistant to both classical and quantum attacks[4](https://www.digicert.com/insights/post-quantum-cryptography)
+
+2. **Threat Identification**: AI, especially when powered by quantum computing, can help identify new threat vectors and patterns, enhancing proactive security measures[4](https://www.digicert.com/insights/post-quantum-cryptography).
+
+3. **AI-Assisted Cryptanalysis**: While AI can be used to strengthen cryptography, it also poses potential threats. Researchers have demonstrated that AI techniques can be used to break certain post-quantum encryption algorithms[2](https://www.securityweek.com/ai-helps-crack-a-nist-recommended-post-quantum-encryption-algorithm/).
+
+### AI Hackers and Post-Quantum Encryption
+
+Recent developments have shown that AI can pose significant threats to current and even post-quantum encryption methods:
+
+- Researchers from KTH Royal Institute of Technology in Stockholm used deep learning analysis combined with side-channel attacks to break the CRYSTALS-Kyber encryption mechanism, which was recommended by NIST for post-quantum cryptography[2](https://www.securityweek.com/ai-helps-crack-a-nist-recommended-post-quantum-encryption-algorithm/).
+
+- This breakthrough suggests that AI-based attacks might pose a more imminent threat to encryption than quantum computers themselves[2](https://www.securityweek.com/ai-helps-crack-a-nist-recommended-post-quantum-encryption-algorithm/).
+
+- The approach used is not specific to CRYSTALS-Kyber and could potentially be applied to other post-quantum encryption schemes[2](https://www.securityweek.com/ai-helps-crack-a-nist-recommended-post-quantum-encryption-algorithm/).
+
+
 # Post-Quantum Cryptography References
 
 ## Diffie-Hellman X25519
