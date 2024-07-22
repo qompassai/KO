@@ -30,10 +30,12 @@ ENV PATH /opt/conda/envs/ai_env/bin:$PATH
 
 # Activate conda environment and install PyTorch
 RUN echo "source activate ai_env" > ~/.bashrc && \
-    conda run -n ai_env conda install -y pytorch torchvision torchaudio pytorch-cuda=12.5 -c pytorch -c nvidia && \
-    conda clean -afy
+    conda run -n ai_env conda install -y pytorch torchvision torchaudio -c pytorch -c nvidia && \
+    conda clean -afy || \
+    conda run -n ai_env pip3 install torch torchvision torchaudio
 
-# Clone and build liboqs
+# Verify the installation
+RUN conda run -n ai_env python -c "import torch; print(f'CUDA available: {torch.cuda.is_available()}')"# Clone and build liboqs
 RUN git clone --branch main https://github.com/open-quantum-safe/liboqs.git && \
     cd liboqs && \
     mkdir build && cd build && \
