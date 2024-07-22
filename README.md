@@ -25,10 +25,16 @@ We propose that our hybrid encryption protocol is a safe, secure, trustworthy so
 2. [Reference Title](https://pubmed.ncbi.nlm.nih.gov/38826742/)
 3. [Transitioning organizations to post-quantum cryptography](https://pubmed.ncbi.nlm.nih.gov/35546191/)
 
+# What Releasing this software under the AGPL (Affero General Public License) means:
+The software is free to use, modify, and share.
+Anyone who uses the software must also share any changes they make to it.
+If someone uses the software to provide a service over the internet, they must make the source code of their version available to users of that service.
+This ensures that improvements and modifications to the software remain open and accessible to everyone.
+It prevents companies from taking the free software, modifying it, and then selling it as a closed-source product without giving back to the community.
+Users always have the right to see and modify the code of AGPL software they're using, even if it's part of an online service.
+In essence, AGPL is designed to keep software free and open, especially in the age of cloud computing and web services. It encourages sharing and collaboration while protecting the original creators' intent for the software to remain open source.
 
-# How to run it yourself
-text
-# Building Kyber's Oddysey
+# Building Kyber's Oddysey for your own responsible AI exploration
 
 This guide will help you set up a special computer environment for AI development with advanced security features. You don't need to be a tech expert to follow these steps!
 
@@ -58,9 +64,8 @@ text
 
 4. Get the project files:
 
-git clone https://github.com/your-repo/kybers-octant.git
+git clone https://github.com/qompassai/K.O.
 cd kybers-octant
-text
 
 5. Build the special environment:
 
@@ -106,5 +111,6 @@ If you run into any problems:
 - Make sure your internet connection is stable
 - Restart your computer and try again
 - Ask for help in our support forum or community chat
+- This software is licensed under the 
 
-Remember, you're setting up a complex environment, so don't worry if it doesn't work perfectly the first time. Keep trying, and don't hesitate to ask for help!
+Remember, you're setting up a complex environment, so don't worry if it doesn't work perfectly the first time. Keep trying, and don't hesitate to ask for help! 
