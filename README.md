@@ -21,8 +21,8 @@ We propose that our hybrid encryption protocol is a safe, secure, trustworthy so
 
 ## References
 
-1. [Reference Title](https://pubmed.ncbi.nlm.nih.gov/38660167/)
-2. [Reference Title](https://pubmed.ncbi.nlm.nih.gov/38826742/)
+1. [Password authenticated key exchange-based on Kyber for mobile devices](https://pubmed.ncbi.nlm.nih.gov/38660167/)
+2. [Post-quantum healthcare: A roadmap for cybersecurity resilience in medical data](https://pubmed.ncbi.nlm.nih.gov/38826742/)
 3. [Transitioning organizations to post-quantum cryptography](https://pubmed.ncbi.nlm.nih.gov/35546191/)
 
 # What Releasing this software under the AGPL (Affero General Public License) means:
