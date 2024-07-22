@@ -1,0 +1,14 @@
+Security Tier,Algorithm,Operations per Second,Used By
+Tier 1,rsa3072,3072,Classic
+Tier 1,x25519,Not Supported,Cloudflare, Google, Apple
+Tier 1,kyber512,No data,Post-Quantum
+Tier 1,p256_kyber512,No data,Cloudflare (Hybrid)
+Tier 2,rsa7680,7680,Classic
+Tier 2,kyber768,No data,Post-Quantum
+Tier 2,p384_kyber768,No data,Google (Hybrid)
+Tier 3,rsa15360,15360,Classic
+Tier 3,kyber1024,No data,Post-Quantum
+Tier 3,p521_kyber1024,No data,Amazon (Hybrid)
+Tier 1,ecdsa256,Not Supported,Apple, Google
+Tier 2,ecdsa384,Not Supported,Amazon
+Tier 1,ed25519,No data,Cloudflare

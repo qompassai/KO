@@ -1,4 +1,4 @@
-FROM nvidia/cuda:12.4.0-devel-ubuntu22.04
+FROM nvidia/cuda:12.4.0-runtime-ubuntu22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -9,6 +9,8 @@ RUN apt-get update && apt-get install -y \
     git \
     ninja-build \
     wget \
+    zlib1g-dev \
+    libssl-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Miniconda
@@ -32,36 +34,33 @@ RUN echo "source activate ai_env" > ~/.bashrc && \
     conda run -n ai_env conda install -y pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia && \
     conda clean -afy
 
-# Build OpenSSL from source
-RUN wget https://www.openssl.org/source/openssl-1.1.1k.tar.gz && \
-    tar -xzvf openssl-1.1.1k.tar.gz && \
-    cd openssl-1.1.1k && \
-    ./config --prefix=/usr/local/ssl --openssldir=/usr/local/ssl shared zlib && \
-    make -j && \
-    make install && \
-    cd .. && \
-    rm -rf openssl-1.1.1k openssl-1.1.1k.tar.gz
-
-# Set OpenSSL environment variables
-ENV OPENSSL_ROOT_DIR=/usr/local/ssl
-ENV OPENSSL_DIR=/usr/local/ssl
-ENV LD_LIBRARY_PATH=$OPENSSL_DIR/lib:$LD_LIBRARY_PATH
-ENV PATH=$OPENSSL_DIR/bin:$PATH
-ENV PKG_CONFIG_PATH=$OPENSSL_DIR/lib/pkgconfig:$PKG_CONFIG_PATH
-
 # Clone and build liboqs
 RUN git clone --branch main https://github.com/open-quantum-safe/liboqs.git && \
     cd liboqs && \
     mkdir build && cd build && \
-    cmake -GNinja -DCMAKE_INSTALL_PREFIX=/usr/local -DOPENSSL_ROOT_DIR=$OPENSSL_ROOT_DIR -DBUILD_SHARED_LIBS=ON .. && \
-    ninja && ninja install
+    cmake -GNinja -DCMAKE_INSTALL_PREFIX=/usr/local -DBUILD_SHARED_LIBS=ON .. && \
+    ninja && ninja install && \
+    cd ../.. && \
+    rm -rf liboqs
 
 # Clone and build OpenSSL with OQS support
 RUN git clone --branch OQS-OpenSSL_1_1_1-stable https://github.com/open-quantum-safe/openssl.git && \
     cd openssl && \
-    ./Configure shared linux-x86_64 -lm --prefix=/usr/local/ssl --openssldir=/usr/local/ssl && \
+    ./Configure shared linux-x86_64 -lm --prefix=/usr/local/ssl --openssldir=/usr/local/ssl \
+    --with-oqs-dir=/usr/local && \
+    sed -i 's/^CFLAGS=/CFLAGS=-I\/usr\/local\/include /' Makefile && \
+    sed -i 's/^LDFLAGS=/LDFLAGS=-L\/usr\/local\/lib /' Makefile && \
     make -j && \
-    make install_sw
+    make install_sw && \
+    cd .. && \
+    rm -rf openssl
+
+# Set OpenSSL environment variables
+ENV OPENSSL_ROOT_DIR=/usr/local/ssl
+ENV OPENSSL_DIR=/usr/local/ssl
+ENV LD_LIBRARY_PATH=/usr/local/ssl/lib:/usr/local/lib:$LD_LIBRARY_PATH
+ENV PATH=/usr/local/ssl/bin:$PATH
+ENV PKG_CONFIG_PATH=/usr/local/ssl/lib/pkgconfig:$PKG_CONFIG_PATH
 
 # Configure OpenSSL
 RUN echo "openssl_conf = openssl_init" >> /usr/local/ssl/openssl.cnf && \
