@@ -6,7 +6,7 @@ Matt A. Porter, B.Sc, Dr. Marcheta J. Hill DO, Dr. Amiethab A. Aiyer MD
 ## Abstract
 
 ### Title
-K.O.: Kyber Ontology of post quantum encryption for a post CrowdStrike Healthcare System.
+Kyber's Odyssey: Charting a course for secure research & innovation in a post-Crowdstrike world
 
 ### Background
 The catastrophic Crowdstrike patch failure of July 19, 2024, exposed critical vulnerabilities in global healthcare systems, stemming from a memory safety issue in C++ code. This null pointer error, a common pitfall in languages without automatic memory management, led to system-wide failures in Microsoft-based environments while Linux/GNU and Apple systems remained unaffected. This event underscores the urgent need for robust, quantum-resistant cryptographic solutions in healthcare IT infrastructure.
