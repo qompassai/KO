@@ -37,7 +37,7 @@ Note that full integration of Kyber into TLS is still ongoing and not yet standa
 
 - [CRYSTALS-Kyber Algorithm Specifications and Supporting Documentation](https://pq-crystals.org/kyber/data/kyber-specification-round3-20210804.pdf)
 - [NIST IR 8413: Status Report on the Third Round of the NIST Post-Quantum Cryptography Standardization Process](https://nvlpubs.nist.gov/nistpubs/ir/2022/NIST.IR.8413.pdf)
-- [Draft FIPS 203: Module-Lattice-Based Key-Encapsulation Mechanism Standard](https://csrc.nist.gov/publications/detail/fips/203/draft)
+- [Draft FIPS 203: Module-Lattice-Based Key-Encapsulation Mechanism Standard](https://csrc.nist.gov/pubs/fips/203/ipd)
 ## NIST Post-Quantum Cryptography Standardization
 
 - [NIST Post-Quantum Cryptography Standardization](https://csrc.nist.gov/projects/post-quantum-cryptography/post-quantum-cryptography-standardization)

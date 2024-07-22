@@ -37,14 +37,20 @@ RUN echo "source activate ai_env" > ~/.bashrc && \
 RUN git clone --branch main https://github.com/open-quantum-safe/liboqs.git && \
     cd liboqs && \
     mkdir build && cd build && \
-    cmake -GNinja -DCMAKE_INSTALL_PREFIX=/usr/local .. && \
+    cmake -GNinja -DCMAKE_INSTALL_PREFIX=/usr/local -DBUILD_SHARED_LIBS=ON .. && \
     ninja && ninja install
 
 # Clone and build OpenSSL with OQS support
 RUN git clone --branch OQS-OpenSSL_1_1_1-stable https://github.com/open-quantum-safe/openssl.git && \
     cd openssl && \
-    ./Configure no-shared linux-x86_64 -lm && \
+    ./Configure shared linux-x86_64 -lm && \
     make -j && make install_sw
+
+# Set OpenSSL environment variables
+ENV OPENSSL_DIR=/usr/local/ssl
+ENV LD_LIBRARY_PATH=$OPENSSL_DIR/lib:$LD_LIBRARY_PATH
+ENV PATH=$OPENSSL_DIR/bin:$PATH
+ENV PKG_CONFIG_PATH=$OPENSSL_DIR/lib/pkgconfig:$PKG_CONFIG_PATH
 
 # Configure OpenSSL
 RUN echo "openssl_conf = openssl_init" >> /etc/ssl/openssl.cnf && \
@@ -64,9 +70,6 @@ RUN echo "openssl_conf = openssl_init" >> /etc/ssl/openssl.cnf && \
     echo "" >> /etc/ssl/openssl.cnf && \
     echo "[ssl_sect]" >> /etc/ssl/openssl.cnf && \
     echo "Groups = X25519:kyber1024" >> /etc/ssl/openssl.cnf
-
-ENV PATH="/usr/local/ssl/bin:${PATH}"
-ENV LD_LIBRARY_PATH="/usr/local/ssl/lib:${LD_LIBRARY_PATH}"
 
 # Verify the installation
 RUN conda run -n ai_env python -c "import torch; print(f'CUDA available: {torch.cuda.is_available()}')"

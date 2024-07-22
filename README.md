@@ -105,12 +105,4 @@ text
 - You might see a lot of text scrolling by - that's normal.
 - When it's done, you'll be in a special, secure environment for AI work.
 
-## Need Help?
-
-If you run into any problems:
-- Make sure your internet connection is stable
-- Restart your computer and try again
-- Ask for help in our support forum or community chat
-- This software is licensed under the GNU Affero General Public License (AGPL) V3.0(https://www.gnu.org/licenses/agpl-3.0.en.html) 
-
 Remember, you're setting up a complex environment, so don't worry if it doesn't work perfectly the first time. Keep trying, and don't hesitate to ask for help! 
