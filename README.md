@@ -1,17 +1,12 @@
-# Kyber's Odyssey: Charting a course for secure research & innovation in a post-Crowdstrike world
+# Kybe Odyssey: Charting a course for secure research & innovation in a post-Crowdstrike world
 ## Authors
 
 Matt A. Porter, B.S<sup>1</sup>, Marcheta J. Hill, DO<sup>2</sup>, Dawn L. Laporte, MD<sup>3</sup>, Amiethab A. Aiyer, MD<sup>3</sup>
-
 
 <sup>1</sup>Qompass, Spokane, WA
 <sup>2</sup>Arnot Ogden Medical Center Emergency Medicine Residency Program, Elmira, NY
 <sup>3</sup>The Johns Hopkins University School of Medicine, Department of Orthopaedic Surgery, Baltimore, MD
 ## Abstract
-
-### Title
-Kyber Odyssey: Charting a course for secure research & innovation in a post-Crowdstrike world
-
 ### Background
 The catastrophic Crowdstrike patch failure of July 19, 2024, exposed critical vulnerabilities in global healthcare systems, stemming from a memory safety issue in C++ code. This null pointer error, a common pitfall in languages without automatic memory management, led to system-wide failures in Microsoft-based environments while Linux/GNU and Apple systems remained unaffected. This event underscores the urgent need for robust, quantum-resistant cryptographic solutions in healthcare IT infrastructure.
 ### Methods
