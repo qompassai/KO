@@ -1,4 +1,4 @@
-# Kybe Odyssey: Charting a course for secure research & innovation in a post-Crowdstrike world
+# Kyber Odyssey: Charting a course for secure innovation in a post-Crowdstrike world
 ## Authors
 
 Matt A. Porter, B.S<sup>1</sup>, Marcheta J. Hill, DO<sup>2</sup>, Dawn L. Laporte, MD<sup>3</sup>, Amiethab A. Aiyer, MD<sup>3</sup>
@@ -111,6 +111,6 @@ If you run into any problems:
 - Make sure your internet connection is stable
 - Restart your computer and try again
 - Ask for help in our support forum or community chat
-- This software is licensed under the 
+- This software is licensed under the GNU Affero General Public License (AGPL) V3.0(https://www.gnu.org/licenses/agpl-3.0.en.html) 
 
 Remember, you're setting up a complex environment, so don't worry if it doesn't work perfectly the first time. Keep trying, and don't hesitate to ask for help! 
