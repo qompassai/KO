@@ -1,4 +1,4 @@
-FROM nvidia/cuda:12.5.1-devel-ubuntu24.04
+FROM nvidia/cuda:12.4.0-devel-ubuntu22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -30,12 +30,10 @@ ENV PATH /opt/conda/envs/ai_env/bin:$PATH
 
 # Activate conda environment and install PyTorch
 RUN echo "source activate ai_env" > ~/.bashrc && \
-    conda run -n ai_env conda install -y pytorch torchvision torchaudio -c pytorch -c nvidia && \
-    conda clean -afy || \
-    conda run -n ai_env pip3 install torch torchvision torchaudio
+    conda run -n ai_env conda install -y pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia && \
+    conda clean -afy
 
-# Verify the installation
-RUN conda run -n ai_env python -c "import torch; print(f'CUDA available: {torch.cuda.is_available()}')"# Clone and build liboqs
+# Clone and build liboqs
 RUN git clone --branch main https://github.com/open-quantum-safe/liboqs.git && \
     cd liboqs && \
     mkdir build && cd build && \
@@ -71,7 +69,7 @@ ENV PATH="/usr/local/ssl/bin:${PATH}"
 ENV LD_LIBRARY_PATH="/usr/local/ssl/lib:${LD_LIBRARY_PATH}"
 
 # Verify the installation
-RUN conda run -n ai_env python -c "import torch; print(torch.cuda.is_available())"
+RUN conda run -n ai_env python -c "import torch; print(f'CUDA available: {torch.cuda.is_available()}')"
 RUN openssl list -providers
 
 SHELL ["/bin/bash", "-c"]
