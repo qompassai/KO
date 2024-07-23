@@ -29,7 +29,7 @@ Prerequisites:
 - **Bash shell environment**
 - **Build tools (Make/CMake/Ninja)**
 - **Linux/Windows Subsystem for Linux or Mac equivalent (Arch Linux 6.10 and Ubuntu 24.04 5.15 Tegra tested)**
-Output:
+- Output:
 The script generates a formatted table with the following columns:
 Algorithm name
 Key Generation time (ms)
