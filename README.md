@@ -11,14 +11,65 @@ Matt A. Porter, B.S<sup>1</sup>, Marcheta J. Hill, DO<sup>2</sup>, Dawn L. Lapor
 ### Background
 The catastrophic Crowdstrike patch failure of July 19, 2024, exposed critical vulnerabilities in global healthcare systems, stemming from a memory safety issue in C++ code. This null pointer error, a common pitfall in languages without automatic memory management, led to system-wide failures in Microsoft-based environments while Linux/GNU and Apple systems remained unaffected. This event underscores the urgent need for robust, quantum-resistant cryptographic solutions in healthcare IT infrastructure.
 ### Methods
-We developed a secure containerized virtual environment that implements hybrid post-quantum encryption protocol of NIST post-quantum encryption algorithm finalist Kyber1024 Key Encapsulation Mechanism (KEM) with X25519 Elliptic Curve Diffie-Hellman (ECDH) Key Exchange. Our implementation focused on two consumer grade computers  with x86_64 & aarch64 processors respectively to prioritize viability for underserved & underfunded regions. We implement our solutions using Arch and Ubuntu distributions of the Linux operating system. We compiled OpenSSL with Open Quantum Safe (OQS) support to enable post-quantum algorithms. Leveraging Podman's native rootless containerization, we created isolated environments for AI model training and inference using Miniconda3 virtual environments. This approach ensures data protection throughout the AI lifecycle while maintaining flexibility for advanced machine learning operations. We compared numerous implementations of post-quantum and classical encrption protocols as a foundation for institutions to decide for themselves on their own security protocols. 
+We developed a protocol for building and benchmarking NIST-endorsed classical and post-quantum encryption algorithms on-premesis at no cost. Our implementation focused on two consumer grade computers  with x86_64 & aarch64 processors respectively to prioritize viability for underserved & underfunded regions. We implement our solutions using Arch and Ubuntu distributions of the Linux operating system. We compiled OpenSSL with Open Quantum Safe (OQS) support to enable post-quantum algorithms. Leveraging Podman's native rootless containerization, we created isolated environments for AI model training and inference using Miniconda3 virtual environments. This approach ensures data protection throughout the AI lifecycle while maintaining flexibility for advanced machine learning operations. We compared numerous implementations of post-quantum and classical encrption protocols as a foundation for institutions to decide for themselves on their own security protocols. 
 
 ### Results
-***Adding 07/22/24
+# Kyber Odyssey Cryptographic Security Benchmark
+
+| Algorithm | NIST Security Level | Keygen (ms) | Encaps (ms) | Decaps (ms) | Keygens/s | Encaps/s | Decaps/s | Industry/Healthcare Usage |
+|:---------:|:-------------------:|:-----------:|:-----------:|:-----------:|:---------:|:--------:|:--------:|:------------------------:|
+| [Frodo640AES](https://frodokem.org/) | [Level 1](#security-levels) | 0.361 | 0.503 | 0.481 | 2773.0 | 1988.9 | 2081.0 | [Experimental in IoT](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6891283/) |
+| [Frodo640SHAKE](https://frodokem.org/) | [Level 1](#security-levels) | 2.240 | 2.364 | 2.346 | 446.5 | 423.0 | 426.3 | [Research in secure messaging](https://eprint.iacr.org/2019/1356.pdf) |
+| [Frodo976AES](https://frodokem.org/) | [Level 3](#security-levels) | 0.802 | 1.024 | 1.038 | 1247.0 | 976.8 | 963.6 | [Tested in satellite communications](https://ieeexplore.ieee.org/document/9435499) |
+| [Frodo976SHAKE](https://frodokem.org/) | [Level 3](#security-levels) | 4.975 | 5.208 | 5.128 | 201.0 | 192.0 | 195.0 | [Evaluated for financial services](https://eprint.iacr.org/2019/1356.pdf) |
+| [Frodo1344AES](https://frodokem.org/) | [Level 5](#security-levels) | 1.350 | 1.656 | 1.599 | 741.0 | 604.0 | 625.3 | [Considered for long-term data protection](https://csrc.nist.gov/Projects/post-quantum-cryptography/round-3-submissions) |
+| [Frodo1344SHAKE](https://frodokem.org/) | [Level 5](#security-levels) | 8.772 | 9.174 | 9.009 | 114.0 | 109.0 | 111.0 | [Evaluated for government communications](https://csrc.nist.gov/Projects/post-quantum-cryptography/round-3-submissions) |
+| [Kyber512](https://pq-crystals.org/kyber/) | [Level 1](#security-levels) | 0.022 | 0.021 | 0.017 | 44556.1 | 47830.3 | 58718.0 | [Implemented in VPN services](https://www.openvpn.net/cloud-docs/openvpn-3-client-for-linux/) |
+| [Kyber768](https://pq-crystals.org/kyber/) | [Level 3](#security-levels) | 0.033 | 0.032 | 0.028 | 30291.8 | 31060.6 | 36305.1 | [Tested in banking systems](https://www.ibm.com/blogs/research/2020/08/ibm-z15-quantum-safe-cryptography/) |
+| [Kyber1024](https://pq-crystals.org/kyber/) | [Level 5](#security-levels) | 0.045 | 0.045 | 0.040 | 22293.9 | 22075.8 | 24937.0 | [Evaluated for aerospace industry](https://www.esa.int/Enabling_Support/Space_Engineering_Technology/Quantum-safe_cryptography_for_space_missions) |
+| [MLKEM512](https://csrc.nist.gov/Projects/post-quantum-cryptography/selected-algorithms-2022) | [Level 1](#security-levels) | 0.022 | 0.017 | 0.017 | 45416.2 | 59462.2 | 57611.1 | [Research in smart home devices](https://ieeexplore.ieee.org/document/9311932) |
+| [MLKEM768](https://csrc.nist.gov/Projects/post-quantum-cryptography/selected-algorithms-2022) | [Level 3](#security-levels) | 0.036 | 0.027 | 0.027 | 28046.4 | 36703.0 | 37677.8 | [Evaluated for telemedicine platforms](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7779191/) |
+| [MLKEM1024](https://csrc.nist.gov/Projects/post-quantum-cryptography/selected-algorithms-2022) | [Level 5](#security-levels) | 0.045 | 0.040 | 0.042 | 22468.7 | 24869.7 | 23599.0 | [Considered for national defense networks](https://www.nsa.gov/Press-Room/News-Highlights/Article/Article/2696916/nsa-releases-future-quantum-resistant-qr-algorithm-requirements-for-national-se/) |
+| [BIKE-L1](https://bikesuite.org/) | [Level 1](#security-levels) | 0.219 | 0.045 | 0.733 | 4556.0 | 22061.6 | 1364.6 | [Experimental in IoT networks](https://ieeexplore.ieee.org/document/9311932) |
+| [BIKE-L3](https://bikesuite.org/) | [Level 3](#security-levels) | 0.631 | 0.107 | 2.404 | 1586.0 | 9351.5 | 416.0 | [Research in industrial control systems](https://www.mdpi.com/1424-8220/21/15/5247) |
+| [BIKE-L5](https://bikesuite.org/) | [Level 5](#security-levels) | 1.658 | 0.243 | 5.657 | 603.0 | 4123.0 | 176.8 | [Evaluated for long-term data archiving](https://csrc.nist.gov/Projects/post-quantum-cryptography/round-3-submissions) |
+| [HQC-128](https://pqc-hqc.org/) | [Level 1](#security-levels) | 1.828 | 3.613 | 5.882 | 547.0 | 276.8 | 170.0 | [Research in wearable tech security](https://www.mdpi.com/1424-8220/21/15/5247) |
+| [HQC-192](https://pqc-hqc.org/) | [Level 3](#security-levels) | 5.525 | 10.989 | 16.949 | 181.0 | 91.0 | 59.0 | [Evaluated for healthcare data exchange](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7779191/) |
+| [HQC-256](https://pqc-hqc.org/) | [Level 5](#security-levels) | 10.000 | 21.277 | 31.250 | 100.0 | 47.0 | 32.0 | [Considered for military communications](https://www.nsa.gov/Press-Room/News-Highlights/Article/Article/2696916/nsa-releases-future-quantum-resistant-qr-algorithm-requirements-for-national-se/) |
+| [P-256 + Kyber512](https://www.ietf.org/archive/id/draft-ietf-pquip-pqc-key-encapsulation-00.html) | [Level 1](#security-levels) | 0.771 | 0.162 | 0.376 | 1296.9 | 6183.8 | 2658.2 | [Tested in e-commerce platforms](https://aws.amazon.com/blogs/security/how-to-tune-tls-for-hybrid-post-quantum-cryptography-with-kyber/) |
+| [P-384 + Kyber768](https://www.ietf.org/archive/id/draft-ietf-pquip-pqc-key-encapsulation-00.html) | [Level 3](#security-levels) | 1.070 | 1.071 | 1.119 | 934.3 | 933.3 | 894.0 | [Evaluated for cloud storage services](https://aws.amazon.com/blogs/security/how-to-tune-tls-for-hybrid-post-quantum-cryptography-with-kyber/) |
+| [P-521 + Kyber1024](https://www.ietf.org/archive/id/draft-ietf-pquip-pqc-key-encapsulation-00.html) | [Level 5](#security-levels) | 0.959 | 0.991 | 1.061 | 1042.9 | 1009.1 | 942.4 | [Research in quantum-resistant blockchains](https://arxiv.org/abs/2305.02739) |
+| [X25519 + Kyber512](https://www.ietf.org/archive/id/draft-ietf-pquip-pqc-key-encapsulation-00.html) | [Level 1](#security-levels) | 0.071 | 0.105 | 0.099 | 14135.7 | 9543.4 | 10106.1 | [Implemented in secure messaging apps](https://signal.org/blog/pqxdh/) |
+| [X25519 + Kyber768](https://www.ietf.org/archive/id/draft-ietf-pquip-pqc-key-encapsulation-00.html) | [Level 3](#security-levels) | 0.086 | 0.115 | 0.111 | 11621.4 | 8704.0 | 9040.0 | [Evaluated for VPN services](https://www.openvpn.net/cloud-docs/openvpn-3-client-for-linux/) |
+| [X448 + Kyber768](https://www.ietf.org/archive/id/draft-ietf-pquip-pqc-key-encapsulation-00.html) | [Level 3](#security-levels) | 0.274 | 0.487 | 0.491 | 3644.9 | 2055.1 | 2037.4 | [Research in high-security financial systems](https://eprint.iacr.org/2019/1356.pdf) |
+
+## Legend
+
+| Term | Explanation | Security Implication |
+|:----:|:-----------:|:--------------------:|
+| Algorithm | The name of the encryption method used to secure data | N/A |
+| NIST Security Level | Indicates the level of security as defined by NIST | Higher is more secure |
+| Keygen (ms) | Time taken to generate a key pair (in milliseconds) | Lower is generally better, but too low may indicate weakness |
+| Encaps (ms) | Time taken to encapsulate (encrypt) a shared secret (in milliseconds) | Lower is better for performance, but should balance with security |
+| Decaps (ms) | Time taken to decapsulate (decrypt) a shared secret (in milliseconds) | Lower is better for performance, but should balance with security |
+| Keygens/s | Number of key pairs that can be generated per second | Higher is better for performance, but should balance with security |
+| Encaps/s | Number of encapsulations that can be performed per second | Higher is better for performance, but should balance with security |
+| Decaps/s | Number of decapsulations that can be performed per second | Higher is better for performance, but should balance with security |
+| Industry/Healthcare Usage | Examples of current or potential use in industry or healthcare | N/A |
+
+## Security Levels
+
+| Level | Description | Healthcare Example |
+|:-----:|:-----------:|:------------------:|
+| [Level 1](https://csrc.nist.gov/projects/post-quantum-cryptography/post-quantum-cryptography-standardization/round-3-submissions) | At least as hard to break as AES-128 | [Securing patient portals](https://www.healthit.gov/topic/privacy-security-and-hipaa/security-risk-assessment-tool) |
+| [Level 3](https://csrc.nist.gov/projects/post-quantum-cryptography/post-quantum-cryptography-standardization/round-3-submissions) | At least as hard to break as AES-192 | [Protecting electronic health records (EHRs)](https://www.hhs.gov/hipaa/for-professionals/security/guidance/cybersecurity/index.html) |
+| [Level 5](https://csrc.nist.gov/projects/post-quantum-cryptography/post-quantum-cryptography-standardization/round-3-submissions) | At least as hard to break as AES-256 | [Safeguarding genomic data](https://www.genome.gov/about-genomics/policy-issues/Privacy) |
+
+Note: While higher security levels provide stronger protection, they often come with increased computational costs. The choice of security level should be based on the sensitivity of the data and the specific requirements of the healthcare application.
 
 ### Conclusion
 We propose that our hybrid encryption protocol is a safe, secure, trustworthy solution for resposible innovation in a world of increasing technical complexity.
-
+Based on industry standard, we recommend Kyber768 Key Encapsulation Mechanism (KEM) with X25519 Elliptic Curve Diffie-Hellman (ECDH) Key Exchange as a reliable standard to aim for broad implementation.
 ## References
 
 1. [Password authenticated key exchange-based on Kyber for mobile devices](https://pubmed.ncbi.nlm.nih.gov/38660167/)
