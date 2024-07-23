@@ -27,6 +27,8 @@ sudo ./kbr.sh
 Prerequisites:
 OpenSSL with Open Quantum Safe (OQS) support
 Bash shell environment
+Build tools (Make/CMake/Ninja)
+Linux/Windows Subsystem for Linux or Mac equivalent (Arch Linux 6.10 and Ubuntu 24.04 5.15 Tegra tested)
 Output:
 The script generates a formatted table with the following columns:
 Algorithm name
@@ -54,7 +56,7 @@ This guide provides instructions for setting up and using post-quantum cryptogra
 ### For x86_64 Linux (Arch)
 
 1. Install dependencies:
-'''bash
+```bash
 sudo pacman -S gcc make cmake ninja openssl
 ```
 
@@ -64,7 +66,7 @@ git clone https://github.com/open-quantum-safe/liboqs.git
 cd liboqs
 mkdir build && cd build
 cmake -GNinja ..
-ninja
+sudo ninja
 sudo ninja install
 ```
 
@@ -73,7 +75,7 @@ sudo ninja install
 git clone https://github.com/open-quantum-safe/openssl.git
 cd openssl
 ./config --prefix=/usr/local/oqs-openssl
-make
+sudo make
 sudo make install
 ```
 
@@ -114,6 +116,7 @@ sudo make install
 ```bash
 export PATH="/usr/local/oqs-openssl/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/oqs-openssl/lib:$LD_LIBRARY_PATH"
+source ~/.bashrc
 ```
 
 ## Generating Keys
@@ -122,38 +125,38 @@ export LD_LIBRARY_PATH="/usr/local/oqs-openssl/lib:$LD_LIBRARY_PATH"
 
 Generate a post-quantum key pair (e.g., using Kyber):
 ```bash
-openssl genpkey -algorithm kyber512 -out kyber_private_key.pem
-openssl pkey -in kyber_private_key.pem -pubout -out kyber_public_key.pem
+sudo openssl genpkey -algorithm kyber512 -out kyber_private_key.pem
+sudo openssl pkey -in kyber_private_key.pem -pubout -out kyber_public_key.pem
 ```
 
 ### Classical Keys
 
 Generate a classical key pair (e.g., RSA):
 ```bash
-openssl genpkey -algorithm RSA -out rsa_private_key.pem
-openssl rsa -pubout -in rsa_private_key.pem -out rsa_public_key.pem
+sudo openssl genpkey -algorithm RSA -out rsa_private_key.pem
+sudo openssl rsa -pubout -in rsa_private_key.pem -out rsa_public_key.pem
 ```
 
 ### Hybrid Keys
 
 Generate a hybrid key pair (e.g., ECDSA with Kyber):
 ```bash
-openssl genpkey -algorithm p256_kyber512 -out hybrid_private_key.pem
-openssl pkey -in hybrid_private_key.pem -pubout -out hybrid_public_key.pem
+sudo openssl genpkey -algorithm p256_kyber512 -out hybrid_private_key.pem
+sudo openssl pkey -in hybrid_private_key.pem -pubout -out hybrid_public_key.pem
 ```
 
 ## Verifying Installation
 
 To verify that OQS-OpenSSL is working correctly:
 ```bash
-openssl list -providers
+sudo openssl list -providers
 ```
 This should list the OQS provider among the available providers.
 
 For a list of supported algorithms:
 ```bash
-openssl list -signature-algorithms
-openssl list -key-exchange-algorithms
+sudo openssl list -signature-algorithms
+sudo openssl list -key-exchange-algorithms
 ```
 
 ## Additional Resources
