@@ -54,111 +54,111 @@ This guide provides instructions for setting up and using post-quantum cryptogra
 ### For x86_64 Linux (Arch)
 
 1. Install dependencies:
-
+'''bash
 sudo pacman -S gcc make cmake ninja openssl
-text
+```
 
 2. Clone and build liboqs:
-
+```bash
 git clone https://github.com/open-quantum-safe/liboqs.git
 cd liboqs
 mkdir build && cd build
 cmake -GNinja ..
 ninja
 sudo ninja install
-text
+```
 
 3. Clone and build OQS-OpenSSL:
-
+```bash
 git clone https://github.com/open-quantum-safe/openssl.git
 cd openssl
 ./config --prefix=/usr/local/oqs-openssl
 make
 sudo make install
-text
+```
 
 4. Set up environment variables:
-
+```bash
 export PATH="/usr/local/oqs-openssl/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/oqs-openssl/lib:$LD_LIBRARY_PATH"
-text
+```
 
-### For aarch64 (Ubuntu)
+### For aarch64 (Ubuntu 24.04/24.10)
 
 1. Install dependencies:
-
+```bash
 sudo apt update
 sudo apt install gcc make cmake ninja-build libssl-dev
-text
+```
 
 2. Clone and build liboqs:
-
+```bash
 git clone https://github.com/open-quantum-safe/liboqs.git
 cd liboqs
 mkdir build && cd build
 cmake -GNinja ..
 ninja
 sudo ninja install
-text
+```
 
 3. Clone and build OQS-OpenSSL:
-
+```bash
 git clone https://github.com/open-quantum-safe/openssl.git
 cd openssl
 ./config --prefix=/usr/local/oqs-openssl
 make
 sudo make install
-text
+```
 
 4. Set up environment variables:
-
+```bash
 export PATH="/usr/local/oqs-openssl/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/oqs-openssl/lib:$LD_LIBRARY_PATH"
-text
+```
 
 ## Generating Keys
 
 ### Post-Quantum Keys
 
 Generate a post-quantum key pair (e.g., using Kyber):
-
+```bash
 openssl genpkey -algorithm kyber512 -out kyber_private_key.pem
 openssl pkey -in kyber_private_key.pem -pubout -out kyber_public_key.pem
-text
+```
 
 ### Classical Keys
 
 Generate a classical key pair (e.g., RSA):
-
+```bash
 openssl genpkey -algorithm RSA -out rsa_private_key.pem
 openssl rsa -pubout -in rsa_private_key.pem -out rsa_public_key.pem
-text
+```
 
 ### Hybrid Keys
 
 Generate a hybrid key pair (e.g., ECDSA with Kyber):
-
+```bash
 openssl genpkey -algorithm p256_kyber512 -out hybrid_private_key.pem
 openssl pkey -in hybrid_private_key.pem -pubout -out hybrid_public_key.pem
-text
+```
 
 ## Verifying Installation
 
 To verify that OQS-OpenSSL is working correctly:
-
+```bash
 openssl list -providers
-text
+```
 This should list the OQS provider among the available providers.
 
 For a list of supported algorithms:
-
+```bash
 openssl list -signature-algorithms
 openssl list -key-exchange-algorithms
-text
+```
 
 ## Additional Resources
 
 - [OQS-OpenSSL Documentation](https://github.com/open-quantum-safe/openssl/wiki)
 - [liboqs Documentation](https://openquantumsafe.org/liboqs/documentation.html)
 
-Note: Always ensure you're using the latest versions of these libraries and follow best practices for key management and cryptographic operations.
+Note: This is Kernel level code implementation and should NOT be used without an understanding of kernel operations and/or a willingness to have to reconfigure your system a few times.
