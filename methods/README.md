@@ -15,7 +15,14 @@ We built an evaluation script to execute a comprehensive benchmarking post-quant
 Simply run the script in a bash environment. Use 'chmod +x' or 'sudo chmod +x' to make executable:
 
 ```bash
-./kem_benchmark.sh
+sudo ./kem_benchmark.sh
+```
+
+## For report:
+Simply run the script in a bash environment. Use 'chmod +x' or 'sudo chmod +x' to make executable:
+```bash
+sudo ./kbr.sh
+```
 
 Prerequisites:
 OpenSSL with Open Quantum Safe (OQS) support
