@@ -54,7 +54,7 @@ Recent developments have shown that AI can pose significant threats to current a
 - [Curve25519: new Diffie-Hellman speed records](https://cr.yp.to/ecdh/curve25519-20060209.pdf) - Original paper by Daniel J. Bernstein
 - [RFC 7748: Elliptic Curves for Security](https://datatracker.ietf.org/doc/html/rfc7748) - IETF specification for X25519
 - [NIST SP 800-186: Recommendations for Discrete Logarithm-Based Cryptography: Elliptic Curve Domain Parameters](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-186.pdf) - NIST guidelines on elliptic curve cryptography
-
+- [Diffie-Hellman Key Exchange: How to Share a Secret](https://www.youtube.com/watch?v=85oMrKd8afY&t=121s) - Visual-based educational video on Diffie-Hellman Key Exchange
 
 ## Kyber
 
