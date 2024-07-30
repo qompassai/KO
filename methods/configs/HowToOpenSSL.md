@@ -1,8 +1,10 @@
 # OpenSSL commands
-
--all-algorithms: Display lists of all algorithms.
--commands: Display a list of standard commands.
--standard-commands: List of standard commands.
+```bash
+openssl list -"insert option below"
+```
+- -all-algorithms: Display lists of all algorithms.
+- -commands: Display a list of standard commands.
+- -standard-commands: List of standard commands.
 -digest-algorithms: Display a list of message digest algorithms.
 -digest-commands: This option is deprecated. Use -digest-algorithms instead.
 -cipher-algorithms: Display a list of symmetric cipher algorithms.
