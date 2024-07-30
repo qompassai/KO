@@ -1,3 +1,11 @@
+# Open Secure Socket Layer (OpenSSL)
+```bash
+git clone https://github.com/openssl/openssl
+cd openssl
+git checkout openssl-3.3.1
+```
+
+
 # OpenSSL commands
 ```bash
 openssl list "-option below. Example of what that looks like to the right" | openssl list -all-algorithms
