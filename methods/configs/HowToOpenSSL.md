@@ -1,4 +1,4 @@
-OpenSSL commands
+#OpenSSL commands
 
 -all-algorithms: Display lists of all algorithms.
 -commands: Display a list of standard commands.
@@ -22,7 +22,7 @@ OpenSSL commands
 -public-key-methods: Display a list of public key methods.
 -store-loaders: Display a list of store loaders.
 -providers: Display a list of all loaded providers with their names, version and status.
-# -engines: This option is deprecated.
+-engines: This option is deprecated.
 -disabled: Display a list of disabled features.
 -objects: Display a list of built-in objects, i.e., OIDs with names.
 -options command: Output a two-column list of the options accepted by the specified command.
