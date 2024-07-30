@@ -1,4 +1,4 @@
-#OpenSSL commands
+# OpenSSL commands
 
 -all-algorithms: Display lists of all algorithms.
 -commands: Display a list of standard commands.
