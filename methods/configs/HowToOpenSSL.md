@@ -1,6 +1,6 @@
 # OpenSSL commands
 ```bash
-openssl list -"insert option below"
+openssl list "-option below. Example of what that looks like to the right" | openssl list -all-algorithms
 ```
 - -all-algorithms: Display lists of all algorithms.
 - -commands: Display a list of standard commands.
