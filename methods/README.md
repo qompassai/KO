@@ -81,8 +81,9 @@ sudo make install
 
 4. Set up environment variables:
 ```bash
-export PATH="/usr/local/oqs-openssl/bin:$PATH"
-export LD_LIBRARY_PATH="/usr/local/oqs-openssl/lib:$LD_LIBRARY_PATH"
+export OPENSSL_CONF=/etc/ssl/openssl.cnf
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+source ~/.bashrc
 ```
 
 ### For aarch64 (Ubuntu 24.04/24.10)
@@ -114,16 +115,19 @@ sudo make install
 
 4. Set up environment variables:
 ```bash
-export PATH="/usr/local/"what_you_name_openssl"/bin:$PATH"
-export LD_LIBRARY_PATH="/usr/local/"what_you_name_openssl"/lib:$LD_LIBRARY_PATH"
+export PATH="/usr/local/openssl-3.3.1/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/oqs-openssl/lib:$LD_LIBRARY_PATH"
 source ~/.bashrc
 ```
 
-## Generating Keys
+# Generating Keys
 
-### Post-Quantum Keys
+## Post-Quantum Keys
 
-Generate a post-quantum key pair (e.g., using Kyber):
+## Generate a post-quantum public & private key pair (e.g., using Kyber):
+
+- breakdown of terminal public key command: openssl genpkey -algorithm <algorithm> -out privatekeyname.pem 
+- breakdown of terminal private key command: openssl pkey -in name.pem -pubout -out publickeyname.pem
 ```bash
 sudo openssl genpkey -algorithm kyber512 -out kyber_private_key.pem
 sudo openssl pkey -in kyber_private_key.pem -pubout -out kyber_public_key.pem
