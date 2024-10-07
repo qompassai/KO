@@ -1,5 +1,32 @@
 #!/bin/bash
 
+# PQC Algorithm Benchmark Script
+# ------------------------------
+# This script benchmarks various post-quantum cryptography (PQC) algorithms
+# using OpenSSL's speed command. It measures the performance of key generation,
+# encapsulation, and decapsulation operations for each algorithm.
+#
+# The script performs the following tasks:
+# 1. Defines an array of PQC algorithms to benchmark.
+# 2. Prints a formatted header for the results table.
+# 3. Iterates through each algorithm:
+#    - Runs OpenSSL speed command for 1 second.
+#    - Parses the output to extract performance metrics.
+#    - Converts time measurements from seconds to milliseconds.
+#    - Prints the formatted results for each algorithm.
+# 4. If an algorithm is not supported or fails, it prints "N/A" for all metrics.
+#
+# Output includes:
+# - Algorithm name
+# - Key generation time (ms)
+# - Encapsulation time (ms)
+# - Decapsulation time (ms)
+# - Key generations per second
+# - Encapsulations per second
+# - Decapsulations per second
+#
+# Note: This script requires OpenSSL with PQC algorithm support.
+
 algorithms=(
     frodo640aes frodo640shake frodo976aes frodo976shake frodo1344aes frodo1344shake
     kyber512 kyber768 kyber1024 mlkem512 mlkem768 mlkem1024
