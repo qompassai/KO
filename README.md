@@ -109,5 +109,6 @@ We would like to thank the Ruth Jackson Orthopaedic Society and Zimmer Biomet fo
 
 
 
+
 ## Licensing
-This respitory and all applications within it are dual-licensed under the terms of the [LICENSE](LICENSE) and [AGPL-3.0](LICENSE-AGPL) licenses.
+This repository and all applications within it are dual-licensed under the terms of the [Qompass Commercial Distribution Agreement (CDA)](LICENSE) and [GNU Affero General Public License v3.0 (AGPL-3.0)](LICENSE-AGPL) licenses.
