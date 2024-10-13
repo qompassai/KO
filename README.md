@@ -108,5 +108,6 @@ In essence, AGPL is designed to keep software free and open, especially in the a
 We would like to thank the Ruth Jackson Orthopaedic Society and Zimmer Biomet for their generous support of our work.
 
 
+
 ## Licensing
-This project is dual-licensed under the terms of the [LICENSE](LICENSE) and [AGPL-3.0](LICENSE-AGPL) licenses.
+This respitory and all applications within it are dual-licensed under the terms of the [LICENSE](LICENSE) and [AGPL-3.0](LICENSE-AGPL) licenses.
