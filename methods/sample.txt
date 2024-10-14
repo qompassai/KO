@@ -1,0 +1,22 @@
+Date: 2024-10-07
+Patient Name: John Doe
+Medical Record Number: 12345
+
+Reason for Visit: Follow-up appointment for hypertension management.
+
+Subjective:
+The patient reports feeling well overall. No new complaints. Blood pressure readings at home have been consistent around 130/80 mmHg.
+
+Objective:
+Vital Signs:
+- Blood Pressure: 128/76 mmHg
+- Heart Rate: 72 bpm
+- Weight: 180 lbs
+
+Assessment:
+Hypertension is well-controlled at this time. Discussed diet and exercise.
+
+Plan:
+1. Continue current medication regimen.
+2. Maintain a low-sodium diet.
+3. Schedule a follow-up appointment in 3 months.
