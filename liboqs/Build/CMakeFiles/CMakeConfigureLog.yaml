@@ -1,0 +1,911 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:21 (project)"
+    message: |
+      The system is: Linux - 6.11.1-zen1-1-zen - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:21 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/clang 
+      Build flags: -isystem;/usr/lib/clang/18/include;-fPIC;-Wno-unused-command-line-argument;-fopenmp;-D_GNU_SOURCE;-std=gnu11;-march=native;-Wno-error=unknown-pragmas;-Wno-sign-conversion;-Wno-implicit-int-conversion;-Wno-implicit-function-declaration;-fms-extensions;-fno-strict-aliasing;-Wno-c99-extensions;-Wno-incompatible-pointer-types;-Wno-int-conversion;-Wno-unused-but-set-variable;-isystem;/usr/lib/clang/18/include;-fPIC;-Wno-unused-command-line-argument;-fopenmp;-D_GNU_SOURCE;-std=gnu11;-march=native;-Wno-error=unknown-pragmas;-Wno-sign-conversion;-Wno-implicit-int-conversion;-Wno-implicit-function-declaration;-fms-extensions;-fno-strict-aliasing;-Wno-c99-extensions;-Wno-incompatible-pointer-types;-Wno-int-conversion;-Wno-unused-but-set-variable
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is Clang, found in:
+        /home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/3.30.4/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:1205 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "CMakeLists.txt:21 (project)"
+    message: |
+      Checking whether the ASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+      clang version 18.1.8
+      Target: x86_64-pc-linux-gnu
+      Thread model: posix
+      InstalledDir: /usr/bin
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:1205 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "CMakeLists.txt:21 (project)"
+    message: |
+      Checking whether the ASM compiler is AppleClang using "--version" did not match "(Apple (clang|LLVM) version)":
+      clang version 18.1.8
+      Target: x86_64-pc-linux-gnu
+      Thread model: posix
+      InstalledDir: /usr/bin
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:1192 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "CMakeLists.txt:21 (project)"
+    message: |
+      Checking whether the ASM compiler is Clang using "--version" matched "(clang version)":
+      clang version 18.1.8
+      Target: x86_64-pc-linux-gnu
+      Thread model: posix
+      InstalledDir: /usr/bin
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:21 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-i8wMBp"
+      binary: "/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-i8wMBp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-L/usr/local/lib"
+      CMAKE_WARN_DEPRECATED: "FALSE"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-i8wMBp'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_eaa33
+        [1/2] /usr/bin/clang   -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable    -v -MD -MT CMakeFiles/cmTC_eaa33.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_eaa33.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_eaa33.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+        clang version 18.1.8
+        Target: x86_64-pc-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/bin
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/13.3.0
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/14.2.1
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/4.9.4
+        Found candidate GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.3.0
+        Found candidate GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1
+        Found candidate GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/4.9.4
+        Selected GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1
+        Candidate multilib: .;@m64
+        Candidate multilib: 32;@m32
+        Selected multilib: .;@m64
+        Found CUDA installation: /opt/cuda, version 
+        Found HIP installation: /opt/rocm, version 6.0.32831
+         (in-process)
+         "/usr/bin/clang-18" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -fhalf-no-semantic-interposition -mframe-pointer=all -relaxed-aliasing -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu alderlake -target-feature +prfchw -target-feature -cldemote -target-feature +avx -target-feature +aes -target-feature +sahf -target-feature +pclmul -target-feature -xop -target-feature +crc32 -target-feature +xsaves -target-feature -avx512fp16 -target-feature -usermsr -target-feature -sm4 -target-feature +sse4.1 -target-feature -avx512ifma -target-feature +xsave -target-feature -avx512pf -target-feature +sse4.2 -target-feature -tsxldtrk -target-feature +ptwrite -target-feature -widekl -target-feature -sm3 -target-feature +invpcid -target-feature +64bit -target-feature +xsavec -target-feature -avx10.1-512 -target-feature -avx512vpopcntdq -target-feature +cmov -target-feature -avx512vp2intersect -target-feature -avx512cd -target-feature +movbe -target-feature -avxvnniint8 -target-feature -avx512er -target-feature -amx-int8 -target-feature -kl -target-feature -avx10.1-256 -target-feature -sha512 -target-feature +avxvnni -target-feature -rtm -target-feature +adx -target-feature +avx2 -target-feature +hreset -target-feature +movdiri -target-feature +serialize -target-feature +vpclmulqdq -target-feature -avx512vl -target-feature -uintr -target-feature +clflushopt -target-feature -raoint -target-feature -cmpccxadd -target-feature +bmi -target-feature -amx-tile -target-feature +sse -target-feature +gfni -target-feature -avxvnniint16 -target-feature -amx-fp16 -target-feature +xsaveopt -target-feature +rdrnd -target-feature -avx512f -target-feature -amx-bf16 -target-feature -avx512bf16 -target-feature -avx512vnni -target-feature +cx8 -target-feature -avx512bw -target-feature +sse3 -target-feature +pku -target-feature +fsgsbase -target-feature -clzero -target-feature -mwaitx -target-feature -lwp -target-feature +lzcnt -target-feature +sha -target-feature +movdir64b -target-feature -wbnoinvd -target-feature -enqcmd -target-feature -prefetchwt1 -target-feature -avxneconvert -target-feature -tbm -target-feature -pconfig -target-feature -amx-complex -target-feature +ssse3 -target-feature +cx16 -target-feature +bmi2 -target-feature +fma -target-feature +popcnt -target-feature -avxifma -target-feature +f16c -target-feature -avx512bitalg -target-feature -rdpru -target-feature +clwb -target-feature +mmx -target-feature +sse2 -target-feature +rdseed -target-feature -avx512vbmi2 -target-feature -prefetchi -target-feature +rdpid -target-feature -fma4 -target-feature -avx512vbmi -target-feature +shstk -target-feature +vaes -target-feature +waitpkg -target-feature -sgx -target-feature +fxsr -target-feature -avx512dq -target-feature -sse4a -debugger-tuning=gdb -fdebug-compilation-dir=/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-i8wMBp -v -fcoverage-compilation-dir=/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-i8wMBp -resource-dir /usr/lib/clang/18 -dependency-file CMakeFiles/cmTC_eaa33.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_eaa33.dir/CMakeCCompilerABI.c.o -sys-header-deps -isystem /usr/lib/clang/18/include -isystem /usr/lib/clang/18/include -D _GNU_SOURCE -D _GNU_SOURCE -I/usr/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include -I/usr/lib/clang/18/include -I/opt/libtorch/include -I/opt/libtorch/include/torch/csrc/api/include -I/home/phaedrus/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/include -I/usr/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include -I/usr/lib/clang/18/include -I/home/phaedrus/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library -I/usr/include/ruby-3.2.0 -I/usr/include/php/ext/date/lib -I/usr/include/php/ext -I/usr/include/php/Zend -I/usr/include/php/TSRM -I/usr/include/php/main -I/usr/include/php -I/home/phaedrus/.opam/4.12.0/include -I/opt/openresty/luajit/include -I/usr/include/lua5.1 -I/usr/include/node -I/usr/lib/jvm/default/include -I/usr/include/ghc -I/usr/lib/dart/include -I/usr/include/openssl -I/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include-fixed -I/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include -I/usr/include/x86_64-linux-gnu -I/usr/include/clang/18/include -I/usr/include/c++/14.2.1/x86_64-pc-linux-gnu -I/usr/include/c++/14.2.1 -I/usr/lib/clang/18/include -I/opt/intel/oneapi/mkl/2024.1/include -I/opt/intel/oneapi/tbb/2021.12/env/../include -I/opt/intel/oneapi/mpi/2021.12/include -I/opt/intel/oneapi/mkl/2024.1/include -I/opt/intel/oneapi/ippcp/2021.11/include -I/opt/intel/oneapi/ipp/2021.11/include -I/opt/intel/oneapi/dpl/2022.5/include -I/opt/intel/oneapi/dpcpp-ct/2024.1/include -I/opt/intel/oneapi/dnnl/2024.1/include -I/opt/intel/oneapi/dev-utilities/2024.1/include -I/opt/intel/oneapi/dal/2024.2/include/dal -I/opt/intel/oneapi/compiler/2024.1/opt/oclfpga/include -I/opt/intel/oneapi/ccl/2021.12/include -I/opt/libtorch/include -I/opt/libtorch/include/torch/csrc/api/include -I/opt/libtorch/include -I/opt/libtorch/include/torch/csrc/api/include -I/opt/intel/oneapi/mkl/2024.1/include -I/opt/intel/oneapi/tbb/2021.12/env/../include -I/opt/intel/oneapi/mpi/2021.12/include -I/opt/intel/oneapi/ippcp/2021.11/include -I/opt/intel/oneapi/ipp/2021.11/include -I/opt/intel/oneapi/dpl/2022.5/include -I/opt/intel/oneapi/dpcpp-ct/2024.1/include -I/opt/intel/oneapi/dnnl/2024.1/include -I/opt/intel/oneapi/dev-utilities/2024.1/include -I/opt/intel/oneapi/dal/2024.2/include/dal -I/opt/intel/oneapi/compiler/2024.1/opt/oclfpga/include -I/opt/intel/oneapi/ccl/2021.12/include -I/usr/lib/clang/18.1.8/include -I/usr/include -I/usr/local/include -I/usr/include/python3.12 -I/usr/lib/go/pkg/include -I/home/phaedrus/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/include -internal-isystem /usr/lib/clang/18/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../x86_64-pc-linux-gnu/include -internal-externc-isystem /include -internal-externc-isystem /usr/include -Wno-unused-command-line-argument -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -Wno-unused-command-line-argument -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -std=gnu11 -ferror-limit 19 -fopenmp -stack-protector 2 -fms-extensions -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_eaa33.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+        clang -cc1 version 18.1.8 based upon LLVM 18.1.8 default target x86_64-pc-linux-gnu
+        ignoring nonexistent directory "/home/phaedrus/.opam/4.12.0/include"
+        ignoring nonexistent directory "/usr/lib/dart/include"
+        ignoring nonexistent directory "/usr/include/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/include/clang/18/include"
+        ignoring nonexistent directory "/usr/lib/clang/18.1.8/include"
+        ignoring nonexistent directory "/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../x86_64-pc-linux-gnu/include"
+        ignoring nonexistent directory "/include"
+        ignoring duplicate directory "/usr/include"
+        ignoring duplicate directory "/usr/local/include"
+        ignoring duplicate directory "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include"
+        ignoring duplicate directory "/usr/lib/clang/18/include"
+        ignoring duplicate directory "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include"
+        ignoring duplicate directory "/usr/lib/clang/18/include"
+        ignoring duplicate directory "/opt/intel/oneapi/mkl/2024.1/include"
+        ignoring duplicate directory "/opt/libtorch/include"
+        ignoring duplicate directory "/opt/libtorch/include/torch/csrc/api/include"
+        ignoring duplicate directory "/opt/libtorch/include"
+        ignoring duplicate directory "/opt/libtorch/include/torch/csrc/api/include"
+        ignoring duplicate directory "/opt/intel/oneapi/mkl/2024.1/include"
+        ignoring duplicate directory "/opt/intel/oneapi/tbb/2021.12/env/../include"
+        ignoring duplicate directory "/opt/intel/oneapi/mpi/2021.12/include"
+        ignoring duplicate directory "/opt/intel/oneapi/ippcp/2021.11/include"
+        ignoring duplicate directory "/opt/intel/oneapi/ipp/2021.11/include"
+        ignoring duplicate directory "/opt/intel/oneapi/dpl/2022.5/include"
+        ignoring duplicate directory "/opt/intel/oneapi/dpcpp-ct/2024.1/include"
+        ignoring duplicate directory "/opt/intel/oneapi/dnnl/2024.1/include"
+        ignoring duplicate directory "/opt/intel/oneapi/dev-utilities/2024.1/include"
+        ignoring duplicate directory "/opt/intel/oneapi/dal/2024.2/include/dal"
+        ignoring duplicate directory "/opt/intel/oneapi/compiler/2024.1/opt/oclfpga/include"
+        ignoring duplicate directory "/opt/intel/oneapi/ccl/2021.12/include"
+        ignoring duplicate directory "/usr/include"
+        ignoring duplicate directory "/usr/local/include"
+        ignoring duplicate directory "/home/phaedrus/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/include"
+        ignoring duplicate directory "/usr/lib/clang/18/include"
+          as it is a non-system directory that duplicates a system directory
+        ignoring duplicate directory "/usr/lib/clang/18/include"
+        ignoring duplicate directory "/usr/lib/clang/18/include"
+        ignoring duplicate directory "/usr/local/include"
+          as it is a non-system directory that duplicates a system directory
+        ignoring duplicate directory "/usr/include"
+          as it is a non-system directory that duplicates a system directory
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include
+         /opt/libtorch/include
+         /opt/libtorch/include/torch/csrc/api/include
+         /home/phaedrus/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/include
+         /home/phaedrus/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library
+         /usr/include/ruby-3.2.0
+         /usr/include/php/ext/date/lib
+         /usr/include/php/ext
+         /usr/include/php/Zend
+         /usr/include/php/TSRM
+         /usr/include/php/main
+         /usr/include/php
+         /opt/openresty/luajit/include
+         /usr/include/lua5.1
+         /usr/include/node
+         /usr/lib/jvm/default/include
+         /usr/include/ghc
+         /usr/include/openssl
+         /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include-fixed
+         /usr/include/c++/14.2.1/x86_64-pc-linux-gnu
+         /usr/include/c++/14.2.1
+         /opt/intel/oneapi/mkl/2024.1/include
+         /opt/intel/oneapi/tbb/2021.12/env/../include
+         /opt/intel/oneapi/mpi/2021.12/include
+         /opt/intel/oneapi/ippcp/2021.11/include
+         /opt/intel/oneapi/ipp/2021.11/include
+         /opt/intel/oneapi/dpl/2022.5/include
+         /opt/intel/oneapi/dpcpp-ct/2024.1/include
+         /opt/intel/oneapi/dnnl/2024.1/include
+         /opt/intel/oneapi/dev-utilities/2024.1/include
+         /opt/intel/oneapi/dal/2024.2/include/dal
+         /opt/intel/oneapi/compiler/2024.1/opt/oclfpga/include
+         /opt/intel/oneapi/ccl/2021.12/include
+         /usr/include/python3.12
+         /usr/lib/go/pkg/include
+         /usr/lib/clang/18/include
+         /usr/local/include
+         /usr/include
+        End of search list.
+        [2/2] : && /usr/bin/clang -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -L/usr/local/lib -v -Wl,-v CMakeFiles/cmTC_eaa33.dir/CMakeCCompilerABI.c.o -o cmTC_eaa33   && :
+        clang version 18.1.8
+        Target: x86_64-pc-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/bin
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/13.3.0
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/14.2.1
+        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/4.9.4
+        Found candidate GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.3.0
+        Found candidate GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1
+        Found candidate GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/4.9.4
+        Selected GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1
+        Candidate multilib: .;@m64
+        Candidate multilib: 32;@m32
+        Selected multilib: .;@m64
+        Found CUDA installation: /opt/cuda, version 
+        Found HIP installation: /opt/rocm, version 6.0.32831
+         "/usr/bin/ld" --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_eaa33 /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/Scrt1.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/crti.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/crtbeginS.o -L/usr/local/lib -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1 -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/lib -L/usr/lib -L/opt/libtorch/lib -L/opt/intel/oneapi/mkl/2024.1/lib/ -L/opt/intel/oneapi/tbb/2021.12/env/../lib/intel64/gcc4.8 -L/opt/intel/oneapi/mpi/2021.12/lib -L/opt/intel/oneapi/mkl/2024.1/lib/ -L/opt/intel/oneapi/ippcp/2021.11/lib/ -L/opt/intel/oneapi/ipp/2021.11/lib -L/opt/intel/oneapi/dpl/2022.5/lib -L/opt/intel/oneapi/dnnl/2024.1/lib -L/opt/intel/oneapi/dal/2024.2/lib -L/opt/intel/oneapi/compiler/2024.1/lib -L/opt/intel/oneapi/ccl/2021.12/lib/ -L/opt/libtorch/lib -L/opt/libtorch/lib -L. -v CMakeFiles/cmTC_eaa33.dir/CMakeCCompilerABI.c.o -lomp -L/usr/lib -lgcc --as-needed -lgcc_s --no-as-needed -lpthread -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/crtendS.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/crtn.o
+        GNU ld (GNU Binutils) 2.43.0
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:21 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include]
+          add: [/opt/libtorch/include]
+          add: [/opt/libtorch/include/torch/csrc/api/include]
+          add: [/home/phaedrus/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/include]
+          add: [/home/phaedrus/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library]
+          add: [/usr/include/ruby-3.2.0]
+          add: [/usr/include/php/ext/date/lib]
+          add: [/usr/include/php/ext]
+          add: [/usr/include/php/Zend]
+          add: [/usr/include/php/TSRM]
+          add: [/usr/include/php/main]
+          add: [/usr/include/php]
+          add: [/opt/openresty/luajit/include]
+          add: [/usr/include/lua5.1]
+          add: [/usr/include/node]
+          add: [/usr/lib/jvm/default/include]
+          add: [/usr/include/ghc]
+          add: [/usr/include/openssl]
+          add: [/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include-fixed]
+          add: [/usr/include/c++/14.2.1/x86_64-pc-linux-gnu]
+          add: [/usr/include/c++/14.2.1]
+          add: [/opt/intel/oneapi/mkl/2024.1/include]
+          add: [/opt/intel/oneapi/tbb/2021.12/env/../include]
+          add: [/opt/intel/oneapi/mpi/2021.12/include]
+          add: [/opt/intel/oneapi/ippcp/2021.11/include]
+          add: [/opt/intel/oneapi/ipp/2021.11/include]
+          add: [/opt/intel/oneapi/dpl/2022.5/include]
+          add: [/opt/intel/oneapi/dpcpp-ct/2024.1/include]
+          add: [/opt/intel/oneapi/dnnl/2024.1/include]
+          add: [/opt/intel/oneapi/dev-utilities/2024.1/include]
+          add: [/opt/intel/oneapi/dal/2024.2/include/dal]
+          add: [/opt/intel/oneapi/compiler/2024.1/opt/oclfpga/include]
+          add: [/opt/intel/oneapi/ccl/2021.12/include]
+          add: [/usr/include/python3.12]
+          add: [/usr/lib/go/pkg/include]
+          add: [/usr/lib/clang/18/include]
+          add: [/usr/local/include]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include]
+        collapse include dir [/opt/libtorch/include] ==> [/opt/libtorch/include]
+        collapse include dir [/opt/libtorch/include/torch/csrc/api/include] ==> [/opt/libtorch/include/torch/csrc/api/include]
+        collapse include dir [/home/phaedrus/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/include] ==> [/home/phaedrus/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/include]
+        collapse include dir [/home/phaedrus/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library] ==> [/home/phaedrus/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library]
+        collapse include dir [/usr/include/ruby-3.2.0] ==> [/usr/include/ruby-3.2.0]
+        collapse include dir [/usr/include/php/ext/date/lib] ==> [/usr/include/php/ext/date/lib]
+        collapse include dir [/usr/include/php/ext] ==> [/usr/include/php/ext]
+        collapse include dir [/usr/include/php/Zend] ==> [/usr/include/php/Zend]
+        collapse include dir [/usr/include/php/TSRM] ==> [/usr/include/php/TSRM]
+        collapse include dir [/usr/include/php/main] ==> [/usr/include/php/main]
+        collapse include dir [/usr/include/php] ==> [/usr/include/php]
+        collapse include dir [/opt/openresty/luajit/include] ==> [/opt/openresty/luajit/include]
+        collapse include dir [/usr/include/lua5.1] ==> [/usr/include/lua5.1]
+        collapse include dir [/usr/include/node] ==> [/usr/include/node]
+        collapse include dir [/usr/lib/jvm/default/include] ==> [/usr/lib/jvm/default/include]
+        collapse include dir [/usr/include/ghc] ==> [/usr/include/ghc]
+        collapse include dir [/usr/include/openssl] ==> [/usr/include/openssl]
+        collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include-fixed] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include-fixed]
+        collapse include dir [/usr/include/c++/14.2.1/x86_64-pc-linux-gnu] ==> [/usr/include/c++/14.2.1/x86_64-pc-linux-gnu]
+        collapse include dir [/usr/include/c++/14.2.1] ==> [/usr/include/c++/14.2.1]
+        collapse include dir [/opt/intel/oneapi/mkl/2024.1/include] ==> [/opt/intel/oneapi/mkl/2024.1/include]
+        collapse include dir [/opt/intel/oneapi/tbb/2021.12/env/../include] ==> [/opt/intel/oneapi/tbb/2021.12/include]
+        collapse include dir [/opt/intel/oneapi/mpi/2021.12/include] ==> [/opt/intel/oneapi/mpi/2021.12/include]
+        collapse include dir [/opt/intel/oneapi/ippcp/2021.11/include] ==> [/opt/intel/oneapi/ippcp/2021.11/include]
+        collapse include dir [/opt/intel/oneapi/ipp/2021.11/include] ==> [/opt/intel/oneapi/ipp/2021.11/include]
+        collapse include dir [/opt/intel/oneapi/dpl/2022.5/include] ==> [/opt/intel/oneapi/dpl/2022.5/include]
+        collapse include dir [/opt/intel/oneapi/dpcpp-ct/2024.1/include] ==> [/opt/intel/oneapi/dpcpp-ct/2024.1/include]
+        collapse include dir [/opt/intel/oneapi/dnnl/2024.1/include] ==> [/opt/intel/oneapi/dnnl/2024.1/include]
+        collapse include dir [/opt/intel/oneapi/dev-utilities/2024.1/include] ==> [/opt/intel/oneapi/dev-utilities/2024.1/include]
+        collapse include dir [/opt/intel/oneapi/dal/2024.2/include/dal] ==> [/opt/intel/oneapi/dal/2024.2/include/dal]
+        collapse include dir [/opt/intel/oneapi/compiler/2024.1/opt/oclfpga/include] ==> [/opt/intel/oneapi/compiler/2024.1/opt/oclfpga/include]
+        collapse include dir [/opt/intel/oneapi/ccl/2021.12/include] ==> [/opt/intel/oneapi/ccl/2021.12/include]
+        collapse include dir [/usr/include/python3.12] ==> [/usr/include/python3.12]
+        collapse include dir [/usr/lib/go/pkg/include] ==> [/usr/lib/go/pkg/include]
+        collapse include dir [/usr/lib/clang/18/include] ==> [/usr/lib/clang/18/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include;/opt/libtorch/include;/opt/libtorch/include/torch/csrc/api/include;/home/phaedrus/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/include;/home/phaedrus/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library;/usr/include/ruby-3.2.0;/usr/include/php/ext/date/lib;/usr/include/php/ext;/usr/include/php/Zend;/usr/include/php/TSRM;/usr/include/php/main;/usr/include/php;/opt/openresty/luajit/include;/usr/include/lua5.1;/usr/include/node;/usr/lib/jvm/default/include;/usr/include/ghc;/usr/include/openssl;/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include-fixed;/usr/include/c++/14.2.1/x86_64-pc-linux-gnu;/usr/include/c++/14.2.1;/opt/intel/oneapi/mkl/2024.1/include;/opt/intel/oneapi/tbb/2021.12/include;/opt/intel/oneapi/mpi/2021.12/include;/opt/intel/oneapi/ippcp/2021.11/include;/opt/intel/oneapi/ipp/2021.11/include;/opt/intel/oneapi/dpl/2022.5/include;/opt/intel/oneapi/dpcpp-ct/2024.1/include;/opt/intel/oneapi/dnnl/2024.1/include;/opt/intel/oneapi/dev-utilities/2024.1/include;/opt/intel/oneapi/dal/2024.2/include/dal;/opt/intel/oneapi/compiler/2024.1/opt/oclfpga/include;/opt/intel/oneapi/ccl/2021.12/include;/usr/include/python3.12;/usr/lib/go/pkg/include;/usr/lib/clang/18/include;/usr/local/include;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:21 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-i8wMBp']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/ninja -v cmTC_eaa33]
+        ignore line: [[1/2] /usr/bin/clang   -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable    -v -MD -MT CMakeFiles/cmTC_eaa33.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_eaa33.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_eaa33.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [clang version 18.1.8]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/bin]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/13.3.0]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/14.2.1]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/4.9.4]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.3.0]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/4.9.4]
+        ignore line: [Selected GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Candidate multilib: 32]
+        ignore line: [@m32]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        ignore line: [Found CUDA installation: /opt/cuda  version ]
+        ignore line: [Found HIP installation: /opt/rocm  version 6.0.32831]
+        ignore line: [ (in-process)]
+        ignore line: [ "/usr/bin/clang-18" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -fhalf-no-semantic-interposition -mframe-pointer=all -relaxed-aliasing -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu alderlake -target-feature +prfchw -target-feature -cldemote -target-feature +avx -target-feature +aes -target-feature +sahf -target-feature +pclmul -target-feature -xop -target-feature +crc32 -target-feature +xsaves -target-feature -avx512fp16 -target-feature -usermsr -target-feature -sm4 -target-feature +sse4.1 -target-feature -avx512ifma -target-feature +xsave -target-feature -avx512pf -target-feature +sse4.2 -target-feature -tsxldtrk -target-feature +ptwrite -target-feature -widekl -target-feature -sm3 -target-feature +invpcid -target-feature +64bit -target-feature +xsavec -target-feature -avx10.1-512 -target-feature -avx512vpopcntdq -target-feature +cmov -target-feature -avx512vp2intersect -target-feature -avx512cd -target-feature +movbe -target-feature -avxvnniint8 -target-feature -avx512er -target-feature -amx-int8 -target-feature -kl -target-feature -avx10.1-256 -target-feature -sha512 -target-feature +avxvnni -target-feature -rtm -target-feature +adx -target-feature +avx2 -target-feature +hreset -target-feature +movdiri -target-feature +serialize -target-feature +vpclmulqdq -target-feature -avx512vl -target-feature -uintr -target-feature +clflushopt -target-feature -raoint -target-feature -cmpccxadd -target-feature +bmi -target-feature -amx-tile -target-feature +sse -target-feature +gfni -target-feature -avxvnniint16 -target-feature -amx-fp16 -target-feature +xsaveopt -target-feature +rdrnd -target-feature -avx512f -target-feature -amx-bf16 -target-feature -avx512bf16 -target-feature -avx512vnni -target-feature +cx8 -target-feature -avx512bw -target-feature +sse3 -target-feature +pku -target-feature +fsgsbase -target-feature -clzero -target-feature -mwaitx -target-feature -lwp -target-feature +lzcnt -target-feature +sha -target-feature +movdir64b -target-feature -wbnoinvd -target-feature -enqcmd -target-feature -prefetchwt1 -target-feature -avxneconvert -target-feature -tbm -target-feature -pconfig -target-feature -amx-complex -target-feature +ssse3 -target-feature +cx16 -target-feature +bmi2 -target-feature +fma -target-feature +popcnt -target-feature -avxifma -target-feature +f16c -target-feature -avx512bitalg -target-feature -rdpru -target-feature +clwb -target-feature +mmx -target-feature +sse2 -target-feature +rdseed -target-feature -avx512vbmi2 -target-feature -prefetchi -target-feature +rdpid -target-feature -fma4 -target-feature -avx512vbmi -target-feature +shstk -target-feature +vaes -target-feature +waitpkg -target-feature -sgx -target-feature +fxsr -target-feature -avx512dq -target-feature -sse4a -debugger-tuning=gdb -fdebug-compilation-dir=/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-i8wMBp -v -fcoverage-compilation-dir=/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-i8wMBp -resource-dir /usr/lib/clang/18 -dependency-file CMakeFiles/cmTC_eaa33.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_eaa33.dir/CMakeCCompilerABI.c.o -sys-header-deps -isystem /usr/lib/clang/18/include -isystem /usr/lib/clang/18/include -D _GNU_SOURCE -D _GNU_SOURCE -I/usr/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include -I/usr/lib/clang/18/include -I/opt/libtorch/include -I/opt/libtorch/include/torch/csrc/api/include -I/home/phaedrus/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/include -I/usr/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include -I/usr/lib/clang/18/include -I/home/phaedrus/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library -I/usr/include/ruby-3.2.0 -I/usr/include/php/ext/date/lib -I/usr/include/php/ext -I/usr/include/php/Zend -I/usr/include/php/TSRM -I/usr/include/php/main -I/usr/include/php -I/home/phaedrus/.opam/4.12.0/include -I/opt/openresty/luajit/include -I/usr/include/lua5.1 -I/usr/include/node -I/usr/lib/jvm/default/include -I/usr/include/ghc -I/usr/lib/dart/include -I/usr/include/openssl -I/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include-fixed -I/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include -I/usr/include/x86_64-linux-gnu -I/usr/include/clang/18/include -I/usr/include/c++/14.2.1/x86_64-pc-linux-gnu -I/usr/include/c++/14.2.1 -I/usr/lib/clang/18/include -I/opt/intel/oneapi/mkl/2024.1/include -I/opt/intel/oneapi/tbb/2021.12/env/../include -I/opt/intel/oneapi/mpi/2021.12/include -I/opt/intel/oneapi/mkl/2024.1/include -I/opt/intel/oneapi/ippcp/2021.11/include -I/opt/intel/oneapi/ipp/2021.11/include -I/opt/intel/oneapi/dpl/2022.5/include -I/opt/intel/oneapi/dpcpp-ct/2024.1/include -I/opt/intel/oneapi/dnnl/2024.1/include -I/opt/intel/oneapi/dev-utilities/2024.1/include -I/opt/intel/oneapi/dal/2024.2/include/dal -I/opt/intel/oneapi/compiler/2024.1/opt/oclfpga/include -I/opt/intel/oneapi/ccl/2021.12/include -I/opt/libtorch/include -I/opt/libtorch/include/torch/csrc/api/include -I/opt/libtorch/include -I/opt/libtorch/include/torch/csrc/api/include -I/opt/intel/oneapi/mkl/2024.1/include -I/opt/intel/oneapi/tbb/2021.12/env/../include -I/opt/intel/oneapi/mpi/2021.12/include -I/opt/intel/oneapi/ippcp/2021.11/include -I/opt/intel/oneapi/ipp/2021.11/include -I/opt/intel/oneapi/dpl/2022.5/include -I/opt/intel/oneapi/dpcpp-ct/2024.1/include -I/opt/intel/oneapi/dnnl/2024.1/include -I/opt/intel/oneapi/dev-utilities/2024.1/include -I/opt/intel/oneapi/dal/2024.2/include/dal -I/opt/intel/oneapi/compiler/2024.1/opt/oclfpga/include -I/opt/intel/oneapi/ccl/2021.12/include -I/usr/lib/clang/18.1.8/include -I/usr/include -I/usr/local/include -I/usr/include/python3.12 -I/usr/lib/go/pkg/include -I/home/phaedrus/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/include -internal-isystem /usr/lib/clang/18/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../x86_64-pc-linux-gnu/include -internal-externc-isystem /include -internal-externc-isystem /usr/include -Wno-unused-command-line-argument -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -Wno-unused-command-line-argument -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -std=gnu11 -ferror-limit 19 -fopenmp -stack-protector 2 -fms-extensions -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_eaa33.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [clang -cc1 version 18.1.8 based upon LLVM 18.1.8 default target x86_64-pc-linux-gnu]
+        ignore line: [ignoring nonexistent directory "/home/phaedrus/.opam/4.12.0/include"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/dart/include"]
+        ignore line: [ignoring nonexistent directory "/usr/include/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/include/clang/18/include"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/clang/18.1.8/include"]
+        ignore line: [ignoring nonexistent directory "/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../x86_64-pc-linux-gnu/include"]
+        ignore line: [ignoring nonexistent directory "/include"]
+        ignore line: [ignoring duplicate directory "/usr/include"]
+        ignore line: [ignoring duplicate directory "/usr/local/include"]
+        ignore line: [ignoring duplicate directory "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include"]
+        ignore line: [ignoring duplicate directory "/usr/lib/clang/18/include"]
+        ignore line: [ignoring duplicate directory "/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include"]
+        ignore line: [ignoring duplicate directory "/usr/lib/clang/18/include"]
+        ignore line: [ignoring duplicate directory "/opt/intel/oneapi/mkl/2024.1/include"]
+        ignore line: [ignoring duplicate directory "/opt/libtorch/include"]
+        ignore line: [ignoring duplicate directory "/opt/libtorch/include/torch/csrc/api/include"]
+        ignore line: [ignoring duplicate directory "/opt/libtorch/include"]
+        ignore line: [ignoring duplicate directory "/opt/libtorch/include/torch/csrc/api/include"]
+        ignore line: [ignoring duplicate directory "/opt/intel/oneapi/mkl/2024.1/include"]
+        ignore line: [ignoring duplicate directory "/opt/intel/oneapi/tbb/2021.12/env/../include"]
+        ignore line: [ignoring duplicate directory "/opt/intel/oneapi/mpi/2021.12/include"]
+        ignore line: [ignoring duplicate directory "/opt/intel/oneapi/ippcp/2021.11/include"]
+        ignore line: [ignoring duplicate directory "/opt/intel/oneapi/ipp/2021.11/include"]
+        ignore line: [ignoring duplicate directory "/opt/intel/oneapi/dpl/2022.5/include"]
+        ignore line: [ignoring duplicate directory "/opt/intel/oneapi/dpcpp-ct/2024.1/include"]
+        ignore line: [ignoring duplicate directory "/opt/intel/oneapi/dnnl/2024.1/include"]
+        ignore line: [ignoring duplicate directory "/opt/intel/oneapi/dev-utilities/2024.1/include"]
+        ignore line: [ignoring duplicate directory "/opt/intel/oneapi/dal/2024.2/include/dal"]
+        ignore line: [ignoring duplicate directory "/opt/intel/oneapi/compiler/2024.1/opt/oclfpga/include"]
+        ignore line: [ignoring duplicate directory "/opt/intel/oneapi/ccl/2021.12/include"]
+        ignore line: [ignoring duplicate directory "/usr/include"]
+        ignore line: [ignoring duplicate directory "/usr/local/include"]
+        ignore line: [ignoring duplicate directory "/home/phaedrus/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/include"]
+        ignore line: [ignoring duplicate directory "/usr/lib/clang/18/include"]
+        ignore line: [  as it is a non-system directory that duplicates a system directory]
+        ignore line: [ignoring duplicate directory "/usr/lib/clang/18/include"]
+        ignore line: [ignoring duplicate directory "/usr/lib/clang/18/include"]
+        ignore line: [ignoring duplicate directory "/usr/local/include"]
+        ignore line: [  as it is a non-system directory that duplicates a system directory]
+        ignore line: [ignoring duplicate directory "/usr/include"]
+        ignore line: [  as it is a non-system directory that duplicates a system directory]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include]
+        ignore line: [ /opt/libtorch/include]
+        ignore line: [ /opt/libtorch/include/torch/csrc/api/include]
+        ignore line: [ /home/phaedrus/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/include]
+        ignore line: [ /home/phaedrus/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library]
+        ignore line: [ /usr/include/ruby-3.2.0]
+        ignore line: [ /usr/include/php/ext/date/lib]
+        ignore line: [ /usr/include/php/ext]
+        ignore line: [ /usr/include/php/Zend]
+        ignore line: [ /usr/include/php/TSRM]
+        ignore line: [ /usr/include/php/main]
+        ignore line: [ /usr/include/php]
+        ignore line: [ /opt/openresty/luajit/include]
+        ignore line: [ /usr/include/lua5.1]
+        ignore line: [ /usr/include/node]
+        ignore line: [ /usr/lib/jvm/default/include]
+        ignore line: [ /usr/include/ghc]
+        ignore line: [ /usr/include/openssl]
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include-fixed]
+        ignore line: [ /usr/include/c++/14.2.1/x86_64-pc-linux-gnu]
+        ignore line: [ /usr/include/c++/14.2.1]
+        ignore line: [ /opt/intel/oneapi/mkl/2024.1/include]
+        ignore line: [ /opt/intel/oneapi/tbb/2021.12/env/../include]
+        ignore line: [ /opt/intel/oneapi/mpi/2021.12/include]
+        ignore line: [ /opt/intel/oneapi/ippcp/2021.11/include]
+        ignore line: [ /opt/intel/oneapi/ipp/2021.11/include]
+        ignore line: [ /opt/intel/oneapi/dpl/2022.5/include]
+        ignore line: [ /opt/intel/oneapi/dpcpp-ct/2024.1/include]
+        ignore line: [ /opt/intel/oneapi/dnnl/2024.1/include]
+        ignore line: [ /opt/intel/oneapi/dev-utilities/2024.1/include]
+        ignore line: [ /opt/intel/oneapi/dal/2024.2/include/dal]
+        ignore line: [ /opt/intel/oneapi/compiler/2024.1/opt/oclfpga/include]
+        ignore line: [ /opt/intel/oneapi/ccl/2021.12/include]
+        ignore line: [ /usr/include/python3.12]
+        ignore line: [ /usr/lib/go/pkg/include]
+        ignore line: [ /usr/lib/clang/18/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [[2/2] : && /usr/bin/clang -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -L/usr/local/lib -v -Wl -v CMakeFiles/cmTC_eaa33.dir/CMakeCCompilerABI.c.o -o cmTC_eaa33   && :]
+        ignore line: [clang version 18.1.8]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/bin]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/13.3.0]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/14.2.1]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/4.9.4]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/13.3.0]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1]
+        ignore line: [Found candidate GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/4.9.4]
+        ignore line: [Selected GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Candidate multilib: 32]
+        ignore line: [@m32]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        ignore line: [Found CUDA installation: /opt/cuda  version ]
+        ignore line: [Found HIP installation: /opt/rocm  version 6.0.32831]
+        link line: [ "/usr/bin/ld" --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_eaa33 /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/Scrt1.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/crti.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/crtbeginS.o -L/usr/local/lib -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1 -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/lib -L/usr/lib -L/opt/libtorch/lib -L/opt/intel/oneapi/mkl/2024.1/lib/ -L/opt/intel/oneapi/tbb/2021.12/env/../lib/intel64/gcc4.8 -L/opt/intel/oneapi/mpi/2021.12/lib -L/opt/intel/oneapi/mkl/2024.1/lib/ -L/opt/intel/oneapi/ippcp/2021.11/lib/ -L/opt/intel/oneapi/ipp/2021.11/lib -L/opt/intel/oneapi/dpl/2022.5/lib -L/opt/intel/oneapi/dnnl/2024.1/lib -L/opt/intel/oneapi/dal/2024.2/lib -L/opt/intel/oneapi/compiler/2024.1/lib -L/opt/intel/oneapi/ccl/2021.12/lib/ -L/opt/libtorch/lib -L/opt/libtorch/lib -L. -v CMakeFiles/cmTC_eaa33.dir/CMakeCCompilerABI.c.o -lomp -L/usr/lib -lgcc --as-needed -lgcc_s --no-as-needed -lpthread -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/crtendS.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/crtn.o]
+          arg [/usr/bin/ld] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_eaa33] ==> ignore
+          arg [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/Scrt1.o] ==> obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/Scrt1.o]
+          arg [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/crti.o] ==> obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/crti.o]
+          arg [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/crtbeginS.o] ==> obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/crtbeginS.o]
+          arg [-L/usr/local/lib] ==> dir [/usr/local/lib]
+          arg [-L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1] ==> dir [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1]
+          arg [-L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64] ==> dir [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [-L/opt/libtorch/lib] ==> dir [/opt/libtorch/lib]
+          arg [-L/opt/intel/oneapi/mkl/2024.1/lib/] ==> dir [/opt/intel/oneapi/mkl/2024.1/lib/]
+          arg [-L/opt/intel/oneapi/tbb/2021.12/env/../lib/intel64/gcc4.8] ==> dir [/opt/intel/oneapi/tbb/2021.12/env/../lib/intel64/gcc4.8]
+          arg [-L/opt/intel/oneapi/mpi/2021.12/lib] ==> dir [/opt/intel/oneapi/mpi/2021.12/lib]
+          arg [-L/opt/intel/oneapi/mkl/2024.1/lib/] ==> dir [/opt/intel/oneapi/mkl/2024.1/lib/]
+          arg [-L/opt/intel/oneapi/ippcp/2021.11/lib/] ==> dir [/opt/intel/oneapi/ippcp/2021.11/lib/]
+          arg [-L/opt/intel/oneapi/ipp/2021.11/lib] ==> dir [/opt/intel/oneapi/ipp/2021.11/lib]
+          arg [-L/opt/intel/oneapi/dpl/2022.5/lib] ==> dir [/opt/intel/oneapi/dpl/2022.5/lib]
+          arg [-L/opt/intel/oneapi/dnnl/2024.1/lib] ==> dir [/opt/intel/oneapi/dnnl/2024.1/lib]
+          arg [-L/opt/intel/oneapi/dal/2024.2/lib] ==> dir [/opt/intel/oneapi/dal/2024.2/lib]
+          arg [-L/opt/intel/oneapi/compiler/2024.1/lib] ==> dir [/opt/intel/oneapi/compiler/2024.1/lib]
+          arg [-L/opt/intel/oneapi/ccl/2021.12/lib/] ==> dir [/opt/intel/oneapi/ccl/2021.12/lib/]
+          arg [-L/opt/libtorch/lib] ==> dir [/opt/libtorch/lib]
+          arg [-L/opt/libtorch/lib] ==> dir [/opt/libtorch/lib]
+          arg [-L.] ==> ignore
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_eaa33.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lomp] ==> lib [omp]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--no-as-needed] ==> ignore
+          arg [-lpthread] ==> lib [pthread]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--no-as-needed] ==> ignore
+          arg [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/crtendS.o] ==> obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/crtendS.o]
+          arg [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/crtn.o] ==> obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/crtn.o]
+        linker tool for 'C': /usr/bin/ld
+        collapse obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/Scrt1.o] ==> [/usr/lib64/Scrt1.o]
+        collapse obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/crti.o] ==> [/usr/lib64/crti.o]
+        collapse obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/crtbeginS.o] ==> [/usr/lib64/gcc/x86_64-pc-linux-gnu/14.2.1/crtbeginS.o]
+        collapse obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/crtendS.o] ==> [/usr/lib64/gcc/x86_64-pc-linux-gnu/14.2.1/crtendS.o]
+        collapse obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/crtn.o] ==> [/usr/lib64/crtn.o]
+        collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
+        collapse library dir [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1] ==> [/usr/lib64/gcc/x86_64-pc-linux-gnu/14.2.1]
+        collapse library dir [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib] ==> [/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        collapse library dir [/opt/libtorch/lib] ==> [/opt/libtorch/lib]
+        collapse library dir [/opt/intel/oneapi/mkl/2024.1/lib/] ==> [/opt/intel/oneapi/mkl/2024.1/lib]
+        collapse library dir [/opt/intel/oneapi/tbb/2021.12/env/../lib/intel64/gcc4.8] ==> [/opt/intel/oneapi/tbb/2021.12/lib/intel64/gcc4.8]
+        collapse library dir [/opt/intel/oneapi/mpi/2021.12/lib] ==> [/opt/intel/oneapi/mpi/2021.12/lib]
+        collapse library dir [/opt/intel/oneapi/mkl/2024.1/lib/] ==> [/opt/intel/oneapi/mkl/2024.1/lib]
+        collapse library dir [/opt/intel/oneapi/ippcp/2021.11/lib/] ==> [/opt/intel/oneapi/ippcp/2021.11/lib]
+        collapse library dir [/opt/intel/oneapi/ipp/2021.11/lib] ==> [/opt/intel/oneapi/ipp/2021.11/lib]
+        collapse library dir [/opt/intel/oneapi/dpl/2022.5/lib] ==> [/opt/intel/oneapi/dpl/2022.5/lib]
+        collapse library dir [/opt/intel/oneapi/dnnl/2024.1/lib] ==> [/opt/intel/oneapi/dnnl/2024.1/lib]
+        collapse library dir [/opt/intel/oneapi/dal/2024.2/lib] ==> [/opt/intel/oneapi/dal/2024.2/lib]
+        collapse library dir [/opt/intel/oneapi/compiler/2024.1/lib] ==> [/opt/intel/oneapi/compiler/2024.1/lib]
+        collapse library dir [/opt/intel/oneapi/ccl/2021.12/lib/] ==> [/opt/intel/oneapi/ccl/2021.12/lib]
+        collapse library dir [/opt/libtorch/lib] ==> [/opt/libtorch/lib]
+        collapse library dir [/opt/libtorch/lib] ==> [/opt/libtorch/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        implicit libs: [omp;gcc;gcc_s;pthread;c;gcc;gcc_s]
+        implicit objs: [/usr/lib64/Scrt1.o;/usr/lib64/crti.o;/usr/lib64/gcc/x86_64-pc-linux-gnu/14.2.1/crtbeginS.o;/usr/lib64/gcc/x86_64-pc-linux-gnu/14.2.1/crtendS.o;/usr/lib64/crtn.o]
+        implicit dirs: [/usr/local/lib;/usr/lib64/gcc/x86_64-pc-linux-gnu/14.2.1;/usr/lib64;/lib/x86_64-linux-gnu;/lib64;/usr/lib/x86_64-linux-gnu;/lib;/usr/lib;/opt/libtorch/lib;/opt/intel/oneapi/mkl/2024.1/lib;/opt/intel/oneapi/tbb/2021.12/lib/intel64/gcc4.8;/opt/intel/oneapi/mpi/2021.12/lib;/opt/intel/oneapi/ippcp/2021.11/lib;/opt/intel/oneapi/ipp/2021.11/lib;/opt/intel/oneapi/dpl/2022.5/lib;/opt/intel/oneapi/dnnl/2024.1/lib;/opt/intel/oneapi/dal/2024.2/lib;/opt/intel/oneapi/compiler/2024.1/lib;/opt/intel/oneapi/ccl/2021.12/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:21 (project)"
+    message: |
+      Running the C compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld (GNU Binutils) 2.43.0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - ".CMake/compiler_opts.cmake:20 (check_c_compiler_flag)"
+      - "CMakeLists.txt:143 (include)"
+    checks:
+      - "Performing Test CC_SUPPORTS_WA_NOEXECSTACK"
+    directories:
+      source: "/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-cAbIiG"
+      binary: "/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-cAbIiG"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-L/usr/local/lib"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "FALSE"
+    buildResult:
+      variable: "CC_SUPPORTS_WA_NOEXECSTACK"
+      cached: true
+      stdout: |
+        Change Dir: '/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-cAbIiG'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_26c51
+        [1/2] /usr/bin/clang -DCC_SUPPORTS_WA_NOEXECSTACK  -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable  -std=gnu11 -fPIE   -Wa,--noexecstack -MD -MT CMakeFiles/cmTC_26c51.dir/src.c.o -MF CMakeFiles/cmTC_26c51.dir/src.c.o.d -o CMakeFiles/cmTC_26c51.dir/src.c.o -c /home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-cAbIiG/src.c
+        [2/2] : && /usr/bin/clang -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -L/usr/local/lib CMakeFiles/cmTC_26c51.dir/src.c.o -o cmTC_26c51   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckLinkerFlag.cmake:37 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckLinkerFlag.cmake:44 (cmake_check_linker_flag)"
+      - ".CMake/compiler_opts.cmake:29 (check_linker_flag)"
+      - "CMakeLists.txt:143 (include)"
+    checks:
+      - "Performing Test LD_SUPPORTS_WL_Z_NOEXECSTACK"
+    directories:
+      source: "/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-gyq5Rm"
+      binary: "/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-gyq5Rm"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-L/usr/local/lib"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "FALSE"
+    buildResult:
+      variable: "LD_SUPPORTS_WL_Z_NOEXECSTACK"
+      cached: true
+      stdout: |
+        Change Dir: '/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-gyq5Rm'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_ce6dd
+        [1/2] /usr/bin/clang -DLD_SUPPORTS_WL_Z_NOEXECSTACK  -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable  -std=gnu11 -fPIE -MD -MT CMakeFiles/cmTC_ce6dd.dir/src.c.o -MF CMakeFiles/cmTC_ce6dd.dir/src.c.o.d -o CMakeFiles/cmTC_ce6dd.dir/src.c.o -c /home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-gyq5Rm/src.c
+        [2/2] : && /usr/bin/clang -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -L/usr/local/lib    -Wl,-z,noexecstack CMakeFiles/cmTC_ce6dd.dir/src.c.o -o cmTC_ce6dd   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/usr/share/cmake/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - ".CMake/compiler_opts.cmake:108 (find_package)"
+      - "CMakeLists.txt:143 (include)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-EML8Gr"
+      binary: "/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-EML8Gr"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-L/usr/local/lib"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "FALSE"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-EML8Gr'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_fc6d7
+        [1/2] /usr/bin/clang -DCMAKE_HAVE_LIBC_PTHREAD  -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable  -std=gnu11 -fPIE -MD -MT CMakeFiles/cmTC_fc6d7.dir/src.c.o -MF CMakeFiles/cmTC_fc6d7.dir/src.c.o.d -o CMakeFiles/cmTC_fc6d7.dir/src.c.o -c /home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-EML8Gr/src.c
+        [2/2] : && /usr/bin/clang -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -L/usr/local/lib CMakeFiles/cmTC_fc6d7.dir/src.c.o -o cmTC_fc6d7   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:154 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:66 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "src/common/CMakeLists.txt:115 (check_symbol_exists)"
+    checks:
+      - "Looking for aligned_alloc"
+    directories:
+      source: "/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-rrDz1W"
+      binary: "/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-rrDz1W"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-L/usr/local/lib"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "FALSE"
+    buildResult:
+      variable: "CMAKE_HAVE_ALIGNED_ALLOC"
+      cached: true
+      stdout: |
+        Change Dir: '/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-rrDz1W'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_9d4cb
+        [1/2] /usr/bin/clang   -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable  -std=gnu11 -fPIE -MD -MT CMakeFiles/cmTC_9d4cb.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_9d4cb.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_9d4cb.dir/CheckSymbolExists.c.o -c /home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-rrDz1W/CheckSymbolExists.c
+        [2/2] : && /usr/bin/clang -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -L/usr/local/lib CMakeFiles/cmTC_9d4cb.dir/CheckSymbolExists.c.o -o cmTC_9d4cb   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:154 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:66 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "src/common/CMakeLists.txt:116 (check_symbol_exists)"
+    checks:
+      - "Looking for posix_memalign"
+    directories:
+      source: "/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-8GNRuJ"
+      binary: "/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-8GNRuJ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-L/usr/local/lib"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "FALSE"
+    buildResult:
+      variable: "CMAKE_HAVE_POSIX_MEMALIGN"
+      cached: true
+      stdout: |
+        Change Dir: '/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-8GNRuJ'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_0c90b
+        [1/2] /usr/bin/clang   -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable  -std=gnu11 -fPIE -MD -MT CMakeFiles/cmTC_0c90b.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_0c90b.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_0c90b.dir/CheckSymbolExists.c.o -c /home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-8GNRuJ/CheckSymbolExists.c
+        [2/2] : && /usr/bin/clang -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -L/usr/local/lib CMakeFiles/cmTC_0c90b.dir/CheckSymbolExists.c.o -o cmTC_0c90b   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:154 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:66 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "src/common/CMakeLists.txt:117 (check_symbol_exists)"
+    checks:
+      - "Looking for memalign"
+    directories:
+      source: "/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-85EHmL"
+      binary: "/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-85EHmL"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-L/usr/local/lib"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "FALSE"
+    buildResult:
+      variable: "CMAKE_HAVE_MEMALIGN"
+      cached: true
+      stdout: |
+        Change Dir: '/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-85EHmL'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_61021
+        [1/2] /usr/bin/clang   -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable  -std=gnu11 -fPIE -MD -MT CMakeFiles/cmTC_61021.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_61021.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_61021.dir/CheckSymbolExists.c.o -c /home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-85EHmL/CheckSymbolExists.c
+        [2/2] : && /usr/bin/clang -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -L/usr/local/lib CMakeFiles/cmTC_61021.dir/CheckSymbolExists.c.o -o cmTC_61021   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:154 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:66 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "src/common/CMakeLists.txt:135 (check_symbol_exists)"
+    checks:
+      - "Looking for explicit_bzero"
+    directories:
+      source: "/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-T9SE8e"
+      binary: "/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-T9SE8e"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-L/usr/local/lib"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "FALSE"
+    buildResult:
+      variable: "CMAKE_HAVE_EXPLICIT_BZERO"
+      cached: true
+      stdout: |
+        Change Dir: '/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-T9SE8e'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_42e71
+        [1/2] /usr/bin/clang   -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable  -std=gnu11 -fPIE -MD -MT CMakeFiles/cmTC_42e71.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_42e71.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_42e71.dir/CheckSymbolExists.c.o -c /home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-T9SE8e/CheckSymbolExists.c
+        [2/2] : && /usr/bin/clang -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -L/usr/local/lib CMakeFiles/cmTC_42e71.dir/CheckSymbolExists.c.o -o cmTC_42e71   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:154 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:66 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "src/common/CMakeLists.txt:136 (check_symbol_exists)"
+    checks:
+      - "Looking for explicit_memset"
+    directories:
+      source: "/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-tumFYC"
+      binary: "/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-tumFYC"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-L/usr/local/lib"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "FALSE"
+    buildResult:
+      variable: "CMAKE_HAVE_EXPLICIT_MEMSET"
+      cached: true
+      stdout: |
+        Change Dir: '/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-tumFYC'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_873e7
+        [1/2] /usr/bin/clang   -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable  -std=gnu11 -fPIE -MD -MT CMakeFiles/cmTC_873e7.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_873e7.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_873e7.dir/CheckSymbolExists.c.o -c /home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-tumFYC/CheckSymbolExists.c
+        FAILED: CMakeFiles/cmTC_873e7.dir/CheckSymbolExists.c.o 
+        /usr/bin/clang   -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable  -std=gnu11 -fPIE -MD -MT CMakeFiles/cmTC_873e7.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_873e7.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_873e7.dir/CheckSymbolExists.c.o -c /home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-tumFYC/CheckSymbolExists.c
+        /home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-tumFYC/CheckSymbolExists.c:8:19: error: use of undeclared identifier 'explicit_memset'
+            8 |   return ((int*)(&explicit_memset))[argc];
+              |                   ^
+        1 error generated.
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:154 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:66 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "src/common/CMakeLists.txt:137 (check_symbol_exists)"
+    checks:
+      - "Looking for memset_s"
+    directories:
+      source: "/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-aMnMeu"
+      binary: "/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-aMnMeu"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-L/usr/local/lib"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "FALSE"
+    buildResult:
+      variable: "CMAKE_HAVE_MEMSET_S"
+      cached: true
+      stdout: |
+        Change Dir: '/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-aMnMeu'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_0d227
+        [1/2] /usr/bin/clang   -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable  -std=gnu11 -fPIE -MD -MT CMakeFiles/cmTC_0d227.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_0d227.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_0d227.dir/CheckSymbolExists.c.o -c /home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-aMnMeu/CheckSymbolExists.c
+        FAILED: CMakeFiles/cmTC_0d227.dir/CheckSymbolExists.c.o 
+        /usr/bin/clang   -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable  -std=gnu11 -fPIE -MD -MT CMakeFiles/cmTC_0d227.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_0d227.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_0d227.dir/CheckSymbolExists.c.o -c /home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-aMnMeu/CheckSymbolExists.c
+        /home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeScratch/TryCompile-aMnMeu/CheckSymbolExists.c:8:19: error: use of undeclared identifier 'memset_s'; did you mean 'memset'?
+            8 |   return ((int*)(&memset_s))[argc];
+              |                   ^~~~~~~~
+              |                   memset
+        /usr/include/string.h:61:14: note: 'memset' declared here
+           61 | extern void *memset (void *__s, int __c, size_t __n) __THROW __nonnull ((1));
+              |              ^
+        1 error generated.
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "src/kem/bike/CMakeLists.txt:61 (try_compile)"
+    directories:
+      source: "/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeTmp"
+      binary: "/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-L/usr/local/lib"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+      CMAKE_WARN_DEPRECATED: "FALSE"
+    buildResult:
+      variable: "CAN_COMPILE_VPCLMUL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/phaedrus/Forge/GH/liboqs/Build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_85bf6
+        [1/2] /usr/bin/clang   -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable  -std=gnu11 -fPIE   -mvpclmulqdq -mavx512f -mavx512bw -mavx512dq -MD -MT CMakeFiles/cmTC_85bf6.dir/gf2x_mul_base_vpclmul.c.o -MF CMakeFiles/cmTC_85bf6.dir/gf2x_mul_base_vpclmul.c.o.d -o CMakeFiles/cmTC_85bf6.dir/gf2x_mul_base_vpclmul.c.o -c /home/phaedrus/Forge/GH/liboqs/src/kem/bike/additional_r4/gf2x_mul_base_vpclmul.c
+        FAILED: CMakeFiles/cmTC_85bf6.dir/gf2x_mul_base_vpclmul.c.o 
+        /usr/bin/clang   -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable -isystem /usr/lib/clang/18/include -fPIC -Wno-unused-command-line-argument -fopenmp -D_GNU_SOURCE -std=gnu11 -march=native -Wno-error=unknown-pragmas -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-implicit-function-declaration -fms-extensions -fno-strict-aliasing -Wno-c99-extensions -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-unused-but-set-variable  -std=gnu11 -fPIE   -mvpclmulqdq -mavx512f -mavx512bw -mavx512dq -MD -MT CMakeFiles/cmTC_85bf6.dir/gf2x_mul_base_vpclmul.c.o -MF CMakeFiles/cmTC_85bf6.dir/gf2x_mul_base_vpclmul.c.o.d -o CMakeFiles/cmTC_85bf6.dir/gf2x_mul_base_vpclmul.c.o -c /home/phaedrus/Forge/GH/liboqs/src/kem/bike/additional_r4/gf2x_mul_base_vpclmul.c
+        /home/phaedrus/Forge/GH/liboqs/src/kem/bike/additional_r4/gf2x_mul_base_vpclmul.c:18:14: error: unknown type name '__m512i'
+           18 | mul2_512(OUT __m512i *h, OUT __m512i *l, IN const __m512i a, IN const __m512i b)
+              |              ^
+        /home/phaedrus/Forge/GH/liboqs/src/kem/bike/additional_r4/gf2x_mul_base_vpclmul.c:18:30: error: unknown type name '__m512i'
+           18 | mul2_512(OUT __m512i *h, OUT __m512i *l, IN const __m512i a, IN const __m512i b)
+              |                              ^
+        /home/phaedrus/Forge/GH/liboqs/src/kem/bike/additional_r4/gf2x_mul_base_vpclmul.c:18:51: error: unknown type name '__m512i'
+           18 | mul2_512(OUT __m512i *h, OUT __m512i *l, IN const __m512i a, IN const __m512i b)
+              |                                                   ^
+        /home/phaedrus/Forge/GH/liboqs/src/kem/bike/additional_r4/gf2x_mul_base_vpclmul.c:18:71: error: unknown type name '__m512i'
+           18 | mul2_512(OUT __m512i *h, OUT __m512i *l, IN const __m512i a, IN const __m512i b)
+              |                                                                       ^
+        /home/phaedrus/Forge/GH/liboqs/src/kem/bike/additional_r4/gf2x_mul_base_vpclmul.c:20:9: error: unknown type name '__m512i'
+           20 |   const __m512i mask_abq = SET_I64(6, 7, 4, 5, 2, 3, 0, 1);
+              |         ^
+        /home/phaedrus/Forge/GH/liboqs/src/kem/bike/additional_r4/gf2x_mul_base_vpclmul.c:21:9: error: unknown type name '__m512i'
+           21 |   const __m512i s1       = a ^ PERMX_I64(a, _MM_SHUFFLE(2, 3, 0, 1));
+              |         ^
+        /home/phaedrus/Forge/GH/liboqs/src/kem/bike/additional_r4/gf2x_mul_base_vpclmul.c:22:9: error: unknown type name '__m512i'
+           22 |   const __m512i s2       = b ^ PERMX_I64(b, _MM_SHUFFLE(2, 3, 0, 1));
+              |         ^
+        /home/phaedrus/Forge/GH/liboqs/src/kem/bike/additional_r4/gf2x_mul_base_vpclmul.c:24:3: error: use of undeclared identifier '__m512i'
+           24 |   __m512i lq  = CLMUL(a, b, 0x00);
+              |   ^
+        /home/phaedrus/Forge/GH/liboqs/src/kem/bike/additional_r4/gf2x_mul_base_vpclmul.c:25:3: error: use of undeclared identifier '__m512i'
+           25 |   __m512i hq  = CLMUL(a, b, 0x11);
+              |   ^
+        /home/phaedrus/Forge/GH/liboqs/src/kem/bike/additional_r4/gf2x_mul_base_vpclmul.c:26:3: error: use of undeclared identifier '__m512i'
+           26 |   __m512i abq = lq ^ hq ^ CLMUL(s1, s2, 0x00);
+              |   ^
+        /home/phaedrus/Forge/GH/liboqs/src/kem/bike/additional_r4/gf2x_mul_base_vpclmul.c:27:3: error: use of undeclared identifier 'abq'
+           27 |   abq         = PERMXVAR_I64(mask_abq, abq);
+              |   ^
+        /home/phaedrus/Forge/GH/liboqs/src/kem/bike/additional_r4/gf2x_mul_base_vpclmul.c:27:40: error: use of undeclared identifier 'abq'; did you mean 'abs'?
+           27 |   abq         = PERMXVAR_I64(mask_abq, abq);
+              |                                        ^~~
+              |                                        abs
+        /home/phaedrus/Forge/GH/liboqs/src/kem/bike/additional_r4/x86_64_intrinsic.h:135:66: note: expanded from macro 'PERMXVAR_I64'
+          135 | #  define PERMXVAR_I64(idx, a)     _mm512_permutexvar_epi64(idx, a)
+              |                                                                  ^
+        /usr/include/stdlib.h:980:12: note: 'abs' declared here
+          980 | extern int abs (int __x) __THROW __attribute__ ((__const__)) __wur;
+              |            ^
+        /home/phaedrus/Forge/GH/liboqs/src/kem/bike/additional_r4/gf2x_mul_base_vpclmul.c:28:26: error: use of undeclared identifier 'lq'
+           28 |   *l          = MXOR_I64(lq, 0xaa, lq, abq);
+              |                          ^
+        /home/phaedrus/Forge/GH/liboqs/src/kem/bike/additional_r4/gf2x_mul_base_vpclmul.c:28:36: error: use of undeclared identifier 'lq'
+           28 |   *l          = MXOR_I64(lq, 0xaa, lq, abq);
+              |                                    ^
+        /home/phaedrus/Forge/GH/liboqs/src/kem/bike/additional_r4/gf2x_mul_base_vpclmul.c:28:40: error: use of undeclared identifier 'abq'
+           28 |   *l          = MXOR_I64(lq, 0xaa, lq, abq);
+              |                                        ^
+        /home/phaedrus/Forge/GH/liboqs/src/kem/bike/additional_r4/gf2x_mul_base_vpclmul.c:29:26: error: use of undeclared identifier 'hq'
+           29 |   *h          = MXOR_I64(hq, 0x55, hq, abq);
+              |                          ^
+        /home/phaedrus/Forge/GH/liboqs/src/kem/bike/additional_r4/gf2x_mul_base_vpclmul.c:29:36: error: use of undeclared identifier 'hq'
+           29 |   *h          = MXOR_I64(hq, 0x55, hq, abq);
+              |                                    ^
+        /home/phaedrus/Forge/GH/liboqs/src/kem/bike/additional_r4/gf2x_mul_base_vpclmul.c:29:40: error: use of undeclared identifier 'abq'
+           29 |   *h          = MXOR_I64(hq, 0x55, hq, abq);
+              |                                        ^
+        /home/phaedrus/Forge/GH/liboqs/src/kem/bike/additional_r4/gf2x_mul_base_vpclmul.c:33:37: error: unknown type name '__m512i'
+           33 | _INLINE_ void gf2x_mul8_512_int(OUT __m512i *zh,
+              |                                     ^
+        fatal error: too many errors emitted, stopping now [-ferror-limit=]
+        20 errors generated.
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+...
