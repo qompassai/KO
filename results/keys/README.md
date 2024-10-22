@@ -6,9 +6,15 @@ patient record, illustrating how sensitive health information is vulnerable to c
 threats. To protect against potential attacks, **encrypted_phi.pdf** is an encrypted
 version of the same file, secured directly on the device.
 
-The purpose of this encryption is to combat the threat of the "harvest now, decrypt
-later" approach used by malicious actors, who aim to gather and decrypt sensitive
-data at some point in the future.
+The critical importance of securing data at rest is highlighted by the 2024 Change
+Healthcare cyberattack, where threat actors exfiltrated up to 4TB of sensitive
+healthcare data, reportedly affecting **one in three** Americans.
+
+This encryption specifically addresses the "harvest now, decrypt later" strategy
+employed by malicious actors who collect encrypted data today, anticipating that
+future AI & computing capabilities will enable them to decrypt it. By implementing
+strong encryption practices now, we protect sensitive information against both
+current and future threats.
 
 ## How to Download Without downloading the rest of the KO repository
 
