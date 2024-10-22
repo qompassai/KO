@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Secure PHI Document Viewer with Post-Quantum Quantum Key Distribution">
+    <meta name="description" content="Kyber Odyssey Use Case: Securing PHI via Post-Quantum Quantum Key Distribution">
     <title>Kyber Odyssey Use Case for securing PHI</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js" defer></script>
@@ -29,6 +29,12 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
         }
 
         .viewer-controls {
@@ -142,7 +148,7 @@
     </style>
 </head>
 <body>
-    <h1>Kyber Oddysey PHI Document Viewer</h1>
+    <h1>Kyber Odyssey PHI Document Viewer</h1>
     <div class="container">
         <div class="viewer-controls">
             <select id="pdf-selector" class="pdf-selector" aria-label="Select PDF document">
@@ -154,18 +160,18 @@
             </div>
         </div>
         <div class="viewer-container">
-    <div id="pdf-viewer" role="main" aria-label="PDF viewer"></div>
-    <nav id="navigation" aria-label="PDF navigation">
-        <button id="prev" aria-label="Previous page">Previous</button>
-        <span class="page-info">
-            Page: <span id="page_num" aria-live="polite">1</span> / 
-            <span id="page_count">-</span>
-        </span>
-        <button id="next" aria-label="Next page">Next</button>
-    </nav>
-</div>
+            <div id="pdf-viewer" role="main" aria-label="PDF viewer"></div>
+            <nav aria-label="PDF navigation">
+                <button id="prev" aria-label="Previous page">Previous</button>
+                <span class="page-info">
+                    Page: <span id="page_num" aria-live="polite">1</span> / 
+                    <span id="page_count">-</span>
+                </span>
+                <button id="next" aria-label="Next page">Next</button>
+            </nav>
+        </div>
+    </div>
     <script>
-        // Ensure PDF.js worker is available
         pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.worker.min.js';
 
         class PDFViewer {
@@ -262,9 +268,10 @@
             }
         }
 
-                // Initialize viewer when DOM is fully loaded
         document.addEventListener('DOMContentLoaded', () => {
             new PDFViewer();
         });
     </script>
+</body>
+</html>
 
