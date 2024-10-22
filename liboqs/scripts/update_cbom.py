@@ -12,7 +12,7 @@ import os
 import json
 import git
 import uuid
-import datetime
+from datetime import datetime
 import copy
 
 cbom_json_file = "cbom.json"
@@ -38,26 +38,28 @@ bom_algs_use_dependencies = {}
 
 ## Common crypto components: aes, sha3
 common_crypto_component_aes = {
-      "type": "cryptographic-asset",
+      "type": "crypto-asset",
       "bom-ref": "alg:aes",
       "name": "aes",
       "cryptoProperties": {
         "assetType": "algorithm",
         "algorithmProperties": {
-          "primitive": "block-cipher",
-          "executionEnvironment": "software-plain-ram"
+          "variant": "aes",
+          "primitive": "blockcipher",
+          "implementationLevel": "softwarePlainRam"
         }
       }
     }
 common_crypto_component_sha3 = {
-      "type": "cryptographic-asset",
+      "type": "crypto-asset",
       "bom-ref": "alg:sha3",
       "name": "sha3",
       "cryptoProperties": {
         "assetType": "algorithm",
         "algorithmProperties": {
+          "variant": "sha3",
           "primitive": "hash",
-          "executionEnvironment": "software-plain-ram"
+          "implementationLevel": "softwarePlainRam"
         }
       }
     }
@@ -66,24 +68,24 @@ def add_cbom_component(out, kem_yaml, parameter_set):
     primitive = kem_yaml['type']
 
     component = {}
-    component['type'] = "cryptographic-asset"
+    component['type'] = "crypto-asset"
     component['bom-ref'] = "alg:" + parameter_set['name']
 
     component['name'] = kem_yaml['name']
 
     algorithmProperties = {}
-    algorithmProperties['parameterSetIdentifier'] = parameter_set['name']
+    algorithmProperties['variant'] = parameter_set['name']
     algorithmProperties['primitive'] = primitive
-    algorithmProperties['executionEnvironment'] = "software-plain-ram"
+    algorithmProperties['implementationLevel'] = "softwarePlainRam"
     if primitive == 'kem':
         algorithmProperties['cryptoFunctions'] = ["keygen", "encapsulate", "decapsulate"]
     elif primitive == 'signature':
         algorithmProperties['cryptoFunctions'] = ["keygen", "sign", "verify"]
-    algorithmProperties['nistQuantumSecurityLevel'] = parameter_set['claimed-nist-level']
 
     cryptoProperties = {}
     cryptoProperties['assetType'] = "algorithm"
     cryptoProperties['algorithmProperties'] = algorithmProperties
+    cryptoProperties['nistQuantumSecurityLevel'] = parameter_set['claimed-nist-level']
 
     component['cryptoProperties'] = cryptoProperties
 
@@ -162,7 +164,7 @@ def build_cbom(liboqs_root, liboqs_version):
     cbom_components.insert(0, liboqs_component)
 
     metadata = {}
-    metadata['timestamp'] = datetime.datetime.now(datetime.timezone.utc).isoformat()
+    metadata['timestamp'] = datetime.now().isoformat()
     metadata['component'] = liboqs_component
 
     ## Dependencies
@@ -170,20 +172,21 @@ def build_cbom(liboqs_root, liboqs_version):
     dependencies = []
     dependencies.append({
         "ref": liboqs_component['bom-ref'],
-        "provides": bom_algs_bomrefs
+        "dependsOn": bom_algs_bomrefs,
+        "dependencyType": "implements"
     })
     for usedep in bom_algs_use_dependencies.keys():
         dependencies.append({
             "ref": usedep,
-            "dependsOn": bom_algs_use_dependencies[usedep]
+            "dependsOn": bom_algs_use_dependencies[usedep],
+            "dependencyType": "uses"
         })
 
 
     ## CBOM
     cbom = {}
-    cbom['$schema'] = "https://raw.githubusercontent.com/CycloneDX/specification/1.6/schema/bom-1.6.schema.json"
-    cbom['bomFormat'] = "CycloneDX"
-    cbom['specVersion'] = "1.6"
+    cbom['bomFormat'] = "CBOM"
+    cbom['specVersion'] = "1.4-cbom-1.0"
     cbom['serialNumber'] = "urn:uuid:" + str(uuid.uuid4())
     cbom['version'] = 1
     cbom['metadata'] = metadata

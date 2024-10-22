@@ -1,7 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0 AND MIT
 
-#include "oqs/oqs.h"
-#include "test_common.h"
 #include <openssl/buffer.h>
 #include <openssl/core_names.h>
 #include <openssl/decoder.h>
@@ -11,6 +9,9 @@
 #include <openssl/provider.h>
 #include <openssl/trace.h>
 #include <string.h>
+
+#include "oqs/oqs.h"
+#include "test_common.h"
 
 static OSSL_LIB_CTX *libctx = NULL;
 static char *modulename = NULL;
@@ -178,6 +179,11 @@ static int test_oqs_encdec(const char *alg_name)
         if (pkey == NULL)
             goto end;
 
+        if (!OBJ_sn2nid(alg_name)) {
+            printf("No OID registered for %s\n", alg_name);
+            ok = -1;
+            goto end;
+        }
         if (!encode_EVP_PKEY_prov(pkey, test_params_list[i].format,
                                   test_params_list[i].structure,
                                   test_params_list[i].pass,
@@ -217,16 +223,24 @@ static int test_algs(const OSSL_ALGORITHM *algs)
 {
     int errcnt = 0;
     for (; algs->algorithm_names != NULL; algs++) {
-        if (test_oqs_encdec(algs->algorithm_names)) {
+        switch (test_oqs_encdec(algs->algorithm_names)) {
+        case 1:
             fprintf(stderr,
                     cGREEN "  Encoding/Decoding test succeeded: %s" cNORM "\n",
                     algs->algorithm_names);
-        } else {
+            break;
+        case -1:
+            fprintf(stderr,
+                    cBLUE "  Encoding/Decoding test skipped: %s" cNORM "\n",
+                    algs->algorithm_names);
+            break;
+        default:
             fprintf(stderr,
                     cRED "  Encoding/Decoding test failed: %s" cNORM "\n",
                     algs->algorithm_names);
             ERR_print_errors_fp(stderr);
             errcnt++;
+            break;
         }
     }
     return errcnt;

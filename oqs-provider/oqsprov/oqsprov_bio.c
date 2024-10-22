@@ -2,9 +2,10 @@
 
 // Code strongly inspired by OpenSSL common provider bio code
 
-#include "oqs_prov.h"
 #include <assert.h>
 #include <openssl/core_dispatch.h>
+
+#include "oqs_prov.h"
 
 static OSSL_FUNC_BIO_new_file_fn *c_bio_new_file = NULL;
 static OSSL_FUNC_BIO_new_membuf_fn *c_bio_new_membuf = NULL;

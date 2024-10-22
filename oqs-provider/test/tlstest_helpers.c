@@ -28,7 +28,7 @@ int create_cert_key(OSSL_LIB_CTX *libctx, char *algname, char *certfilename,
         || !X509_NAME_add_entry_by_txt(name, "CN", MBSTRING_ASC,
                                        (unsigned char *)"localhost", -1, -1, 0)
         || !X509_set_issuer_name(x509, name)
-        || !X509_sign(x509, pkey, EVP_sha1())
+        || !X509_sign(x509, pkey, EVP_sha256())
         || !(keybio = BIO_new_file(privkeyfilename, "wb"))
         || !PEM_write_bio_PrivateKey(keybio, pkey, NULL, NULL, 0, NULL, NULL)
         || !(certbio = BIO_new_file(certfilename, "wb"))
@@ -184,7 +184,6 @@ int create_bare_tls_connection(SSL *serverssl, SSL *clientssl, int want,
             fprintf(stderr, "No progress made");
             return 0;
         }
-
     } while (retc <= 0 || rets <= 0);
 
     return 1;

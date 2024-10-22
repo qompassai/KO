@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0 AND MIT
 
 #include "test_common.h"
+
 #include <string.h>
 
 void hexdump(const void *ptr, size_t len)

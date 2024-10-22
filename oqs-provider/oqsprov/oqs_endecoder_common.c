@@ -8,10 +8,11 @@
  * ToDo: Adding hybrid alg support
  */
 
-#include "oqs_endecoder_local.h"
 #include <openssl/bio.h>
 #include <openssl/buffer.h>
 #include <openssl/core.h>
+
+#include "oqs_endecoder_local.h"
 
 OSSL_FUNC_keymgmt_new_fn *oqs_prov_get_keymgmt_new(const OSSL_DISPATCH *fns)
 {

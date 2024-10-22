@@ -1,11 +1,12 @@
 // SPDX-License-Identifier: Apache-2.0 AND MIT
 
-#include "test_common.h"
-#include "tlstest_helpers.h"
 #include <openssl/core_names.h>
 #include <openssl/provider.h>
 #include <openssl/ssl.h>
 #include <string.h>
+
+#include "test_common.h"
+#include "tlstest_helpers.h"
 
 static OSSL_LIB_CTX *libctx = NULL;
 static char *modulename = NULL;

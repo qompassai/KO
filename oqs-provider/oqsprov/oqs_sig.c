@@ -7,12 +7,8 @@
  *
  */
 
-#include "oqs/sig.h"
-
-#include <string.h>
-
-#include "oqs_prov.h"
 #include <openssl/asn1.h>
+#include <openssl/asn1t.h>
 #include <openssl/core_dispatch.h>
 #include <openssl/core_names.h>
 #include <openssl/crypto.h>
@@ -20,10 +16,12 @@
 #include <openssl/evp.h>
 #include <openssl/params.h>
 #include <openssl/rsa.h>
-#include <openssl/x509.h>
-
-#include <openssl/asn1t.h>
 #include <openssl/types.h>
+#include <openssl/x509.h>
+#include <string.h>
+
+#include "oqs/sig.h"
+#include "oqs_prov.h"
 
 // TBD: Review what we really need/want: For now go with OSSL settings:
 #define OSSL_MAX_NAME_SIZE       50
@@ -87,19 +85,19 @@ static int get_aid(unsigned char **oidbuf, const char *tls_name)
 
 DECLARE_ASN1_FUNCTIONS(CompositeSignature)
 
-ASN1_NDEF_SEQUENCE(CompositeSignature) = {
-  ASN1_SIMPLE(CompositeSignature, sig1, ASN1_BIT_STRING),
-  ASN1_SIMPLE(CompositeSignature, sig2, ASN1_BIT_STRING),
+ASN1_NDEF_SEQUENCE(CompositeSignature) =
+    {
+        ASN1_SIMPLE(CompositeSignature, sig1, ASN1_BIT_STRING),
+        ASN1_SIMPLE(CompositeSignature, sig2, ASN1_BIT_STRING),
 } ASN1_NDEF_SEQUENCE_END(CompositeSignature)
 
-IMPLEMENT_ASN1_FUNCTIONS(CompositeSignature)
+        IMPLEMENT_ASN1_FUNCTIONS(CompositeSignature)
 
-/*
- * What's passed as an actual key is defined by the KEYMGMT interface.
- */
+    /*
+     * What's passed as an actual key is defined by the KEYMGMT interface.
+     */
 
-typedef struct
-{
+    typedef struct {
     OSSL_LIB_CTX *libctx;
     char *propq;
     OQSX_KEY *sig;
@@ -218,38 +216,101 @@ static int oqs_sig_verify_init(void *vpoqs_sigctx, void *voqssig,
 // this list need to be in order of the last number on the OID from the
 // composite, the len of each value is COMPOSITE_OID_PREFIX_LEN
 static const unsigned char *composite_OID_prefix[] = {
-    "060B6086480186FA6B50080101", // mldsa44_pss2048
-                                  // id-MLDSA44-RSA2048-PSS-SHA256
-    "060B6086480186FA6B50080102", // mldsa44_rsa2048
-                                  // id-MLDSA44-RSA2048-PKCS15-SHA256
-    "060B6086480186FA6B50080103", // mldsa44_ed25519
-                                  // id-MLDSA44-Ed25519-SHA512
-    "060B6086480186FA6B50080104", // mldsa44_p256
-                                  // id-MLDSA44-ECDSA-P256-SHA256
-    "060B6086480186FA6B50080105", // mldsa44_bp256
-                                  // id-MLDSA44-ECDSA-brainpoolP256r1-SHA256
-    "060B6086480186FA6B50080106", // mldsa65_pss3072
-                                  // id-MLDSA65-RSA3072-PSS-SHA512
-    "060B6086480186FA6B50080107", // mldsa65_rsa3072
-                                  // id-MLDSA65-RSA3072-PKCS15-SHA512
-    "060B6086480186FA6B50080108", // mldsa65_p256
-                                  // id-MLDSA65-ECDSA-P256-SHA512
-    "060B6086480186FA6B50080109", // mldsa65_bp256
-                                  // id-MLDSA65-ECDSA-brainpoolP256r1-SHA512
-    "060B6086480186FA6B5008010A", // mldsa65_ed25519
-                                  // id-MLDSA65-Ed25519-SHA512
-    "060B6086480186FA6B5008010B", // mldsa87_p384
-                                  // id-MLDSA87-ECDSA-P384-SHA512
-    "060B6086480186FA6B5008010C", // mldsa87_bp384
-                                  // id-MLDSA87-ECDSA-brainpoolP384r1-SHA512
-    "060B6086480186FA6B5008010D", // mldsa87_ed448 id-MLDSA87-Ed448-SHA512
-    "060B6086480186FA6B5008010E", // falcon512_p256
-                                  // id-Falon512-ECDSA-P256-SHA256
-    "060B6086480186FA6B5008010F", // falcon512_bp256
-                                  // id-Falcon512-ECDSA-brainpoolP256r1-SHA256
-    "060B6086480186FA6B50080110", // falcon512_ed25519
-                                  // id-Falcon512-Ed25519-SHA512
+    /*
+     * mldsa44_pss2048
+     * id-MLDSA44-RSA2048-PSS-SHA256
+     */
+    (const unsigned char *)"060B6086480186FA6B50080101",
 
+    /*
+     * mldsa44_rsa2048
+     * id-MLDSA44-RSA2048-PKCS15-SHA256
+     */
+    (const unsigned char *)"060B6086480186FA6B50080102",
+
+    /*
+     * mldsa44_ed25519
+     * id-MLDSA44-Ed25519-SHA512
+     */
+    (const unsigned char *)"060B6086480186FA6B50080103",
+
+    /*
+     * mldsa44_p256
+     * id-MLDSA44-ECDSA-P256-SHA256
+     */
+    (const unsigned char *)"060B6086480186FA6B50080104",
+
+    /*
+     * mldsa44_bp256
+     * id-MLDSA44-ECDSA-brainpoolP256r1-SHA256
+     */
+    (const unsigned char *)"060B6086480186FA6B50080105",
+
+    /*
+     * mldsa65_pss3072
+     * id-MLDSA65-RSA3072-PSS-SHA512
+     */
+    (const unsigned char *)"060B6086480186FA6B50080106",
+
+    /*
+     * mldsa65_rsa3072
+     * id-MLDSA65-RSA3072-PKCS15-SHA512
+     */
+    (const unsigned char *)"060B6086480186FA6B50080107",
+
+    /*
+     * mldsa65_p256
+     * id-MLDSA65-ECDSA-P256-SHA512
+     */
+    (const unsigned char *)"060B6086480186FA6B50080108",
+
+    /*
+     * mldsa65_bp256
+     * id-MLDSA65-ECDSA-brainpoolP256r1-SHA512
+     */
+    (const unsigned char *)"060B6086480186FA6B50080109",
+
+    /*
+     * mldsa65_ed25519
+     * id-MLDSA65-Ed25519-SHA512
+     */
+    (const unsigned char *)"060B6086480186FA6B5008010A",
+
+    /*
+     * mldsa87_p384
+     * id-MLDSA87-ECDSA-P384-SHA512
+     */
+    (const unsigned char *)"060B6086480186FA6B5008010B",
+
+    /*
+     * mldsa87_bp384
+     * id-MLDSA87-ECDSA-brainpoolP384r1-SHA512
+     */
+    (const unsigned char *)"060B6086480186FA6B5008010C",
+
+    /*
+     * mldsa87_ed448
+     * id-MLDSA87-Ed448-SHA512
+     */
+    (const unsigned char *)"060B6086480186FA6B5008010D",
+
+    /*
+     * falcon512_p256
+     * id-Falon512-ECDSA-P256-SHA256
+     */
+    (const unsigned char *)"060B6086480186FA6B5008010E",
+
+    /*
+     * falcon512_p256
+     * id-Falcon512-ECDSA-brainpoolP256r1-SHA256
+     */
+    (const unsigned char *)"060B6086480186FA6B5008010F",
+
+    /*
+     * falcon512_ed25519
+     * id-Falcon512-Ed25519-SHA512
+     */
+    (const unsigned char *)"060B6086480186FA6B50080110",
 };
 
 /*put the chars on in into memory on out*/
@@ -339,7 +400,8 @@ static int oqs_sig_sign(void *vpoqs_sigctx, unsigned char *sig, size_t *siglen,
         int digest_len;
         unsigned char digest[SHA512_DIGEST_LENGTH]; /* init with max length */
 
-        /* classical schemes can't sign arbitrarily large data; we hash it first
+        /* classical schemes can't sign arbitrarily large data; we hash it
+         * first
          */
         switch (oqs_key->claimed_nist_level) {
         case 1:
@@ -401,9 +463,9 @@ static int oqs_sig_sign(void *vpoqs_sigctx, unsigned char *sig, size_t *siglen,
         CompositeSignature *compsig = CompositeSignature_new();
         size_t final_tbslen
             = COMPOSITE_OID_PREFIX_LEN
-              / 2; // COMPOSITE_OID_PREFIX_LEN stores the size of the *char, but
-                   // the prefix will be on memory, so each 2 chars will
-                   // translate into one byte
+              / 2; // COMPOSITE_OID_PREFIX_LEN stores the size of
+                   // the *char, but the prefix will be on memory,
+                   // so each 2 chars will translate into one byte
         int aux = 0;
         unsigned char *tbs_hash;
 
@@ -464,8 +526,9 @@ static int oqs_sig_sign(void *vpoqs_sigctx, unsigned char *sig, size_t *siglen,
                 oqs_sig_len = oqsxkey->oqsx_provider_ctx.oqsx_qs_ctx.sig
                                   ->length_signature;
                 buf = OPENSSL_malloc(oqs_sig_len);
-                if (OQS_SIG_sign(oqs_key, buf, &oqs_sig_len, final_tbs,
-                                 final_tbslen, oqsxkey->comp_privkey[i])
+                if (OQS_SIG_sign(oqs_key, buf, &oqs_sig_len,
+                                 (const unsigned char *)final_tbs, final_tbslen,
+                                 oqsxkey->comp_privkey[i])
                     != OQS_SUCCESS) {
                     ERR_raise(ERR_LIB_USER, OQSPROV_R_SIGNING_FAILED);
                     CompositeSignature_free(compsig);
@@ -481,8 +544,8 @@ static int oqs_sig_sign(void *vpoqs_sigctx, unsigned char *sig, size_t *siglen,
                 buf = OPENSSL_malloc(oqs_sig_len);
                 const EVP_MD *classical_md;
                 int digest_len;
-                unsigned char
-                    digest[SHA512_DIGEST_LENGTH]; /* init with max length */
+                unsigned char digest[SHA512_DIGEST_LENGTH]; /* init with max
+                                                               length */
 
                 if (name[0] == 'e') { // ed25519 or ed448
                     EVP_MD_CTX *evp_ctx = EVP_MD_CTX_new();
@@ -490,7 +553,8 @@ static int oqs_sig_sign(void *vpoqs_sigctx, unsigned char *sig, size_t *siglen,
                                             oqs_key_classic)
                          <= 0)
                         || (EVP_DigestSign(evp_ctx, buf, &oqs_sig_len,
-                                           final_tbs, final_tbslen)
+                                           (const unsigned char *)final_tbs,
+                                           final_tbslen)
                             <= 0)) {
                         ERR_raise(ERR_LIB_USER, ERR_R_FATAL);
                         CompositeSignature_free(compsig);
@@ -515,14 +579,32 @@ static int oqs_sig_sign(void *vpoqs_sigctx, unsigned char *sig, size_t *siglen,
                     }
 
                     if (!strncmp(name, "pss", 3)) {
+                        int salt;
+                        const EVP_MD *pss_mgf1;
+                        if (!strncmp(name, "pss3072", 7)) {
+                            salt = 64;
+                            pss_mgf1 = EVP_sha512();
+                        } else {
+                            if (!strncmp(name, "pss2048", 7)) {
+                                salt = 32;
+                                pss_mgf1 = EVP_sha256();
+                            } else {
+                                ERR_raise(ERR_LIB_USER, ERR_R_FATAL);
+                                CompositeSignature_free(compsig);
+                                OPENSSL_free(final_tbs);
+                                OPENSSL_free(name);
+                                OPENSSL_free(buf);
+                                goto endsign;
+                            }
+                        }
                         if ((EVP_PKEY_CTX_set_rsa_padding(classical_ctx_sign,
                                                           RSA_PKCS1_PSS_PADDING)
                              <= 0)
                             || (EVP_PKEY_CTX_set_rsa_pss_saltlen(
-                                    classical_ctx_sign, 64)
+                                    classical_ctx_sign, salt)
                                 <= 0)
                             || (EVP_PKEY_CTX_set_rsa_mgf1_md(classical_ctx_sign,
-                                                             EVP_sha256())
+                                                             pss_mgf1)
                                 <= 0)) {
                             ERR_raise(ERR_LIB_USER, ERR_R_FATAL);
                             CompositeSignature_free(compsig);
@@ -548,12 +630,12 @@ static int oqs_sig_sign(void *vpoqs_sigctx, unsigned char *sig, size_t *siglen,
                     if (comp_idx < 6) {
                         classical_md = EVP_sha256();
                         digest_len = SHA256_DIGEST_LENGTH;
-                        SHA256(final_tbs, final_tbslen,
+                        SHA256((const unsigned char *)final_tbs, final_tbslen,
                                (unsigned char *)&digest);
                     } else {
                         classical_md = EVP_sha512();
                         digest_len = SHA512_DIGEST_LENGTH;
-                        SHA512(final_tbs, final_tbslen,
+                        SHA512((const unsigned char *)final_tbs, final_tbslen,
                                (unsigned char *)&digest);
                     }
 
@@ -639,9 +721,9 @@ static int oqs_sig_verify(void *vpoqs_sigctx, const unsigned char *sig,
     int rv = 0;
     ASN1_BIT_STRING *comp_sig;
 
-    OQS_SIG_PRINTF3(
-        "OQS SIG provider: verify called with siglen %ld bytes and tbslen %ld\n",
-        siglen, tbslen);
+    OQS_SIG_PRINTF3("OQS SIG provider: verify called with siglen %ld bytes and "
+                    "tbslen %ld\n",
+                    siglen, tbslen);
 
     if (!oqsxkey || !oqs_key || !oqsxkey->pubkey || sig == NULL
         || (tbs == NULL && tbslen > 0)) {
@@ -816,8 +898,9 @@ static int oqs_sig_verify(void *vpoqs_sigctx, const unsigned char *sig,
             }
 
             if (get_oqsname_fromtls(name)) {
-                if (OQS_SIG_verify(oqs_key, final_tbs, final_tbslen, buf,
-                                   buf_len, oqsxkey->comp_pubkey[i])
+                if (OQS_SIG_verify(oqs_key, (const unsigned char *)final_tbs,
+                                   final_tbslen, buf, buf_len,
+                                   oqsxkey->comp_pubkey[i])
                     != OQS_SUCCESS) {
                     ERR_raise(ERR_LIB_USER, OQSPROV_R_VERIFY_ERROR);
                     OPENSSL_free(name);
@@ -829,15 +912,16 @@ static int oqs_sig_verify(void *vpoqs_sigctx, const unsigned char *sig,
                 const EVP_MD *classical_md;
                 int digest_len;
                 int aux;
-                unsigned char
-                    digest[SHA512_DIGEST_LENGTH]; /* init with max length */
+                unsigned char digest[SHA512_DIGEST_LENGTH]; /* init with max
+                                                               length */
 
                 if (name[0] == 'e') { // ed25519 or ed448
                     EVP_MD_CTX *evp_ctx = EVP_MD_CTX_new();
                     if ((EVP_DigestVerifyInit(evp_ctx, NULL, NULL, NULL,
                                               oqsxkey->classical_pkey)
                          <= 0)
-                        || (EVP_DigestVerify(evp_ctx, buf, buf_len, final_tbs,
+                        || (EVP_DigestVerify(evp_ctx, buf, buf_len,
+                                             (const unsigned char *)final_tbs,
                                              final_tbslen)
                             <= 0)) {
                         ERR_raise(ERR_LIB_USER, OQSPROV_R_VERIFY_ERROR);
@@ -860,13 +944,31 @@ static int oqs_sig_verify(void *vpoqs_sigctx, const unsigned char *sig,
                         goto endverify;
                     }
                     if (!strncmp(name, "pss", 3)) {
+                        int salt;
+                        const EVP_MD *pss_mgf1;
+                        if (!strncmp(name, "pss3072", 7)) {
+                            salt = 64;
+                            pss_mgf1 = EVP_sha512();
+                        } else {
+                            if (!strncmp(name, "pss2048", 7)) {
+                                salt = 32;
+                                pss_mgf1 = EVP_sha256();
+                            } else {
+                                ERR_raise(ERR_LIB_USER, OQSPROV_R_VERIFY_ERROR);
+                                OPENSSL_free(name);
+                                CompositeSignature_free(compsig);
+                                OPENSSL_free(final_tbs);
+                                goto endverify;
+                            }
+                        }
                         if ((EVP_PKEY_CTX_set_rsa_padding(ctx_verify,
                                                           RSA_PKCS1_PSS_PADDING)
                              <= 0)
-                            || (EVP_PKEY_CTX_set_rsa_pss_saltlen(ctx_verify, 64)
+                            || (EVP_PKEY_CTX_set_rsa_pss_saltlen(ctx_verify,
+                                                                 salt)
                                 <= 0)
                             || (EVP_PKEY_CTX_set_rsa_mgf1_md(ctx_verify,
-                                                             EVP_sha256())
+                                                             pss_mgf1)
                                 <= 0)) {
                             ERR_raise(ERR_LIB_USER, OQSPROV_R_WRONG_PARAMETERS);
                             OPENSSL_free(name);
@@ -890,12 +992,12 @@ static int oqs_sig_verify(void *vpoqs_sigctx, const unsigned char *sig,
                     if (comp_idx < 6) {
                         classical_md = EVP_sha256();
                         digest_len = SHA256_DIGEST_LENGTH;
-                        SHA256(final_tbs, final_tbslen,
+                        SHA256((const unsigned char *)final_tbs, final_tbslen,
                                (unsigned char *)&digest);
                     } else {
                         classical_md = EVP_sha512();
                         digest_len = SHA512_DIGEST_LENGTH;
-                        SHA512(final_tbs, final_tbslen,
+                        SHA512((const unsigned char *)final_tbs, final_tbslen,
                                (unsigned char *)&digest);
                     }
 
@@ -1024,9 +1126,9 @@ int oqs_sig_digest_signverify_update(void *vpoqs_sigctx,
             poqs_sigctx->mdsize = datalen;
             memcpy(poqs_sigctx->mddata, data, poqs_sigctx->mdsize);
         }
-        OQS_SIG_PRINTF2(
-            "OQS SIG provider: digest_signverify_update collected %ld bytes...\n",
-            poqs_sigctx->mdsize);
+        OQS_SIG_PRINTF2("OQS SIG provider: digest_signverify_update collected "
+                        "%ld bytes...\n",
+                        poqs_sigctx->mdsize);
     }
     return 1;
 }
@@ -1048,9 +1150,10 @@ int oqs_sig_digest_sign_final(void *vpoqs_sigctx, unsigned char *sig,
      */
     if (sig != NULL) {
         /*
-         * TODO(3.0): There is the possibility that some externally provided
-         * digests exceed EVP_MAX_MD_SIZE. We should probably handle that
-         * somehow - but that problem is much larger than just here.
+         * TODO(3.0): There is the possibility that some externally
+         * provided digests exceed EVP_MAX_MD_SIZE. We should probably
+         * handle that somehow - but that problem is much larger than just
+         * here.
          */
         if (poqs_sigctx->mdctx != NULL)
             if (!EVP_DigestFinal_ex(poqs_sigctx->mdctx, digest, &dlen))

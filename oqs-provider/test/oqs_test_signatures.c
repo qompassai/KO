@@ -1,9 +1,10 @@
 // SPDX-License-Identifier: Apache-2.0 AND MIT
 
-#include "oqs/oqs.h"
-#include "test_common.h"
 #include <openssl/evp.h>
 #include <openssl/provider.h>
+
+#include "oqs/oqs.h"
+#include "test_common.h"
 
 static OSSL_LIB_CTX *libctx = NULL;
 static char *modulename = NULL;
@@ -31,7 +32,8 @@ static int test_oqs_signatures(const char *sigalg_name)
         return 1;
     }
     // test with built-in digest only if default provider is active:
-    // TBD revisit when hybrids are activated: They always need default provider
+    // TBD revisit when hybrids are activated: They always need default
+    // provider
     if (OSSL_PROVIDER_available(libctx, "default")) {
         testresult
             &= (ctx = EVP_PKEY_CTX_new_from_name(libctx, sigalg_name, NULL))

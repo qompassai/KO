@@ -7,6 +7,9 @@ Matt A. Porter, B.S<sup>1</sup>, Marcheta J. Hill, DO<sup>2</sup>, Dawn L. Lapor
 <sup>1</sup>Qompass, Spokane, WA  
 <sup>2</sup>Arnot Ogden Medical Center Emergency Medicine Residency Program, Elmira, NY  
 <sup>3</sup>The Johns Hopkins University School of Medicine, Department of Orthopaedic Surgery, Baltimore, MD
+## 2025 AMA Research Challenge Poster
+[Kyber Odyssey](./KO_MAP_AMA_2025_Turnin.pdf)
+
 ## Abstract
 ### Background
 The catastrophic Crowdstrike patch failure of July 19, 2024, exposed critical vulnerabilities in global healthcare systems, stemming from a memory safety issue in C++ code. This null pointer error, a common pitfall in languages without automatic memory management, led to system-wide failures in Microsoft-based environments while Linux/GNU and Apple systems remained unaffected. This event underscores the urgent need for robust, quantum-resistant cryptographic solutions in healthcare IT infrastructure.

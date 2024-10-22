@@ -1,17 +1,16 @@
 // SPDX-License-Identifier: Apache-2.0 AND MIT
 
-#include "test_common.h"
-#include "tlstest_helpers.h"
+#include <errno.h>
 #include <openssl/core_names.h>
 #include <openssl/provider.h>
 #include <openssl/ssl.h>
-#include <string.h>
-
 #include <openssl/trace.h>
-
-#include <errno.h>
+#include <string.h>
 #include <sys/stat.h>
 #include <sys/types.h>
+
+#include "test_common.h"
+#include "tlstest_helpers.h"
 
 static OSSL_LIB_CTX *libctx = NULL;
 static char *modulename = NULL;
@@ -171,9 +170,9 @@ int main(int argc, char *argv[])
     // crashes: EVP_SIGNATURE_do_all_provided(libctx, test_oqs_sigs, &errcnt);
     OSSL_PROVIDER_do_all(libctx, test_provider_signatures, &errcnt);
 #else
-    fprintf(
-        stderr,
-        "TLS-SIG handshake test not enabled. Update OpenSSL to more current version.\n");
+    fprintf(stderr,
+            "TLS-SIG handshake test not enabled. Update OpenSSL to more "
+            "current version.\n");
 #endif
 
     OSSL_LIB_CTX_free(libctx);

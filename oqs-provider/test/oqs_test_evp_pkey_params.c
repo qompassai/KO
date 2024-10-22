@@ -1,26 +1,48 @@
 // SPDX-License-Identifier: Apache-2.0 AND MIT
 
-#undef USE_ENCODING_LIB
-#include "oqs_prov.h"
-#include "test_common.h"
-
-#include <stdint.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 #include <openssl/core_names.h>
 #include <openssl/crypto.h>
 #include <openssl/err.h>
 #include <openssl/evp.h>
 #include <openssl/provider.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "oqs_prov.h"
+#include "test_common.h"
 
 ///// OQS_TEMPLATE_FRAGMENT_HYBRID_SIG_ALGS_START
 
 /** \brief List of hybrid signature algorithms. */
 const char *kHybridSignatureAlgorithms[] = {
-"p256_dilithium2","rsa3072_dilithium2","p384_dilithium3","p521_dilithium5","p256_mldsa44","rsa3072_mldsa44","p384_mldsa65","p521_mldsa87","p256_falcon512","rsa3072_falcon512","p256_falconpadded512","rsa3072_falconpadded512","p521_falcon1024","p521_falconpadded1024","p256_sphincssha2128fsimple","rsa3072_sphincssha2128fsimple","p256_sphincssha2128ssimple","rsa3072_sphincssha2128ssimple","p384_sphincssha2192fsimple","p256_sphincsshake128fsimple","rsa3072_sphincsshake128fsimple",
-NULL,
+    "p256_dilithium2",
+    "rsa3072_dilithium2",
+    "p384_dilithium3",
+    "p521_dilithium5",
+    "p256_mldsa44",
+    "rsa3072_mldsa44",
+    "p384_mldsa65",
+    "p521_mldsa87",
+    "p256_falcon512",
+    "rsa3072_falcon512",
+    "p256_falconpadded512",
+    "rsa3072_falconpadded512",
+    "p521_falcon1024",
+    "p521_falconpadded1024",
+    "p256_sphincssha2128fsimple",
+    "rsa3072_sphincssha2128fsimple",
+    "p256_sphincssha2128ssimple",
+    "rsa3072_sphincssha2128ssimple",
+    "p384_sphincssha2192fsimple",
+    "p256_sphincsshake128fsimple",
+    "rsa3072_sphincsshake128fsimple",
+    "p256_mayo1",
+    "p256_mayo2",
+    "p384_mayo3",
+    "p521_mayo5",
+    NULL,
 };
 ///// OQS_TEMPLATE_FRAGMENT_HYBRID_SIG_ALGS_END
 
@@ -28,43 +50,19 @@ NULL,
 
 /** \brief List of hybrid KEMs. */
 const char *kHybridKEMAlgorithms[] = {
-    "p256_frodo640aes",
-    "x25519_frodo640aes",
-    "p256_frodo640shake",
-    "x25519_frodo640shake",
-    "p384_frodo976aes",
-    "x448_frodo976aes",
-    "p384_frodo976shake",
-    "x448_frodo976shake",
-    "p521_frodo1344aes",
-    "p521_frodo1344shake",
-    "p256_kyber512",
-    "x25519_kyber512",
-    "p384_kyber768",
-    "x448_kyber768",
-    "x25519_kyber768",
-    "p256_kyber768",
-    "p521_kyber1024",
-    "p256_mlkem512",
-    "x25519_mlkem512",
-    "p384_mlkem768",
-    "x448_mlkem768",
-    "x25519_mlkem768",
-    "p256_mlkem768",
-    "p521_mlkem1024",
-    "p384_mlkem1024",
-    "p256_bikel1",
-    "x25519_bikel1",
-    "p384_bikel3",
-    "x448_bikel3",
-    "p521_bikel5",
-    "p256_hqc128",
-    "x25519_hqc128",
-    "p384_hqc192",
-    "x448_hqc192",
-    "p521_hqc256",
-NULL,
-};///// OQS_TEMPLATE_FRAGMENT_HYBRID_KEM_ALGS_END
+    "p256_frodo640aes",     "x25519_frodo640aes", "p256_frodo640shake",
+    "x25519_frodo640shake", "p384_frodo976aes",   "x448_frodo976aes",
+    "p384_frodo976shake",   "x448_frodo976shake", "p521_frodo1344aes",
+    "p521_frodo1344shake",  "p256_kyber512",      "x25519_kyber512",
+    "p384_kyber768",        "x448_kyber768",      "x25519_kyber768",
+    "p256_kyber768",        "p521_kyber1024",     "p256_mlkem512",
+    "x25519_mlkem512",      "p384_mlkem768",      "x448_mlkem768",
+    "X25519MLKEM768",       "SecP256r1MLKEM768",  "p521_mlkem1024",
+    "p384_mlkem1024",       "p256_bikel1",        "x25519_bikel1",
+    "p384_bikel3",          "x448_bikel3",        "p521_bikel5",
+    "p256_hqc128",          "x25519_hqc128",      "p384_hqc192",
+    "x448_hqc192",          "p521_hqc256",        NULL,
+}; ///// OQS_TEMPLATE_FRAGMENT_HYBRID_KEM_ALGS_END
 
 /** \brief Indicates if a string is in a given list of strings.
  *
@@ -172,9 +170,9 @@ static int init_keygen(EVP_PKEY_CTX *ctx)
     int err;
 
     if ((err = EVP_PKEY_keygen_init(ctx)) == -2) {
-        fputs(cRED
-              "`EVP_PKEY_keygen_init` failed, couldn't initialize keygen: not "
-              "supported" cNORM "\n",
+        fputs(cRED "`EVP_PKEY_keygen_init` failed, couldn't initialize "
+                   "keygen: not "
+                   "supported" cNORM "\n",
               stderr);
     } else if (err <= 0) {
         fputs(cRED
@@ -198,11 +196,9 @@ static EVP_PKEY *generate_private_key(EVP_PKEY_CTX *ctx)
     int err;
 
     if ((err = EVP_PKEY_generate(ctx, &private_key)) == -2) {
-        fputs(
-            cRED
-            "`EVP_PKEY_generate` failed, couldn't generate: not supported" cNORM
-            "\n",
-            stderr);
+        fputs(cRED "`EVP_PKEY_generate` failed, couldn't generate: not "
+                   "supported" cNORM "\n",
+              stderr);
     } else if (err <= 0) {
         fputs(cRED "`EVP_PKEY_generate` failed, couldn't generate: ", stderr);
         ERR_print_errors_fp(stderr);
@@ -320,7 +316,8 @@ out:
     return ret;
 }
 
-/** \brief Extracts the combination of classical+hybrid keys from an hybrid key.
+/** \brief Extracts the combination of classical+hybrid keys from an hybrid
+ * key.
  *
  * \param private_key The private key.
  * \param[out] out Key pair where to write the keys.
@@ -356,12 +353,13 @@ out:
  * \param classical_n Length in bytes of `classical`.
  * \param pq Quantum-resistant key.
  * \param pq_n Length in bytes of `pq`.
+ * \param reverse Reverses the order of shares
  * \param[out] buf Out buffer.
  * \param[out] buf_n Length in bytes of `buf`.
  *
  * \returns 0 on success. */
 static int reconstitute_keys(const uint8_t *classical, const size_t classical_n,
-                             const uint8_t *pq, const size_t pq_n,
+                             const uint8_t *pq, const size_t pq_n, int reverse,
                              uint8_t **buf, size_t *buf_len)
 {
     uint32_t header;
@@ -378,8 +376,14 @@ static int reconstitute_keys(const uint8_t *classical, const size_t classical_n,
     (*buf)[1] = header >> 0x10;
     (*buf)[2] = header >> 0x8;
     (*buf)[3] = header;
-    memcpy(*buf + sizeof(header), classical, classical_n);
-    memcpy(*buf + sizeof(header) + classical_n, pq, pq_n);
+
+    if (!reverse) {
+        memcpy(*buf + sizeof(header), classical, classical_n);
+        memcpy(*buf + sizeof(header) + classical_n, pq, pq_n);
+    } else {
+        memcpy(*buf + sizeof(header), pq, pq_n);
+        memcpy(*buf + sizeof(header) + pq_n, classical, classical_n);
+    }
     ret = 0;
 
 out:
@@ -397,24 +401,27 @@ static int keypairs_verify_consistency(const struct KeyPair *classical,
                                        const struct KeyPair *pq,
                                        const struct KeyPair *comb)
 {
-    uint8_t *reconstitution;
+    uint8_t *reconstitution, *reconstitution_rev;
     size_t n;
     int ret = -1;
 
     if (reconstitute_keys(classical->pubkey, classical->pubkey_len, pq->pubkey,
-                          pq->pubkey_len, &reconstitution, &n)) {
+                          pq->pubkey_len, 1, &reconstitution, &n)) {
+        goto out;
+    }
+    if (reconstitute_keys(classical->pubkey, classical->pubkey_len, pq->pubkey,
+                          pq->pubkey_len, 0, &reconstitution_rev, &n)) {
         goto out;
     }
     if (n != comb->pubkey_len) {
-        fprintf(
-            stderr,
-            cRED
-            "expected %#zx byte(s) for reconstitution of pubkey, got %#zx" cNORM
-            "\n",
-            comb->pubkey_len, n);
+        fprintf(stderr,
+                cRED "expected %#zx byte(s) for reconstitution of "
+                     "pubkey, got %#zx" cNORM "\n",
+                comb->pubkey_len, n);
         goto free_reconstitute;
     }
-    if (memcmp(reconstitution, comb->pubkey, n)) {
+    if (memcmp(reconstitution, comb->pubkey, n)
+        && memcmp(reconstitution_rev, comb->pubkey, n)) {
         fputs(cRED "pubkey and comb->pubkey differ " cNORM "\n", stderr);
         fputs(cRED "pubkey: ", stderr);
         hexdump(reconstitution, n);
@@ -424,19 +431,27 @@ static int keypairs_verify_consistency(const struct KeyPair *classical,
         goto free_reconstitute;
     }
     free(reconstitution);
+    free(reconstitution_rev);
 
     if (reconstitute_keys(classical->privkey, classical->privkey_len,
-                          pq->privkey, pq->privkey_len, &reconstitution, &n)) {
+                          pq->privkey, pq->privkey_len, 0, &reconstitution,
+                          &n)) {
+        goto out;
+    }
+    if (reconstitute_keys(classical->privkey, classical->privkey_len,
+                          pq->privkey, pq->privkey_len, 1, &reconstitution_rev,
+                          &n)) {
         goto out;
     }
     if (n != comb->privkey_len) {
-        fprintf(
-            stderr,
-            "expected %#zx byte(s) for reconstitution of privkey, got %#zx\n",
-            comb->privkey_len, n);
+        fprintf(stderr,
+                "expected %#zx byte(s) for reconstitution of privkey, "
+                "got %#zx\n",
+                comb->privkey_len, n);
         goto free_reconstitute;
     }
-    if (memcmp(reconstitution, comb->privkey, n)) {
+    if (memcmp(reconstitution, comb->privkey, n)
+        && memcmp(reconstitution_rev, comb->privkey, n)) {
         fputs(cRED "privkey and comb->privkey differ" cNORM "\n", stderr);
         fputs(cRED "privkey: ", stderr);
         hexdump(reconstitution, n);
@@ -449,6 +464,7 @@ static int keypairs_verify_consistency(const struct KeyPair *classical,
 
 free_reconstitute:
     free(reconstitution);
+    free(reconstitution_rev);
 
 out:
     return ret;
@@ -554,6 +570,7 @@ int main(int argc, char **argv)
         fprintf(stderr, cRED "  No signature algorithms found" cNORM "\n");
         ERR_print_errors_fp(stderr);
         ++errcnt;
+        goto next_alg;
     }
 
     for (; algs->algorithm_names != NULL; ++algs) {
@@ -570,6 +587,7 @@ int main(int argc, char **argv)
         }
     }
 
+next_alg:
     algs = OSSL_PROVIDER_query_operation(oqs_provider, OSSL_OP_KEM,
                                          &query_nocache);
     if (!algs) {
