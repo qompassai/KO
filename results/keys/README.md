@@ -1,13 +1,13 @@
-# Securing Personal Health Data in the age of AI
+# Kyber Odyssey Use Case: Securing Personal Health Data in the Age of AI
 
-- One of our most acute use cases is securing data at rest, ie the files on your laptop.
-- The phi.pdf is an example fictional patient record vulnerable to hackers.
-- The encrypted_phi.pdf is the same phi.pdf file encrypted by us on device.
+One of our most pressing challenges is securing data at rest—the files stored on personal devices like laptops & phones.
+In this example, **phi.pdf** represents a fictional patient record, illustrating how sensitive health information is vulnerable to cyber threats.
+To protect against potential attacks, **encrypted_phi.pdf** is an encrypted version of the same file, secured directly on the device.
 
-The goal is to mitigate the `harvest now, decrypt later` practice of bad actors
-on sensitive health data.
+The purpose of this encryption is to combat the threat of the "harvest now, decrypt later" approach used by malicious actors, who aim to gather and decrypt sensitive data at some point in the future.
 
-## How to download without having to download any other data
+## How to Download
 
-- [phi.pdf](./phi.pdf): Click to view or download `phi.pdf`.
-- [encrypted_phi.pdf](./encrypted_phi.pdf): Click to view or download `encrypted_phi.pdf`.
+- [phi.pdf](./phi.pdf): Click here to view or download the unencrypted patient record.
+- [encrypted_phi.pdf](./encrypted_phi.pdf): Click here to **download** the encrypted version.
+  **Note:** Encrypted files cannot be viewed directly online like unencrypted ones.
