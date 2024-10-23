@@ -98,20 +98,8 @@ Out of the evaluated KEMs, we propose hybrid combinations of ECDH and Kyber for 
 2. [Post-quantum healthcare: A roadmap for cybersecurity resilience in medical data](https://pubmed.ncbi.nlm.nih.gov/38826742/)
 3. [Transitioning organizations to post-quantum cryptography](https://pubmed.ncbi.nlm.nih.gov/35546191/)
 
-# What Releasing this software under the AGPL (Affero General Public License) means:
-The software is free to use, modify, and share.
-Anyone who uses the software must also share any changes they make to it.
-If someone uses the software to provide a service over the internet, they must make the source code of their version available to users of that service.
-This ensures that improvements and modifications to the software remain open and accessible to everyone.
-It prevents companies from taking the free software, modifying it, and then selling it as a closed-source product without giving back to the community.
-Users always have the right to see and modify the code of AGPL software they're using, even if it's part of an online service.
-In essence, AGPL is designed to keep software free and open, especially in the age of cloud computing and web services. It encourages sharing and collaboration while protecting the original creators' intent for the software to remain open source.
-
 # Acknowledgment
 We would like to thank the Ruth Jackson Orthopaedic Society and Zimmer Biomet for their generous support of our work.
-
-
-
 
 # Dual-License Notice
 This repository and all applications within it are dual-licensed under the terms of the [Qompass Commercial Distribution Agreement (CDA)](LICENSE) and [GNU Affero General Public License v3.0 (AGPL-3.0)](LICENSE-AGPL) licenses.
