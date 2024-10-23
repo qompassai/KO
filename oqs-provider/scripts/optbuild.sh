@@ -1,34 +1,48 @@
 #!/bin/bash
-# Script to build and install oqs-provider aligned with liboqs installation into /opt/liboqs without interfering with system packages
+# Script to build and install oqs-provider aligned with liboqs and OpenSSL installation into /opt/qompassl without interfering with system packages
 
-# Set liboqs installation directory
+# Enable strict error handling
+set -euo pipefail
+
+# Set liboqs and OpenSSL installation directory
 LIBOQS_INSTALL_DIR="/opt/liboqs"
+OPENSSL_INSTALL_DIR="/opt/qompassl"
 
-# Set OpenSSL installation directory
-OPENSSL_INSTALL_DIR="/opt/openssl-oqs"
+# Set compiler to Clang
+export CC=/usr/bin/clang
+export CXX=/usr/bin/clang++
+
+# Use LLVM linker
+export CMAKE_EXE_LINKER_FLAGS="-fuse-ld=lld"
+export CMAKE_SHARED_LINKER_FLAGS="-fuse-ld=lld"
 
 # Step 1: Build oqs-provider with CMake
 # Ensure the script is run from the oqs-provider directory
-OQSPROV_SRC_DIR="$(pwd)/.."
+OQSPROV_SRC_DIR="${PWD}/.."
 
 # Clean any existing build artifacts
 BUILD_DIR="${OQSPROV_SRC_DIR}/_build"
-sudo rm -rf "$BUILD_DIR"
-mkdir "$BUILD_DIR"
-cd "$BUILD_DIR"
+if [[ -d "${BUILD_DIR}" ]]; then
+    rm -rf "${BUILD_DIR}"
+fi
+mkdir "${BUILD_DIR}"
+cd "${BUILD_DIR}"
 
-# Configure the oqs-provider build
+# Configure the oqs-provider build with CMake
 cmake -GNinja \
     -DCMAKE_INSTALL_PREFIX="${OPENSSL_INSTALL_DIR}" \
     -DOPENSSL_ROOT_DIR="${OPENSSL_INSTALL_DIR}" \
-    -DOPENSSL_CRYPTO_LIBRARY="${LIBOQS_INSTALL_DIR}/lib/liboqs.so" \
+    -Dliboqs_DIR="${LIBOQS_INSTALL_DIR}/lib/cmake/liboqs" \
+    -DOPENSSL_LIBRARIES="${OPENSSL_INSTALL_DIR}/lib64/libssl.so;${OPENSSL_INSTALL_DIR}/lib64/libcrypto.so" \
+    -DCMAKE_C_COMPILER=/usr/bin/clang \
+    -DCMAKE_CXX_COMPILER=/usr/bin/clang++ \
     -DCMAKE_BUILD_TYPE=Release \
     -DBUILD_SHARED_LIBS=ON \
-    -Dliboqs_DIR="${LIBOQS_INSTALL_DIR}" \
+    -DCMAKE_C_FLAGS="-I${LIBOQS_INSTALL_DIR}/include/oqs" \
     -Wno-dev ..
 
-# Build oqs-provider
-ninja
+# Build oqs-provider using Ninja
+sudo ninja
 
 # Step 2: Install oqs-provider
 sudo ninja install
@@ -45,14 +59,16 @@ fi
 # Step 4: Update environment variables script (Optional)
 # Create a wrapper script to use these environment variables locally when needed
 WRAPPER_SCRIPT="${OPENSSL_INSTALL_DIR}/oqsprovider_env.sh"
-cat << EOF | sudo tee "$WRAPPER_SCRIPT"
+cat <<EOF | sudo tee "${WRAPPER_SCRIPT}"
 #!/bin/bash
 export PKG_CONFIG_PATH="${LIBOQS_INSTALL_DIR}/lib/pkgconfig:\$PKG_CONFIG_PATH"
 export PATH="${OPENSSL_INSTALL_DIR}/bin:\$PATH"
+export LD_LIBRARY_PATH="${LIBOQS_INSTALL_DIR}/lib:\$LD_LIBRARY_PATH"
 EOF
-sudo chmod +x "$WRAPPER_SCRIPT"
+sudo chmod +x "${WRAPPER_SCRIPT}"
 
-cat << EOF
+# Inform the user about how to source the environment wrapper
+cat <<EOF
 
 To use OpenSSL with oqs-provider, source the environment variables for your current shell session:
 
@@ -60,4 +76,3 @@ source ${OPENSSL_INSTALL_DIR}/oqsprovider_env.sh
 
 Alternatively, use the commands in the script above in a terminal when needed.
 EOF
-
