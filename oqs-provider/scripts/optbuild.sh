@@ -16,11 +16,15 @@ export CXX=/usr/bin/clang++
 export CMAKE_EXE_LINKER_FLAGS="-fuse-ld=lld"
 export CMAKE_SHARED_LINKER_FLAGS="-fuse-ld=lld"
 
-# Step 1: Build oqs-provider with CMake
-# Ensure the script is run from the oqs-provider directory
+if [[ ! -d "oqs-provider" ]]; then
+    git clone https://github.com/open-quantum-safe/oqs-provider.git
+fi
+cd oqs-provider
+git fetch --all --tags
+git checkout tags/0.7.0
+
 OQSPROV_SRC_DIR="${PWD}/.."
 
-# Clean any existing build artifacts
 BUILD_DIR="${OQSPROV_SRC_DIR}/_build"
 if [[ -d "${BUILD_DIR}" ]]; then
     rm -rf "${BUILD_DIR}"
@@ -28,7 +32,6 @@ fi
 mkdir "${BUILD_DIR}"
 cd "${BUILD_DIR}"
 
-# Configure the oqs-provider build with CMake
 cmake -GNinja \
     -DCMAKE_INSTALL_PREFIX="${OPENSSL_INSTALL_DIR}" \
     -DOPENSSL_ROOT_DIR="${OPENSSL_INSTALL_DIR}" \

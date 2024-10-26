@@ -1,0 +1,300 @@
+#!/bin/bash -e
+# Copyright (C) 2022 Simo Sorce <simo@redhat.com>
+# SPDX-License-Identifier: Apache-2.0
+
+source "${TESTSSRCDIR}/helpers.sh"
+
+title PARA "Raw Sign check error"
+dd if=/dev/urandom of="${TMPPDIR}/64Brandom.bin" bs=64 count=1 >/dev/null 2>&1
+FAIL=0
+ossl '
+pkeyutl -sign -inkey "${BASEURI}"
+              -pkeyopt pad-mode:none
+              -in ${TMPPDIR}/64Brandom.bin
+              -out ${TMPPDIR}/raw-sig.bin' || FAIL=1
+if [ $FAIL -eq 0 ]; then
+    echo "Raw signature should not allow data != modulus size"
+    exit 1
+fi
+# unfortunately pkeyutl simply does not make it possible to sign anything
+# that is bigger than a hash, which means we'd need a very small RSA key
+# to really check a raw signature through pkeyutl
+
+title PARA "Sign and Verify with provided Hash and RSA"
+ossl 'dgst -sha256 -binary -out ${TMPPDIR}/sha256.bin ${SEEDFILE}'
+ossl '
+pkeyutl -sign -inkey "${PRIURI}"
+              -in ${TMPPDIR}/sha256.bin
+              -out ${TMPPDIR}/sha256-sig.bin'
+
+ossl '
+pkeyutl -verify -inkey "${PUBURI}"
+                -pubin
+                -in ${TMPPDIR}/sha256.bin
+                -sigfile ${TMPPDIR}/sha256-sig.bin'
+
+title PARA "Sign and Verify with provided Hash and RSA with DigestInfo struct"
+ossl 'dgst -sha256 -binary -out ${TMPPDIR}/sha256.bin ${SEEDFILE}'
+ossl '
+pkeyutl -sign -inkey "${PRIURI}" -pkeyopt digest:sha256
+              -in ${TMPPDIR}/sha256.bin
+              -out ${TMPPDIR}/sha256-sig.bin'
+
+ossl '
+pkeyutl -verify -inkey "${PUBURI}" -pkeyopt digest:sha256
+                -pubin
+                -in ${TMPPDIR}/sha256.bin
+                -sigfile ${TMPPDIR}/sha256-sig.bin'
+
+title PARA "DigestSign and DigestVerify with RSA"
+ossl '
+pkeyutl -sign -inkey "${BASEURI}"
+              -digest sha256
+              -in ${RAND64FILE}
+              -rawin
+              -out ${TMPPDIR}/sha256-dgstsig.bin'
+ossl '
+pkeyutl -verify -inkey "${BASEURI}" -pubin
+                -digest sha256
+                -in ${RAND64FILE}
+                -rawin
+                -sigfile ${TMPPDIR}/sha256-dgstsig.bin'
+ossl '
+pkeyutl -verify -inkey "${PUBURI}"
+                -pubin
+                -digest sha256
+                -in ${RAND64FILE}
+                -rawin
+                -sigfile ${TMPPDIR}/sha256-dgstsig.bin'
+
+
+SECRETFILE=${TMPPDIR}/rsasecret.txt
+echo "Super Secret" > "${SECRETFILE}"
+
+title LINE "RSA basic encrypt and decrypt"
+ossl '
+pkeyutl -encrypt -inkey "${PUBURI}" -pubin
+                 -in ${SECRETFILE}
+                 -out ${SECRETFILE}.enc'
+ossl '
+pkeyutl -decrypt -inkey "${PRIURI}"
+                 -in ${SECRETFILE}.enc
+                 -out ${SECRETFILE}.dec'
+diff "${SECRETFILE}" "${SECRETFILE}.dec"
+
+title PARA "Test Disallow Public Export"
+ORIG_OPENSSL_CONF=${OPENSSL_CONF}
+sed "s/#pkcs11-module-allow-export/pkcs11-module-allow-export = 1/" "${OPENSSL_CONF}" > "${OPENSSL_CONF}.noexport"
+OPENSSL_CONF=${OPENSSL_CONF}.noexport
+ossl 'pkey -in $PUBURI -pubin -pubout -text' "$helper_emit"
+output="$helper_output"
+FAIL=0
+echo "$output" | grep "^PKCS11 RSA Public Key (2048 bits)" > /dev/null 2>&1 || FAIL=1
+if [ $FAIL -ne 0 ]; then
+    echo "$output" | grep "PUBLIC KEY" > /dev/null 2>&1 || FAIL=2
+fi
+if [ $FAIL -eq 1 ]; then
+    echo "pkcs11 pem export failed"
+fi
+if [ $FAIL -eq 2 ]; then
+    echo "pkcs11 pem export succeeded but internal encoder was not used"
+fi
+if [ $FAIL -ne 0 ]; then
+    echo
+    echo "Original command output:"
+    echo "$output"
+    echo
+    exit 1
+fi
+OPENSSL_CONF=${ORIG_OPENSSL_CONF}
+
+title PARA "Test CSR generation from RSA private keys"
+ossl '
+req -new -batch -key "${PRIURI}" -out ${TMPPDIR}/rsa_csr.pem'
+ossl '
+req -in ${TMPPDIR}/rsa_csr.pem -verify -noout'
+
+title PARA "Test fetching public keys without PIN in config files"
+ORIG_OPENSSL_CONF=${OPENSSL_CONF}
+sed "s/^pkcs11-module-token-pin.*$/##nopin/" "${OPENSSL_CONF}" > "${OPENSSL_CONF}.nopin"
+OPENSSL_CONF=${OPENSSL_CONF}.nopin
+ossl 'pkey -in $PUBURI -pubin -pubout -out ${TMPPDIR}/rsa.pub.nopin.pem'
+ossl 'pkey -in $ECPUBURI -pubin -pubout -out ${TMPPDIR}/ec.pub.nopin.pem'
+[[ -n $ECXPUBURI ]] && ossl 'pkey -in $ECXPUBURI -pubin -pubout -out ${TMPPDIR}/ecx.pub.nopin.pem'
+[[ -n $EDPUBURI ]] && ossl 'pkey -in $EDPUBURI -pubin -pubout -out ${TMPPDIR}/ed.pub.nopin.pem'
+
+title PARA "Test fetching public keys with a PIN in URI"
+ossl 'pkey -in $BASEURIWITHPINVALUE -pubin -pubout -out ${TMPPDIR}/rsa.pub.uripin.pem'
+ossl 'pkey -in $ECBASEURIWITHPINVALUE -pubin -pubout -out ${TMPPDIR}/ec.pub.uripin.pem'
+[[ -n $ECXBASEURIWITHPINVALUE ]] && ossl 'pkey -in $ECXBASEURIWITHPINVALUE -pubin -pubout -out ${TMPPDIR}/ecx.pub.uripin.pem'
+[[ -n $EDBASEURIWITHPINVALUE ]] && ossl 'pkey -in $EDBASEURIWITHPINVALUE -pubin -pubout -out ${TMPPDIR}/ed.pub.uripin.pem'
+
+title PARA "Test fetching public keys with a PIN source in URI"
+ossl 'pkey -in $BASEURIWITHPINSOURCE -pubin -pubout -out ${TMPPDIR}/rsa.pub.uripinsource.pem'
+ossl 'pkey -in $ECBASEURIWITHPINSOURCE -pubin -pubout -out ${TMPPDIR}/ec.pub.uripinsource.pem'
+[[ -n $ECXBASEURIWITHPINSOURCE ]] && ossl 'pkey -in $ECXBASEURIWITHPINSOURCE -pubin -pubout -out ${TMPPDIR}/ecx.pub.uripinsource.pem'
+[[ -n $EDBASEURIWITHPINSOURCE ]] && ossl 'pkey -in $EDBASEURIWITHPINSOURCE -pubin -pubout -out ${TMPPDIR}/ed.pub.uripinsource.pem'
+
+title PARA "Test prompting without PIN in config files"
+output=$(expect -c "spawn -noecho $CHECKER openssl pkey -in \"${PRIURI}\" -text -noout;
+                   expect \"Enter pass phrase for PKCS#11 Token (Slot *:\";
+                   send \"${PINVALUE}\r\";
+                   expect \"Key ID:\";")
+echo "$output" | grep "Enter pass phrase for PKCS#11 Token (Slot .*):" > /dev/null 2>&1 || FAIL=1
+if [ $FAIL -eq 0 ]; then
+    echo "$output" | grep "PKCS11 RSA Private Key" > /dev/null 2>&1 || FAIL=2
+fi
+if [ $FAIL -eq 1 ]; then
+    echo "Failed to obtain expected prompt"
+fi
+if [ $FAIL -eq 2 ]; then
+    echo "Failed to get expected command output"
+fi
+if [ $FAIL -ne 0 ]; then
+    echo
+    echo "Original command output:"
+    echo "$output"
+    echo
+    exit 1
+fi
+
+OPENSSL_CONF=${ORIG_OPENSSL_CONF}
+
+title PARA "Test EVP_PKEY_eq on public RSA key both on token"
+# shellcheck disable=SC2153 # PUBURIs is assigned
+$CHECKER "${TESTBLDDIR}/tcmpkeys" "$PUBURI" "$PUBURI"
+title PARA "Test EVP_PKEY_eq on public EC key both on token"
+# shellcheck disable=SC2153 # ECURIs and ECXURIs are assigned
+$CHECKER "${TESTBLDDIR}/tcmpkeys" "$ECPUBURI" "$ECPUBURI"
+if [[ -n $ECXPUBURI ]]; then
+    title PARA "Test EVP_PKEY_eq on public explicit EC key both on token"
+    $CHECKER "${TESTBLDDIR}/tcmpkeys" "$ECXPUBURI" "$ECXPUBURI"
+fi
+
+# It's important to test the commutative property since in the
+# first case the private key (its public part) is exported from
+# pkcs11 keymgmt and matched using the openssl's keymgmt while
+# in the second case it's the other way around.
+
+title PARA "Test EVP_PKEY_eq on public RSA key via import"
+$CHECKER "${TESTBLDDIR}/tcmpkeys" "$PUBURI" "${TMPPDIR}"/rsa.pub.uripin.pem
+$CHECKER "${TESTBLDDIR}/tcmpkeys" "$PUBURI" "${TMPPDIR}"/rsa.pub.uripinsource.pem
+title PARA "Match private RSA key against public key"
+$CHECKER "${TESTBLDDIR}/tcmpkeys" "$PRIURI" "${TMPPDIR}"/rsa.pub.uripin.pem
+$CHECKER "${TESTBLDDIR}/tcmpkeys" "$PRIURI" "${TMPPDIR}"/rsa.pub.uripinsource.pem
+title PARA "Match private RSA key against public key (commutativity)"
+$CHECKER "${TESTBLDDIR}/tcmpkeys" "${TMPPDIR}"/rsa.pub.uripin.pem "$PRIURI"
+$CHECKER "${TESTBLDDIR}/tcmpkeys" "${TMPPDIR}"/rsa.pub.uripinsource.pem "$PRIURI"
+
+title PARA "Test EVP_PKEY_eq on public EC key via import"
+$CHECKER "${TESTBLDDIR}/tcmpkeys" "$ECPUBURI" "${TMPPDIR}"/ec.pub.uripin.pem
+$CHECKER "${TESTBLDDIR}/tcmpkeys" "$ECPUBURI" "${TMPPDIR}"/ec.pub.uripinsource.pem
+title PARA "Match private EC key against public key"
+$CHECKER "${TESTBLDDIR}/tcmpkeys" "$ECPRIURI" "${TMPPDIR}"/ec.pub.uripin.pem
+$CHECKER "${TESTBLDDIR}/tcmpkeys" "$ECPRIURI" "${TMPPDIR}"/ec.pub.uripinsource.pem
+title PARA "Match private EC key against public key (commutativity)"
+$CHECKER "${TESTBLDDIR}/tcmpkeys" "${TMPPDIR}"/ec.pub.uripin.pem "$ECPRIURI"
+$CHECKER "${TESTBLDDIR}/tcmpkeys" "${TMPPDIR}"/ec.pub.uripinsource.pem "$ECPRIURI"
+
+if [[ -n $ECXPUBURI ]]; then
+    echo "ECXPUBURI is $ECXPUBURI"
+    title PARA "Test EVP_PKEY_eq on public explicit EC key via import"
+    $CHECKER "${TESTBLDDIR}/tcmpkeys" "$ECXPUBURI" "${TMPPDIR}"/ecx.pub.uripin.pem
+    $CHECKER "${TESTBLDDIR}/tcmpkeys" "$ECXPUBURI" "${TMPPDIR}"/ecx.pub.uripinsource.pem
+    title PARA "Match private explicit EC key against public key"
+    # shellcheck disable=SC2153 # ECURIs and ECXURIs are assigned
+    $CHECKER "${TESTBLDDIR}/tcmpkeys" "$ECXPRIURI" "${TMPPDIR}"/ecx.pub.uripin.pem
+    $CHECKER "${TESTBLDDIR}/tcmpkeys" "$ECXPRIURI" "${TMPPDIR}"/ecx.pub.uripinsource.pem
+    title PARA "Match private explicit EC key against public key (commutativity)"
+    $CHECKER "${TESTBLDDIR}/tcmpkeys" "${TMPPDIR}"/ecx.pub.uripin.pem "$ECXPRIURI"
+    $CHECKER "${TESTBLDDIR}/tcmpkeys" "${TMPPDIR}"/ecx.pub.uripinsource.pem "$ECXPRIURI"
+fi
+
+title PARA "Test EVP_PKEY_eq with key exporting disabled"
+ORIG_OPENSSL_CONF=${OPENSSL_CONF}
+OPENSSL_CONF=${OPENSSL_CONF}.noexport
+title PARA "Test RSA key"
+$CHECKER "${TESTBLDDIR}/tcmpkeys" "$PUBURI" "$PUBURI"
+title PARA "Test EC key"
+$CHECKER "${TESTBLDDIR}/tcmpkeys" "$ECPUBURI" "$ECPUBURI"
+if [[ -n $ECXPUBURI ]]; then
+    title PARA "Test explicit EC key"
+    $CHECKER "${TESTBLDDIR}/tcmpkeys" "$ECXPUBURI" "$ECXPUBURI"
+fi
+OPENSSL_CONF=${ORIG_OPENSSL_CONF}
+
+title PARA "Test PIN caching"
+ORIG_OPENSSL_CONF=${OPENSSL_CONF}
+sed "s/^pkcs11-module-token-pin.*$/pkcs11-module-cache-pins = cache/" \
+    "${OPENSSL_CONF}" > "${OPENSSL_CONF}.pincaching"
+OPENSSL_CONF=${OPENSSL_CONF}.pincaching
+$CHECKER "${TESTBLDDIR}/pincache"
+$CHECKER "${TESTBLDDIR}/pincache" "$ECPRIURI"
+OPENSSL_CONF=${ORIG_OPENSSL_CONF}
+
+OPENSSL_CONF=${OPENSSL_CONF}.nopin
+
+title PARA "Test interactive Login on key without ALWAYS AUTHENTICATE"
+output=$(expect -c "spawn -noecho $CHECKER ${TESTBLDDIR}/tsession \"$BASEURI\";
+                expect \"Enter PIN for PKCS#11 Token (Slot *:\" {
+                    send \"${PINVALUE}\r\"; exp_continue; }
+                expect \"ALL A-OK\";")
+FAIL=0
+echo "$output" | grep "Enter PIN for PKCS#11 Token (Slot .*):" > /dev/null 2>&1 || FAIL=1
+prompts=$(echo "$output" | grep -c "Enter PIN for PKCS#11 Token (Slot .*):" 2>&1)
+# 1 login to read key only
+if [ "$prompts" -ne "1" ]; then
+    echo "Failed receive expected amount of prompts (got $prompts, expected 1)"
+    FAIL=2
+fi
+if [ $FAIL -eq 1 ]; then
+    echo "Failed to obtain expected prompt"
+fi
+if [ $FAIL -ne 0 ]; then
+    echo
+    echo "Original command output:"
+    echo "$output"
+    echo
+    exit 1
+fi
+
+if [[ -n $ECBASE3URI ]]; then
+    title PARA "Test interactive Login repeated for operation on key with ALWAYS AUTHENTICATE"
+    output=$(expect -c "spawn -noecho $CHECKER ${TESTBLDDIR}/tsession \"$ECBASE3URI\";
+                    expect \"Enter PIN for PKCS#11 Token (Slot *:\" {
+                        send \"${PINVALUE}\r\"; exp_continue; }
+                    expect \"ALL A-OK\";")
+    FAIL=0
+    echo "$output" | grep "Enter PIN for PKCS#11 Token (Slot .*):" > /dev/null 2>&1 || FAIL=1
+    prompts=$(echo "$output" | grep -c "Enter PIN for PKCS#11 Token (Slot .*):"  2>&1)
+    # 1 login to read key + 16 signatures from 2 processes
+    if [ "$prompts" -ne "33" ]; then
+        echo "Failed receive expected amount of prompts (got $prompts, expected 33)"
+        FAIL=2
+    fi
+    if [ $FAIL -eq 1 ]; then
+        echo "Failed to obtain expected prompt"
+    fi
+    if [ $FAIL -ne 0 ]; then
+        echo
+        echo "Original command output:"
+        echo "$output"
+        echo
+        exit 1
+    fi
+fi
+OPENSSL_CONF=${ORIG_OPENSSL_CONF}
+
+title PARA "Test Key generation"
+output=$($CHECKER "${TESTBLDDIR}"/tgenkey "RSA,RSA-PSS,EC,RSAKeyUsage" 2>&1)
+FAIL=0
+echo "$output" | grep "Performed tests: 4" || FAIL=1
+if [ $FAIL -ne 0 ]; then
+    echo
+    echo "Original command output:"
+    echo "$output"
+    echo
+    exit 1
+fi
+
+exit 0
