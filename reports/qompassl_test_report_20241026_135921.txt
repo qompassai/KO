@@ -1,0 +1,82 @@
+"make" depend && "make" _tests
+make[1]: Entering directory '/home/phaedrus/Forge/GH/Qompass/KO/qompassl-340'
+make[1]: Leaving directory '/home/phaedrus/Forge/GH/Qompass/KO/qompassl-340'
+make[1]: Entering directory '/home/phaedrus/Forge/GH/Qompass/KO/qompassl-340'
+"make" run_tests
+make[2]: Entering directory '/home/phaedrus/Forge/GH/Qompass/KO/qompassl-340'
+( SRCTOP=. \
+  BLDTOP=. \
+  PERL="/usr/bin/perl" \
+  FIPSKEY="f4556650ac31d35461610bac4ed81b1a181b2d8a43ea2854cbae22ca74560813" \
+  EXE_EXT= \
+  /usr/bin/perl ./test/run_tests.pl  )
+00-prep_fipsmodule_cnf.t .. ok
+All tests successful.
+Files=1, Tests=1,  0 wallclock secs ( 0.01 usr  0.00 sys +  0.12 cusr  0.02 csys =  0.15 CPU)
+Result: PASS
+01-test_abort.t ......................... ok
+01-test_fipsmodule_cnf.t ................ ok
+01-test_sanity.t ........................ ok
+01-test_symbol_presence.t ............... ok
+01-test_test.t .......................... ok
+02-test_errstr.t ........................ ok
+02-test_internal_context.t .............. ok
+02-test_internal_ctype.t ................ ok
+02-test_internal_exts.t ................. ok
+02-test_internal_keymgmt.t .............. ok
+02-test_internal_provider.t ............. ok
+02-test_lhash.t ......................... ok
+02-test_list.t .......................... ok
+02-test_localetest.t .................... ok
+02-test_ordinals.t ...................... ok
+02-test_priority_queue.t ................ ok
+02-test_sparse_array.t .................. ok
+02-test_stack.t ......................... ok
+02-test_strtoul.t ....................... ok
+02-test_time.t .......................... ok
+02-test_windows_registry.t .............. skipped: Windows registry tests are only available on windows
+03-test_exdata.t ........................ ok
+03-test_fipsinstall.t ................... ok
+03-test_internal_asn1.t ................. ok
+03-test_internal_asn1_dsa.t ............. ok
+03-test_internal_bn.t ................... ok
+03-test_internal_chacha.t ............... ok
+03-test_internal_curve448.t ............. ok
+03-test_internal_ec.t ................... ok
+03-test_internal_ffc.t .................. ok
+03-test_internal_mdc2.t ................. ok
+03-test_internal_modes.t ................ ok
+03-test_internal_namemap.t .............. ok
+03-test_internal_poly1305.t ............. ok
+03-test_internal_rsa_sp800_56b.t ........ ok
+03-test_internal_siphash.t .............. ok
+03-test_internal_sm2.t .................. ok
+03-test_internal_sm3.t .................. ok
+03-test_internal_sm4.t .................. ok
+03-test_internal_ssl_cert_table.t ....... ok
+03-test_internal_x509.t ................. ok
+03-test_params_api.t .................... ok
+03-test_property.t ...................... ok
+03-test_ui.t ............................ ok
+04-test_asn1_decode.t ................... ok
+04-test_asn1_encode.t ................... ok
+04-test_asn1_parse.t .................... ok
+04-test_asn1_stable_parse.t ............. ok
+04-test_asn1_string_table.t ............. ok
+04-test_bio_callback.t .................. ok
+04-test_bio_core.t ...................... ok
+04-test_bio_dgram.t ..................... ok
+04-test_bio_tfo.t ....................... ok
+04-test_bioprint.t ...................... ok
+04-test_conf.t .......................... ok
+04-test_encoder_decoder.t ............... ok
+04-test_encoder_decoder_legacy.t ........ ok
+04-test_err.t ........................... ok
+04-test_hexstring.t ..................... ok
+04-test_membio.t ........................ ok
+04-test_nodefltctx.t .................... ok
+04-test_param_build.t ................... ok
+04-test_params.t ........................ ok
+04-test_params_conversion.t ............. ok
+04-test_pem_read_depr.t ................. ok
+04-test_pem_reading.t ................... ok

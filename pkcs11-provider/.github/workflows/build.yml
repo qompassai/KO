@@ -1,0 +1,154 @@
+---
+name: Build
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    name: CI with software token
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        name: [fedora, debian, centos, ubuntu]
+        compiler: [gcc, clang]
+        token: [softokn, softhsm]
+        include:
+          - name: fedora
+            container: fedora:latest
+          - name: debian
+            container: debian:sid
+          - name: centos
+            container: quay.io/centos/centos:stream9
+          - name: ubuntu
+            container: ubuntu:latest
+    container: ${{ matrix.container }}
+    steps:
+      - name: Install Dependencies
+        run: |
+            if [ "${{ matrix.name }}" = centos ]; then
+              dnf_opts="--enablerepo=crb"
+            fi
+            if [ -f /etc/redhat-release ]; then
+              dnf -y install $dnf_opts \
+                git ${{ matrix.compiler }} meson \
+                pkgconf-pkg-config openssl-devel openssl \
+                diffutils expect valgrind opensc gnutls-utils
+              if [ "${{ matrix.token }}" = "softokn" ]; then
+                dnf -y install nss-softokn nss-tools nss-softokn-devel \
+                  nss-devel
+              elif [ "${{ matrix.token }}" = "softhsm" ]; then
+                dnf -y install softhsm p11-kit-devel
+              fi
+            elif [ -f /etc/debian_version ]; then
+              apt-get -q update
+              apt-get -yq install git ${{ matrix.compiler }} meson \
+                pkg-config libssl-dev openssl expect \
+                valgrind procps opensc gnutls-bin
+              if [ "${{ matrix.token }}" = "softokn" ]; then
+                apt-get -yq install libnss3 libnss3-tools libnss3-dev
+              elif [ "${{ matrix.token }}" = "softhsm" ]; then
+                apt-get -yq install softhsm2 p11-kit libp11-kit-dev \
+                  p11-kit-modules
+              fi
+            fi
+      - name: Check NSS version
+        id: nss-version-check
+        run: |
+          if [ "${{ matrix.name }}" = "centos" ]; then
+            if [ "${{ matrix.token }}" = "softokn" ]; then
+              NSSMINVER=`nss-config --version nss | cut -d '.' -f 2`
+              if [ $NSSMINVER -lt 101 ]; then
+                echo "skiptest=true" >> $GITHUB_OUTPUT
+              fi
+            fi
+          fi
+      - name: Checkout Repository
+        if : ( steps.nss-version-check.outputs.skiptest != 'true' )
+        uses: actions/checkout@v4
+      - name: Setup
+        if : ( steps.nss-version-check.outputs.skiptest != 'true' )
+        run: |
+          CC=${{ matrix.compiler }} meson setup builddir
+      - name: Build and Test
+        if : ( steps.nss-version-check.outputs.skiptest != 'true' )
+        run: |
+          meson compile -C builddir
+          meson test --num-processes 1 -C builddir
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: Test logs ${{ matrix.name }}, ${{ matrix.compiler }}, ${{ matrix.token }}
+          path: |
+            builddir/meson-logs/
+            builddir/tests/tmp.${{ matrix.token }}/p11prov-debug.log
+            builddir/tests/tmp.${{ matrix.token }}/testvars
+            builddir/tests/tmp.${{ matrix.token }}/openssl.cnf
+      - name: Run tests with valgrind
+        if : ( steps.nss-version-check.outputs.skiptest != 'true' )
+        run: |
+            if [ "${{ matrix.compiler }}" = "gcc" ]; then
+              meson test --num-processes 1 -C builddir --setup=valgrind
+            fi
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: Test valgrind logs ${{ matrix.name }}, ${{ matrix.compiler }}, ${{ matrix.token }}
+          path: |
+            builddir/meson-logs/
+            builddir/tests/tmp.${{ matrix.token }}/p11prov-debug.log
+            builddir/tests/tmp.${{ matrix.token }}/testvars
+            builddir/tests/tmp.${{ matrix.token }}/openssl.cnf
+  build-macos:
+    name: CI with software token
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-14]
+        token: [softokn, softhsm]
+    steps:
+      - name: Install Dependencies
+        run: |
+          brew update
+          brew install \
+            meson \
+            openssl@3 \
+            pkg-config \
+            opensc \
+            p11-kit
+          if [ "${{ matrix.token }}" = "softokn" ]; then
+            brew install nss
+          elif [ "${{ matrix.token }}" = "softhsm" ]; then
+            brew install \
+              softhsm
+          fi
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Setup
+        run: |
+          export PKG_CONFIG_PATH=$(brew --prefix openssl@3)/lib/pkgconfig
+          export PATH=$(brew --prefix openssl@3)/bin:$PATH
+
+          CC=clang meson setup builddir
+      - name: Build and Test
+        run: |
+          export PATH=$(brew --prefix openssl@3)/bin:$PATH
+
+          meson compile -j$(sysctl -n hw.ncpu || echo 2) -C builddir
+          meson test --num-processes 1 -C builddir
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: Test logs on macOS-14 with ${{ matrix.token }}
+          path: |
+            builddir/meson-logs/*
+            builddir/tests/*.log
+            builddir/tests/tmp.${{ matrix.token }}/p11prov-debug.log
+            builddir/tests/tmp.${{ matrix.token }}/testvars
+            builddir/tests/tmp.${{ matrix.token }}/openssl.cnf
+
