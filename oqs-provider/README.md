@@ -3,19 +3,17 @@
 [![GitHub actions](https://github.com/open-quantum-safe/oqs-provider/actions/workflows/macos.yml/badge.svg)](https://github.com/open-quantum-safe/oqs-provider/actions/workflows/macos.yml)
 [![oqs-provider](https://circleci.com/gh/open-quantum-safe/oqs-provider.svg?style=svg)](https://app.circleci.com/pipelines/github/open-quantum-safe/oqs-provider)
 
-oqsprovider - Open Quantum Safe provider for OpenSSL (3.x)
-==========================================================
+# A Qompass implementation of the Open Quantum Safe provider for OpenSSL (3.x)
 
-Purpose
--------
+## Purpose
 
 This repository contains code to enable quantum-safe cryptography (QSC)
 in a standard OpenSSL (3.x) distribution by way of implementing a single
-shared library, the OQS
-[provider](https://www.openssl.org/docs/manmaster/man7/provider.html).
+shared library. All of the heavy work was done by the great folks
+of the Open-Quantum-Safe Project and NIST. We're humbled
+to stand on the shoulders of such giants.
 
-Status
-------
+## Status
 
 Currently this provider fully enables quantum-safe cryptography for KEM
 key establishment in TLS1.3 including management of such keys via the
@@ -29,12 +27,12 @@ have been resolved.
 
 The standards implemented are documented in the separate file [STANDARDS.md](STANDARDS.md).
 
-Algorithms
-----------
+## Algorithms
 
 This implementation makes available the following quantum safe algorithms:
 
 <!--- OQS_TEMPLATE_FRAGMENT_ALGS_START -->
+
 ### KEM algorithms
 
 - **BIKE**: `bikel1`, `p256_bikel1`, `x25519_bikel1`, `bikel3`, `p384_bikel3`, `x448_bikel3`, `bikel5`, `p521_bikel5`
@@ -46,12 +44,17 @@ This implementation makes available the following quantum safe algorithms:
 ### Signature algorithms
 
 - **CRYSTALS-Dilithium**:`dilithium2`\*, `p256_dilithium2`\*, `rsa3072_dilithium2`\*, `dilithium3`\*, `p384_dilithium3`\*, `dilithium5`\*, `p521_dilithium5`\*
+
 - **ML-DSA**:`mldsa44`\*, `p256_mldsa44`\*, `rsa3072_mldsa44`\*, `mldsa44_pss2048`\*, `mldsa44_rsa2048`\*, `mldsa44_ed25519`\*, `mldsa44_p256`\*, `mldsa44_bp256`\*, `mldsa65`\*, `p384_mldsa65`\*, `mldsa65_pss3072`\*, `mldsa65_rsa3072`\*, `mldsa65_p256`\*, `mldsa65_bp256`\*, `mldsa65_ed25519`\*, `mldsa87`\*, `p521_mldsa87`\*, `mldsa87_p384`\*, `mldsa87_bp384`\*, `mldsa87_ed448`\*
+
 - **Falcon**:`falcon512`\*, `p256_falcon512`\*, `rsa3072_falcon512`\*, `falconpadded512`\*, `p256_falconpadded512`\*, `rsa3072_falconpadded512`\*, `falcon1024`\*, `p521_falcon1024`\*, `falconpadded1024`\*, `p521_falconpadded1024`\*
 
 - **SPHINCS-SHA2**:`sphincssha2128fsimple`\*, `p256_sphincssha2128fsimple`\*, `rsa3072_sphincssha2128fsimple`\*, `sphincssha2128ssimple`\*, `p256_sphincssha2128ssimple`\*, `rsa3072_sphincssha2128ssimple`\*, `sphincssha2192fsimple`\*, `p384_sphincssha2192fsimple`\*, `sphincssha2192ssimple`\*, `p384_sphincssha2192ssimple`\*, `sphincssha2256fsimple`\*, `p521_sphincssha2256fsimple`\*, `sphincssha2256ssimple`\*, `p521_sphincssha2256ssimple`\*
+
 - **SPHINCS-SHAKE**:`sphincsshake128fsimple`\*, `p256_sphincsshake128fsimple`\*, `rsa3072_sphincsshake128fsimple`\*, `sphincsshake128ssimple`\*, `p256_sphincsshake128ssimple`\*, `rsa3072_sphincsshake128ssimple`\*, `sphincsshake192fsimple`\*, `p384_sphincsshake192fsimple`\*, `sphincsshake192ssimple`\*, `p384_sphincsshake192ssimple`\*, `sphincsshake256fsimple`\*, `p521_sphincsshake256fsimple`\*, `sphincsshake256ssimple`\*, `p521_sphincsshake256ssimple`\*
+
 - **MAYO**:`mayo1`\*, `p256_mayo1`\*, `mayo2`\*, `p256_mayo2`\*, `mayo3`\*, `p384_mayo3`\*, `mayo5`\*, `p521_mayo5`\*
+
 - **CROSS**:`CROSSrsdp128balanced`\*, `CROSSrsdp128fast`\*, `CROSSrsdp128small`\*, `CROSSrsdp192balanced`\*, `CROSSrsdp192fast`\*, `CROSSrsdp192small`\*, `CROSSrsdp256small`\*, `CROSSrsdpg128balanced`\*, `CROSSrsdpg128fast`\*, `CROSSrsdpg128small`\*, `CROSSrsdpg192balanced`\*, `CROSSrsdpg192fast`\*, `CROSSrsdpg192small`\*, `CROSSrsdpg256balanced`\*, `CROSSrsdpg256fast`\*, `CROSSrsdpg256small`\*
 
 <!--- OQS_TEMPLATE_FRAGMENT_ALGS_END -->
@@ -67,68 +70,34 @@ In addition, algorithms not denoted with "\*" above are not enabled for
 TLS operations. This designation [can be changed by modifying the
 "enabled" flags in the main algorithm configuration file](CONFIGURE.md#pre-build-configuration).
 
-In order to support parallel use of classic and quantum-safe cryptography 
+In order to support parallel use of classic and quantum-safe cryptography
 this provider also provides different hybrid algorithms, combining classic
 and quantum-safe methods.
 There are two types of combinations:
-The Hybrids are listed above with a prefix denoting a classic algorithm, e.g., for elliptic curve: "p256_".
+The Hybrids are listed above with a prefix denoting a classic algorithm, e.g., for elliptic curve: "p256\_".
 The [Composite](https://datatracker.ietf.org/doc/draft-ietf-lamps-pq-composite-sigs/) are listed above with a suffix denoting a
-classic algorithm, e.g., for elliptic curve: "_p256".
+classic algorithm, e.g., for elliptic curve: "\_p256".
 
 A full list of algorithms, their interoperability code points and OIDs as well
 as a method to dynamically adapt them, e.g., for interoperability testing are
 documented in [ALGORITHMS.md](ALGORITHMS.md).
 
-Building and testing -- Quick start
------------------------------------
+## Building and testing -- Very Quick start
 
-All component builds and testing described in detail below can be executed by
-running the scripts `scripts/fullbuild.sh` and `scripts/runtests.sh`
-respectively (tested on Linux Ubuntu and Mint as well as MacOS).
+\*\*The below scripts used with a lack of knowledge or thoughtful preparation with OpenSSL, Cryptography,
+and processor architecture have high potential of bricking your system. All building scripts
+have been established using the isolated /opt directory native to Linux/Unix systems
+with numerous checks on dependendcies that trigger the build stopping. All of this
+was done to contain and mitigate the potential of bricking your box.
+YMMV.
 
-By default, these scripts always build and test against the current OpenSSL `master` branch.
+```bash
+# in the KO/oqs-provider directory after KO
+## Used liboqs 0.11, oqs-provider 0.7.0 and openssl 3.4.0
+./gambit.sh
+```
 
-These scripts can be [configured by setting various variables](CONFIGURE.md#convenience-build-script-options). Please note that these scripts do _not_ install `oqsprovider`. This can be facilitated by running `cmake --install _build` (and following the [activation instructions](USAGE.md#activation).
-
-Building and testing
---------------------
-
-The below describes the basic build-test-install cycle using the standard
-`cmake` tooling. Platform-specific notes are available for [UNIX](NOTES-UNIX.md)
-(incl. MacOS and `cygwin`) and [Windows](NOTES-Windows.md).
-
-## Configuration options
-
-All options to configure `oqs-provider` at build- or run-time are documented
-in [CONFIGURE.md](CONFIGURE.md).
-
-## Pre-requisites
-
-To be able to build `oqsprovider`, OpenSSL 3.0 and liboqs need to be installed.
-It's not important where they are installed, just that they are. If installed
-in non-standard locations, these must be provided when running `cmake` via
-the variables "OPENSSL_ROOT_DIR" and "liboqs_DIR". See [CONFIGURE.md](CONFIGURE.md)
-for details.
-
-## Basic steps
-
-    cmake -S . -B _build && cmake --build _build && ctest --test-dir _build && cmake --install _build
-    
-Using
------
-
-Usage of `oqsprovider` is documented in the separate [USAGE.md](USAGE.md) file.
-
-Note on OpenSSL versions
-------------------------
-
-`oqsprovider` is written to ensure building on all versions of OpenSSL
-supporting the provider concept. However, OpenSSL still is in active
-development regarding features supported via the provider interface.
-Therefore some functionalities documented above are only supported
-with specific OpenSSL versions:
-
-## 3.0/3.1
+## For OpenSSL 3.0/3.1
 
 In these versions, CMS functionality implemented in providers is not
 supported: The resolution of https://github.com/openssl/openssl/issues/17717
@@ -140,7 +109,7 @@ used during TLS1.3 operations as documented in https://github.com/openssl/openss
 Also not fully supported in 3.0.2 is performance testing as per the openssl
 `speed` command as documented in #385.
 
-## 3.2 and greater
+## For OpenSSL 3.2 and greater
 
 These versions have full support for all TLS1.3 operations using PQ algorithms
 when deploying `oqsprovider`, particularly with regard to the use of signature
@@ -174,74 +143,6 @@ A problem basically related to any TLS server installation is the observed
 [limitation to 64 TLS signature algorithms](https://github.com/open-quantum-safe/oqs-provider/issues/399)
 by some TLS server implementations. Therefore, again caution is advised
 [activating more than 64 PQ signature algorithms via the pre-build configuration facility](CONFIGURE.md#pre-build-configuration).
-
-Governance & Contributions
---------------------------
-
-Project governance is documented in [GOVERNANCE.md](GOVERNANCE.md) and contribution
-policy is documented in [CONTRIBUTING.md](CONTRIBUTING.md).
-
-Discussions
------------
-
-The policy of this project is that all discussions pertaining to changes in the
-functional and non-functional aspects of `oqsprovider` shall take place in
-`github`. References to external discussion fora are discouraged to retain the
-free and open flow of thoughts unencumbered by potentially differing or changing
-access or data retention policies by `github`-external chat forums.
-
-Team
-----
-
-Contributors to the `oqsprovider` include:
-
-- Michael Baentsch (initial author and maintainer; responsible for all code except as listed per specific contributions below)
-- Christian Paquin (original OpenSSL111 OQS integrator)
-- Richard Levitte (OpenSSL provider wizard and initial `cmake` setup)
-- Basil Hess (hybrid KEM integration & pqcrystals/mayo OID management)
-- Julian Segeth (some memory management improvements)
-- Alex Zaslavsky (improvements on OpenSSL integration)
-- Will Childs-Klein (improvements on Kyber hybrid OIDs)
-- Thomas Bailleux (many build, CI and usage improvements for different platforms)
-- Felipe Ventura (composite sig integration and OID management)
-- Iyán Méndez Veiga (PKCS#12 testing)
-- Alessandro Barenghi (CROSS OIDs)
-
-History
--------
-
-Documentation on current and past releases ("code history") is documented in
-the separate file [RELEASE.md](RELEASE.md).
-
-Acknowledgments
----------------
-
-`oqsprovider` came into existence as a branch of [oqs-openssl](https://github.com/open-quantum-safe/openssl)
-as part of the OQS project initially led by Douglas Stebila and Michele
-Mosca at the University of Waterloo but split off to become a separate
-project catering to the [OpenSSL provider](https://www.openssl.org/docs/manmaster/man7/provider.html)
-concept. With OQS joining [PQCA](https://pqca.org) `oqsprovider` also
-was folded into that organization.
-
-The `oqsprovider` project had been supported through the [NGI Assure Fund](https://nlnet.nl/assure),
-a fund established by [NLnet](https://nlnet.nl) with financial
-support from the European Commission's [Next Generation Internet programme](https://www.ngi.eu),
-under the aegis of DG Communications Networks, Content and Technology
-under grant agreement No 957073.
-
-Financial support for the development of Open Quantum Safe had been provided
-by Amazon Web Services and the Tutte Institute for Mathematics and Computing.
-
-The OQS project would like to make a special acknowledgement to the companies who
-had dedicated programmer time to contribute source code to OQS, including
-Amazon Web Services, evolutionQ, Microsoft Research, Cisco Systems, and IBM Research.
-
-Research projects which developed specific components of OQS have been
-supported by various research grants, including funding from the Natural
-Sciences and Engineering Research Council of Canada (NSERC); see
-[here](https://openquantumsafe.org/papers/SAC-SteMos16.pdf) and
-[here](https://openquantumsafe.org/papers/NISTPQC-CroPaqSte19.pdf)
-for funding acknowledgments.
 
 # Disclaimers
 
