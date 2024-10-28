@@ -4,15 +4,12 @@
 # Enable strict error handling
 set -euo pipefail
 
-# Set liboqs and OpenSSL installation directory
 LIBOQS_INSTALL_DIR="/opt/liboqs"
 OPENSSL_INSTALL_DIR="/opt/qompassl"
 
-# Set compiler to Clang
 export CC=/usr/bin/clang
 export CXX=/usr/bin/clang++
 
-# Use LLVM linker
 export CMAKE_EXE_LINKER_FLAGS="-fuse-ld=lld"
 export CMAKE_SHARED_LINKER_FLAGS="-fuse-ld=lld"
 
@@ -44,10 +41,8 @@ cmake -GNinja \
     -DCMAKE_C_FLAGS="-I${LIBOQS_INSTALL_DIR}/include/oqs" \
     -Wno-dev ..
 
-# Build oqs-provider using Ninja
 sudo ninja
 
-# Step 2: Install oqs-provider
 sudo ninja install
 
 # Step 3: Verify the installation
