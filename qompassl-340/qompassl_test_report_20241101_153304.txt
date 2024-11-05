@@ -1,0 +1,2 @@
+"make" depend && "make" _tests
+make[1]: Entering directory '/home/phaedrus/Forge/GH/Qompass/KO/qompassl-340'
