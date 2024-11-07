@@ -1,6 +1,5 @@
-#!/bin/bash
-# Use: sudo -E ./scripts/optbuild2.sh
-# Script to build and install liboqs for OQS-Provider compatibility
+#!/usr/bin/bash
+# Use: sudo -E ./scripts/optbuild3.sh
 
 set -euo pipefail
 
@@ -12,7 +11,7 @@ BUILD_DIR="${LIBOQS_DIR}/build"
 mkdir -p "${BUILD_DIR}"
 
 # Run cmake to configure the build
-cmake -GNinja \
+sudo cmake -GNinja \
     -DBUILD_SHARED_LIBS=ON \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX="/opt/liboqs" \
@@ -45,23 +44,32 @@ sudo ninja -C "${BUILD_DIR}" gen_docs || {
 
 # Install documentation to /opt/liboqs/docs
 printf "Installing documentation to /opt/liboqs/docs...\n"
-if [[ -d "${BUILD_DIR}/docs" ]]; then
+if [[ -d "${LIBOQS_DIR}/docs" ]]; then
     sudo mkdir -p /opt/liboqs/docs
-    sudo cp -r "${BUILD_DIR}/docs"/* /opt/liboqs/docs/ || {
+    sudo cp -r "${LIBOQS_DIR}/docs"/* /opt/liboqs/docs/ || {
         printf "Documentation installation failed.\n"
     }
 else
     printf "Documentation directory not found. Skipping documentation installation.\n"
 fi
 
-# Run tests and capture results
+# Install algorithms documentation to /opt/liboqs/docs/algorithms
+printf "Installing algorithms documentation to /opt/liboqs/docs/algorithms...\n"
+if [[ -d "${LIBOQS_DIR}/docs/algorithms" ]]; then
+    sudo mkdir -p /opt/liboqs/docs/algorithms
+    sudo cp -r "${LIBOQS_DIR}/docs/algorithms"/* /opt/liboqs/docs/algorithms/ || {
+        printf "Algorithms documentation installation failed.\n"
+    }
+else
+    printf "Algorithms documentation directory not found. Skipping algorithms documentation installation.\n"
+fi
+
 TEST_REPORT_FILE="${BUILD_DIR}/test_report_$(date +'%Y%m%d_%H%M%S').txt"
 printf "Running tests and capturing results to %s...\n" "${TEST_REPORT_FILE}"
 sudo ninja -C "${BUILD_DIR}" run_tests | tee "${TEST_REPORT_FILE}" || {
     printf "Some tests failed. Test report saved to %s\n" "${TEST_REPORT_FILE}"
 }
 
-# Install the library to /opt/liboqs
 if [[ -d "${BUILD_DIR}" ]]; then
     printf "Installing liboqs to /opt/liboqs...\n"
     sudo ninja -C "${BUILD_DIR}" install || {
@@ -71,12 +79,10 @@ else
     printf "Build directory not found, skipping installation.\n"
 fi
 
-# Create a configuration file for /opt/liboqs
 printf "Creating ld.so configuration for liboqs...\n"
 echo "/opt/liboqs/lib" | sudo tee /etc/ld.so.conf.d/liboqs.conf
 sudo ldconfig
 
-# Create environment wrapper script
 WRAPPER_SCRIPT="/opt/liboqs/liboqs_env.sh"
 cat <<EOF | sudo tee "${WRAPPER_SCRIPT}" || true
 #!/bin/bash
@@ -86,7 +92,6 @@ export PATH="/opt/liboqs/bin:\$PATH"
 EOF
 sudo chmod +x "${WRAPPER_SCRIPT}"
 
-# Summary message
 cat <<EOF
 
 To use Qompass liboqs, you may want to source the environment variables for your current shell session:

@@ -110,28 +110,30 @@ static OQS_GROUP_CONSTANTS oqs_group_list[] = {
 };
 
 // Adds entries for tlsname, `ecx`_tlsname and `ecp`_tlsname
-#define OQS_GROUP_ENTRY(tlsname, realname, algorithm, idx)             \
-    {OSSL_PARAM_utf8_string(OSSL_CAPABILITY_TLS_GROUP_NAME, #tlsname,  \
-                            sizeof(#tlsname)),                         \
-     OSSL_PARAM_utf8_string(OSSL_CAPABILITY_TLS_GROUP_NAME_INTERNAL,   \
-                            #realname, sizeof(#realname)),             \
-     OSSL_PARAM_utf8_string(OSSL_CAPABILITY_TLS_GROUP_ALG, #algorithm, \
-                            sizeof(#algorithm)),                       \
-     OSSL_PARAM_uint(OSSL_CAPABILITY_TLS_GROUP_ID,                     \
-                     (unsigned int *)&oqs_group_list[idx].group_id),   \
-     OSSL_PARAM_uint(OSSL_CAPABILITY_TLS_GROUP_SECURITY_BITS,          \
-                     (unsigned int *)&oqs_group_list[idx].secbits),    \
-     OSSL_PARAM_int(OSSL_CAPABILITY_TLS_GROUP_MIN_TLS,                 \
-                    (unsigned int *)&oqs_group_list[idx].mintls),      \
-     OSSL_PARAM_int(OSSL_CAPABILITY_TLS_GROUP_MAX_TLS,                 \
-                    (unsigned int *)&oqs_group_list[idx].maxtls),      \
-     OSSL_PARAM_int(OSSL_CAPABILITY_TLS_GROUP_MIN_DTLS,                \
-                    (unsigned int *)&oqs_group_list[idx].mindtls),     \
-     OSSL_PARAM_int(OSSL_CAPABILITY_TLS_GROUP_MAX_DTLS,                \
-                    (unsigned int *)&oqs_group_list[idx].maxdtls),     \
-     OSSL_PARAM_int(OSSL_CAPABILITY_TLS_GROUP_IS_KEM,                  \
-                    (unsigned int *)&oqs_group_list[idx].is_kem),      \
-     OSSL_PARAM_END}
+#define OQS_GROUP_ENTRY(tlsname, realname, algorithm, idx)                     \
+    {                                                                          \
+        OSSL_PARAM_utf8_string(OSSL_CAPABILITY_TLS_GROUP_NAME, #tlsname,       \
+                               sizeof(#tlsname)),                              \
+            OSSL_PARAM_utf8_string(OSSL_CAPABILITY_TLS_GROUP_NAME_INTERNAL,    \
+                                   #realname, sizeof(#realname)),              \
+            OSSL_PARAM_utf8_string(OSSL_CAPABILITY_TLS_GROUP_ALG, #algorithm,  \
+                                   sizeof(#algorithm)),                        \
+            OSSL_PARAM_uint(OSSL_CAPABILITY_TLS_GROUP_ID,                      \
+                            (unsigned int *)&oqs_group_list[idx].group_id),    \
+            OSSL_PARAM_uint(OSSL_CAPABILITY_TLS_GROUP_SECURITY_BITS,           \
+                            (unsigned int *)&oqs_group_list[idx].secbits),     \
+            OSSL_PARAM_int(OSSL_CAPABILITY_TLS_GROUP_MIN_TLS,                  \
+                           (unsigned int *)&oqs_group_list[idx].mintls),       \
+            OSSL_PARAM_int(OSSL_CAPABILITY_TLS_GROUP_MAX_TLS,                  \
+                           (unsigned int *)&oqs_group_list[idx].maxtls),       \
+            OSSL_PARAM_int(OSSL_CAPABILITY_TLS_GROUP_MIN_DTLS,                 \
+                           (unsigned int *)&oqs_group_list[idx].mindtls),      \
+            OSSL_PARAM_int(OSSL_CAPABILITY_TLS_GROUP_MAX_DTLS,                 \
+                           (unsigned int *)&oqs_group_list[idx].maxdtls),      \
+            OSSL_PARAM_int(OSSL_CAPABILITY_TLS_GROUP_IS_KEM,                   \
+                           (unsigned int *)&oqs_group_list[idx].is_kem),       \
+            OSSL_PARAM_END                                                     \
+    }
 
 static const OSSL_PARAM oqs_param_group_list[][11] = {
 ///// OQS_TEMPLATE_FRAGMENT_GROUP_NAMES_START
@@ -348,8 +350,7 @@ static OQS_SIGALG_CONSTANTS oqs_sigalg_list[] = {
 ///// OQS_TEMPLATE_FRAGMENT_SIGALG_ASSIGNMENTS_END
 };
 
-int oqs_patch_codepoints()
-{
+int oqs_patch_codepoints() {
     ///// OQS_TEMPLATE_FRAGMENT_CODEPOINT_PATCHING_START
    if (getenv("OQS_CODEPOINT_FRODO640AES")) oqs_group_list[0].group_id = atoi(getenv("OQS_CODEPOINT_FRODO640AES"));
    if (getenv("OQS_CODEPOINT_P256_FRODO640AES")) oqs_group_list[1].group_id = atoi(getenv("OQS_CODEPOINT_P256_FRODO640AES"));
@@ -498,8 +499,7 @@ int oqs_patch_codepoints()
     return 1;
 }
 
-static int oqs_group_capability(OSSL_CALLBACK *cb, void *arg)
-{
+static int oqs_group_capability(OSSL_CALLBACK *cb, void *arg) {
     size_t i;
 
     for (i = 0; i < OSSL_NELEM(oqs_param_group_list); i++) {
@@ -511,22 +511,24 @@ static int oqs_group_capability(OSSL_CALLBACK *cb, void *arg)
 }
 
 #ifdef OSSL_CAPABILITY_TLS_SIGALG_NAME
-#    define OQS_SIGALG_ENTRY(tlsname, realname, algorithm, oid, idx)        \
-        {OSSL_PARAM_utf8_string(OSSL_CAPABILITY_TLS_SIGALG_IANA_NAME,       \
-                                #tlsname, sizeof(#tlsname)),                \
-         OSSL_PARAM_utf8_string(OSSL_CAPABILITY_TLS_SIGALG_NAME, #tlsname,  \
-                                sizeof(#tlsname)),                          \
-         OSSL_PARAM_utf8_string(OSSL_CAPABILITY_TLS_SIGALG_OID, #oid,       \
-                                sizeof(#oid)),                              \
-         OSSL_PARAM_uint(OSSL_CAPABILITY_TLS_SIGALG_CODE_POINT,             \
-                         (unsigned int *)&oqs_sigalg_list[idx].code_point), \
-         OSSL_PARAM_uint(OSSL_CAPABILITY_TLS_SIGALG_SECURITY_BITS,          \
-                         (unsigned int *)&oqs_sigalg_list[idx].secbits),    \
-         OSSL_PARAM_int(OSSL_CAPABILITY_TLS_SIGALG_MIN_TLS,                 \
-                        (unsigned int *)&oqs_sigalg_list[idx].mintls),      \
-         OSSL_PARAM_int(OSSL_CAPABILITY_TLS_SIGALG_MAX_TLS,                 \
-                        (unsigned int *)&oqs_sigalg_list[idx].maxtls),      \
-         OSSL_PARAM_END}
+#define OQS_SIGALG_ENTRY(tlsname, realname, algorithm, oid, idx)               \
+    {                                                                          \
+        OSSL_PARAM_utf8_string(OSSL_CAPABILITY_TLS_SIGALG_IANA_NAME, #tlsname, \
+                               sizeof(#tlsname)),                              \
+            OSSL_PARAM_utf8_string(OSSL_CAPABILITY_TLS_SIGALG_NAME, #tlsname,  \
+                                   sizeof(#tlsname)),                          \
+            OSSL_PARAM_utf8_string(OSSL_CAPABILITY_TLS_SIGALG_OID, #oid,       \
+                                   sizeof(#oid)),                              \
+            OSSL_PARAM_uint(OSSL_CAPABILITY_TLS_SIGALG_CODE_POINT,             \
+                            (unsigned int *)&oqs_sigalg_list[idx].code_point), \
+            OSSL_PARAM_uint(OSSL_CAPABILITY_TLS_SIGALG_SECURITY_BITS,          \
+                            (unsigned int *)&oqs_sigalg_list[idx].secbits),    \
+            OSSL_PARAM_int(OSSL_CAPABILITY_TLS_SIGALG_MIN_TLS,                 \
+                           (unsigned int *)&oqs_sigalg_list[idx].mintls),      \
+            OSSL_PARAM_int(OSSL_CAPABILITY_TLS_SIGALG_MAX_TLS,                 \
+                           (unsigned int *)&oqs_sigalg_list[idx].maxtls),      \
+            OSSL_PARAM_END                                                     \
+    }
 
 static const OSSL_PARAM oqs_param_sigalg_list[][12] = {
 ///// OQS_TEMPLATE_FRAGMENT_SIGALG_NAMES_START
@@ -706,8 +708,7 @@ static const OSSL_PARAM oqs_param_sigalg_list[][12] = {
 ///// OQS_TEMPLATE_FRAGMENT_SIGALG_NAMES_END
 };
 
-static int oqs_sigalg_capability(OSSL_CALLBACK *cb, void *arg)
-{
+static int oqs_sigalg_capability(OSSL_CALLBACK *cb, void *arg) {
     size_t i;
 
     // relaxed assertion for the case that not all algorithms are enabled in
@@ -723,8 +724,7 @@ static int oqs_sigalg_capability(OSSL_CALLBACK *cb, void *arg)
 #endif /* OSSL_CAPABILITY_TLS_SIGALG_NAME */
 
 int oqs_provider_get_capabilities(void *provctx, const char *capability,
-                                  OSSL_CALLBACK *cb, void *arg)
-{
+                                  OSSL_CALLBACK *cb, void *arg) {
     if (strcasecmp(capability, "TLS-GROUP") == 0)
         return oqs_group_capability(cb, arg);
 
@@ -732,13 +732,13 @@ int oqs_provider_get_capabilities(void *provctx, const char *capability,
     if (strcasecmp(capability, "TLS-SIGALG") == 0)
         return oqs_sigalg_capability(cb, arg);
 #else
-#    ifndef NDEBUG
+#ifndef NDEBUG
     fprintf(stderr, "Warning: OSSL_CAPABILITY_TLS_SIGALG_NAME not defined: "
                     "OpenSSL version used that does not support pluggable "
                     "signature capabilities.\nUpgrading OpenSSL installation "
                     "recommended to enable QSC TLS signature support.\n\n");
-#    endif /* NDEBUG */
-#endif     /* OSSL_CAPABILITY_TLS_SIGALG_NAME */
+#endif /* NDEBUG */
+#endif /* OSSL_CAPABILITY_TLS_SIGALG_NAME */
 
     /* We don't support this capability */
     return 0;

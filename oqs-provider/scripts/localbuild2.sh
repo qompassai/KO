@@ -1,38 +1,40 @@
 #!/bin/bash
-# Use: sudo -E ./scripts/oqsprep.sh
+# Use: ./scripts/oqs_localbuild.sh
+# Script to build OQS provider locally for development purposes
+
 set -euo pipefail
-if command -v pass >/dev/null 2>&1; then
-    if pass show liboqs/source >/dev/null 2>&1; then
-        QLIBOQS=$(pass show liboqs/source)
-        printf "Using QLIBOQS environment variable from pass: %s\n" "${QLIBOQS}"
-    else
-        printf "Error: QLIBOQS path not found in pass. Please add it using:\n"
-        printf "pass insert liboqs/source\n"
-        exit 1
-    fi
-else
-    printf "Error: pass is not installed or not in PATH. Aborting.\n"
+
+# Ensure required commands are available
+command -v cmake >/dev/null 2>&1 || {
+    printf "CMake is required but not installed. Aborting.\n"
     exit 1
-fi
-: "${QLIBOQS:?QLIBOQS environment variable is not set}"
-LIBOQS_SRC_DIR="${QLIBOQS}"
-SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
-PROVIDER_DIR="${SCRIPT_DIR}/.."
-TEMPLATE_DIR="${PROVIDER_DIR}/oqs-template"
-OPENSSL_INSTALL_DIR="/opt/qompassl"
-LIBOQS_INSTALL_DIR="/opt/liboqs"
-export CPATH="${CPATH:-}/opt/liboqs/include"
-export LD_LIBRARY_PATH="${LD_LIBRARY_PATH:-}/opt/liboqs/lib"
-LOG_DIR="${PROVIDER_DIR}/reports"
-mkdir -p "${LOG_DIR}"
+}
 command -v python3 >/dev/null 2>&1 || {
-    printf >&2 "Python 3 is required but not installed. Aborting.\n"
+    printf "Python 3 is required but not installed. Aborting.\n"
     exit 1
 }
 command -v sed >/dev/null 2>&1 || {
-    printf >&2 "sed is required but not installed. Aborting.\n"
+    printf "sed is required but not installed. Aborting.\n"
     exit 1
 }
+
+# Directories and configuration
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROVIDER_DIR="${SCRIPT_DIR}/.."
+TEMPLATE_DIR="${PROVIDER_DIR}/oqs-template"
+BUILD_DIR="${PROVIDER_DIR}/build"
+LIBOQS_INSTALL_DIR="/usr/local"
+OPENSSL_INSTALL_DIR="/opt/qompassl"
+LOG_DIR="${PROVIDER_DIR}/reports"
+C_COMPILER="/usr/bin/clang"
+CXX_COMPILER="/usr/bin/clang++"
+C_FLAGS="-std=gnu11 -Wno-error=incompatible-pointer-types -Wno-error=unknown-pragmas -Wno-error=sign-conversion"
+
+# Create directories
+mkdir -p "${LOG_DIR}"
+mkdir -p "${BUILD_DIR}"
+
+# Update generate.yml to enable all algorithms
 cd "${TEMPLATE_DIR}" || {
     printf "Directory %s not found. Aborting.\n" "${TEMPLATE_DIR}"
     exit 1
@@ -40,31 +42,35 @@ cd "${TEMPLATE_DIR}" || {
 cp generate.yml generate.yml.bak
 printf "Updating generate.yml to enable all algorithms.\n"
 sed -i -e 's/enable: false/enable: true/g' generate.yml
+
+# Run generatehelpers.py if available
 if [[ -f "${TEMPLATE_DIR}/generatehelpers.py" ]]; then
     printf "Running generatehelpers.py.\n"
-    python3 "${TEMPLATE_DIR}/generatehelpers.py"
+    python3 -E"${TEMPLATE_DIR}/generatehelpers.py"
 else
     printf "generatehelpers.py not found. Skipping.\n"
 fi
+
+# Run generate.py to generate code for oqs provider
 cd "${PROVIDER_DIR}" || {
     printf "Failed to change directory to %s. Aborting.\n" "${PROVIDER_DIR}"
     exit 1
 }
-if [[ -d "${LIBOQS_SRC_DIR}" ]]; then
-    printf "Running generate.py with LIBOQS_SRC_DIR set to %s.\n" "${LIBOQS_SRC_DIR}"
-    LIBOQS_SRC_DIR="${LIBOQS_SRC_DIR}" python3 oqs-template/generate.py
+if [[ -d "${LIBOQS_INSTALL_DIR}" ]]; then
+    printf "Running generate.py with LIBOQS_SRC_DIR set to %s.\n" "${LIBOQS_INSTALL_DIR}"
+    LIBOQS_SRC_DIR="${LIBOQS_INSTALL_DIR}" python3 oqs-template/generate.py
 else
-    printf "LIBOQS source directory %s not found. Aborting.\n" "${LIBOQS_SRC_DIR}"
+    printf "LIBOQS source directory %s not found. Aborting.\n" "${LIBOQS_INSTALL_DIR}"
     exit 1
 fi
+
+# Generate the OID and NID table
 printf "Running generate_oid_nid_table.py to generate the OID and NID table.\n"
-python3 oqs-template/generate_oid_nid_table.py --liboqs-docs-dir "${LIBOQS_SRC_DIR}/docs"
-C_COMPILER="/usr/bin/clang" # 18.1.8
-CXX_COMPILER="/usr/bin/clang++"
-C_FLAGS="-std=gnu11 -Wno-error=incompatible-pointer-types -Wno-error=unknown-pragmas"
-sudo rm -rf build
-mkdir -p build
-cmake -B build -S "${PROVIDER_DIR}" \
+python3 -E oqs-template/generate_oid_nid_table.py --liboqs-docs-dir "${LIBOQS_INSTALL_DIR}/share/liboqs/docs"
+
+# Configure the build with CMake
+printf "Configuring the OQS provider build with CMake.\n"
+sudo cmake -B "${BUILD_DIR}" -S "${PROVIDER_DIR}" \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX="${OPENSSL_INSTALL_DIR}" \
     -DCMAKE_C_COMPILER="${C_COMPILER}" \
@@ -75,30 +81,40 @@ cmake -B build -S "${PROVIDER_DIR}" \
     -DBUILD_TESTING=ON \
     -DOPENSSL_LIBRARIES="${OPENSSL_INSTALL_DIR}/lib64/libssl.so;${OPENSSL_INSTALL_DIR}/lib64/libcrypto.so" \
     -Wno-dev
-sudo cmake --build build || {
+
+# Build the project
+printf "Building the OQS provider.\n"
+sudo cmake --build "${BUILD_DIR}" || {
     printf "Build failed. Aborting installation.\n"
     exit 1
 }
+
+# Run tests to validate the build
 printf "Running tests to validate the build before installation.\n"
 LOG_FILE="${LOG_DIR}/qbuild_test_results_$(date +'%Y-%m-%d_%H-%M-%S').txt"
 MD_FILE="${LOG_DIR}/qbuild_test_results_$(date +'%Y-%m-%d_%H-%M-%S').md"
 PDF_FILE="${LOG_DIR}/qbuild_test_results_$(date +'%Y-%m-%d_%H-%M-%S').pdf"
 export OPENSSL_MODULES="${OPENSSL_INSTALL_DIR}/lib64/ossl-modules"
-export LD_LIBRARY_PATH="${OPENSSL_INSTALL_DIR}/lib64:${LD_LIBRARY_PATH}"
-pushd build || {
+export LD_LIBRARY_PATH="${OPENSSL_INSTALL_DIR}/lib64:${LD_LIBRARY_PATH:-}"
+
+pushd "${BUILD_DIR}" || {
     printf "Failed to enter build directory. Aborting.\n"
     exit 1
 }
 ctest --output-on-failure --verbose | tee "${LOG_FILE}"
 popd
+
+# Check test results
 if grep -q "No tests were found!!!" "${LOG_FILE}" || grep -q "errors detected" "${LOG_FILE}"; then
     printf "Tests failed. Aborting installation.\n"
     exit 1
 else
     printf "Tests completed successfully. Proceeding to installation.\n"
-    sudo cmake --install build
+    cmake --install "${BUILD_DIR}"
 fi
-sed -i -e 's/[^[:print:]	]//g' -e 's/\x1b\[[0-9;]*m//g' -e 's/\s\{1,\}\([0-9]\+:\)/\n\1/g' "${LOG_FILE}"
+
+# Generate test result markdown and PDF
+sed -i -e 's/[^[:print:]\t]//g' -e 's/\x1b\[[0-9;]*m//g' -e 's/\s\{1,\}\([0-9]\+:\)/\n\1/g' "${LOG_FILE}"
 printf "# OQS-Provider Test Results\n\n" >"${MD_FILE}"
 cat "${LOG_FILE}" >>"${MD_FILE}"
 if command -v pandoc >/dev/null 2>&1; then
@@ -111,6 +127,8 @@ if command -v pandoc >/dev/null 2>&1; then
 else
     printf "Pandoc not found. Skipping PDF generation.\n"
 fi
+
+# Generate OpenSSL available algorithms list
 ALGORITHMS_TXT="${LOG_DIR}/openssl_algorithms_$(date +'%Y-%m-%d_%H-%M-%S').txt"
 ALGORITHMS_MD="${LOG_DIR}/openssl_algorithms_$(date +'%Y-%m-%d_%H-%M-%S').md"
 ALGORITHMS_PDF="${LOG_DIR}/openssl_algorithms_$(date +'%Y-%m-%d_%H-%M-%S').pdf"
@@ -130,6 +148,8 @@ if command -v pandoc >/dev/null 2>&1; then
 else
     printf "Pandoc not found. Skipping PDF generation for algorithm list.\n"
 fi
+
+# Summary of results
 printf "Build and test completed successfully.\n"
 printf "OQS-Provider Test results have been saved to:\n"
 printf -- "- Log File: %s\n" "${LOG_FILE}"
@@ -143,3 +163,4 @@ printf -- "- Markdown File: %s\n" "${ALGORITHMS_MD}"
 if [[ -f "${ALGORITHMS_PDF}" ]]; then
     printf -- "- PDF File: %s\n" "${ALGORITHMS_PDF}"
 fi
+
