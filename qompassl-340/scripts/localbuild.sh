@@ -26,9 +26,6 @@ export OPENSSL_TEST_EXTERNAL="1"
 	enable-capieng \
 	enable-ec_nistp_64_gcc_128 \
 	enable-dh \
-	enable-gmp \
-	enable-krb5 \
-	enable-jpake \
 	enable-psk \
 	enable-dsa \
 	enable-ecdsa \
@@ -39,7 +36,6 @@ export OPENSSL_TEST_EXTERNAL="1"
 	no-ssl3 \
 	enable-dtls \
 	enable-hw \
-	enable-thread \
 	enable-err \
 	enable-tls1_3 \
 	enable-quic \
