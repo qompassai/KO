@@ -14,13 +14,12 @@ LIBOQS_INSTALL_DIR="/opt/liboqs"
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 BUILD_DIR="${SCRIPT_DIR}/../build"
 export OPENSSL_TEST_EXTERNAL="1"
-"$(dirname "$0")/../Configure" shared \
+"$(dirname "$0")/../Configure" linux-x86_64 shared \
     --prefix=/opt/qompassl \
     --openssldir=/opt/qompassl/ssl \
     -DWITH_JITTERENTROPY=1 \
     enable-external-tests \
     enable-md2 \
-    linux-x86_64 \
     enable-sctp \
     enable-engine \
     enable-dynamic-engine \
