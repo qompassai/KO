@@ -1,0 +1,299 @@
+UpdateCTestConfiguration  from :/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/DartConfiguration.tcl
+Parse Config file:/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/DartConfiguration.tcl
+Parse Config file:/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/DartConfiguration.tcl
+Test project /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+    Start 1: oqs_signatures
+
+1: Test command: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/oqs_test_signatures "oqsprovider" "/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/oqs.cnf"
+1: Working Directory: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test
+1: Environment variables: 
+1:  OPENSSL_MODULES=/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/lib
+1: Test timeout computed to be: 1500
+1: 
+1: ** (process:383438): WARNING **: 17:55:50.303: Failed to create connection with service: GDBus.Error:org.freedesktop.DBus.Error.AccessDenied: Sender is not authorized to send message
+1: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-tabrmd.so.0 
+1: ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tpmrm0: Permission denied 
+1: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+1: ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tpm0: Permission denied 
+1: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+1: ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tcm0: No such file or directory 
+1: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+1: WARNING:tcti:src/util-io/io.c:262:socket_connect() Failed to connect to host 127.0.0.1, port 2321: errno 111: Connection refused 
+1: ERROR:tcti:src/tss2-tcti/tcti-swtpm.c:617:Tss2_Tcti_Swtpm_Init() Cannot connect to swtpm TPM socket 
+1: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-swtpm.so.0 
+1: WARNING:tcti:src/util-io/io.c:262:socket_connect() Failed to connect to host 127.0.0.1, port 2321: errno 111: Connection refused 
+1: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-mssim.so.0 
+1: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:263:tctildr_get_default() No standard TCTI could be loaded 
+1: ERROR:tcti:src/tss2-tcti/tctildr.c:477:tctildr_init_context_data() Failed to instantiate TCTI 
+1: error registering NID for mldsa44
+1: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/test_common.c:55: OpenSSL internal error: OSSL_PROVIDER_available(libctx, modulename)
+1/6 Test #1: oqs_signatures ...................Subprocess aborted***Exception:   0.70 sec
+
+** (process:383438): WARNING **: 17:55:50.303: Failed to create connection with service: GDBus.Error:org.freedesktop.DBus.Error.AccessDenied: Sender is not authorized to send message
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-tabrmd.so.0 
+ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tpmrm0: Permission denied 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tpm0: Permission denied 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tcm0: No such file or directory 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+WARNING:tcti:src/util-io/io.c:262:socket_connect() Failed to connect to host 127.0.0.1, port 2321: errno 111: Connection refused 
+ERROR:tcti:src/tss2-tcti/tcti-swtpm.c:617:Tss2_Tcti_Swtpm_Init() Cannot connect to swtpm TPM socket 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-swtpm.so.0 
+WARNING:tcti:src/util-io/io.c:262:socket_connect() Failed to connect to host 127.0.0.1, port 2321: errno 111: Connection refused 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-mssim.so.0 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:263:tctildr_get_default() No standard TCTI could be loaded 
+ERROR:tcti:src/tss2-tcti/tctildr.c:477:tctildr_init_context_data() Failed to instantiate TCTI 
+error registering NID for mldsa44
+/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/test_common.c:55: OpenSSL internal error: OSSL_PROVIDER_available(libctx, modulename)
+
+test 2
+    Start 2: oqs_kems
+
+2: Test command: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/oqs_test_kems "oqsprovider" "/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/oqs.cnf"
+2: Working Directory: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test
+2: Environment variables: 
+2:  OPENSSL_MODULES=/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/lib
+2: Test timeout computed to be: 1500
+2: 
+2: ** (process:383452): WARNING **: 17:55:51.005: Failed to create connection with service: GDBus.Error:org.freedesktop.DBus.Error.AccessDenied: Sender is not authorized to send message
+2: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-tabrmd.so.0 
+2: ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tpmrm0: Permission denied 
+2: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+2: ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tpm0: Permission denied 
+2: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+2: ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tcm0: No such file or directory 
+2: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+2: WARNING:tcti:src/util-io/io.c:262:socket_connect() Failed to connect to host 127.0.0.1, port 2321: errno 111: Connection refused 
+2: ERROR:tcti:src/tss2-tcti/tcti-swtpm.c:617:Tss2_Tcti_Swtpm_Init() Cannot connect to swtpm TPM socket 
+2: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-swtpm.so.0 
+2: WARNING:tcti:src/util-io/io.c:262:socket_connect() Failed to connect to host 127.0.0.1, port 2321: errno 111: Connection refused 
+2: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-mssim.so.0 
+2: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:263:tctildr_get_default() No standard TCTI could be loaded 
+2: ERROR:tcti:src/tss2-tcti/tctildr.c:477:tctildr_init_context_data() Failed to instantiate TCTI 
+2: error registering NID for mldsa44
+2: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/test_common.c:55: OpenSSL internal error: OSSL_PROVIDER_available(libctx, modulename)
+2/6 Test #2: oqs_kems .........................Subprocess aborted***Exception:   0.70 sec
+
+** (process:383452): WARNING **: 17:55:51.005: Failed to create connection with service: GDBus.Error:org.freedesktop.DBus.Error.AccessDenied: Sender is not authorized to send message
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-tabrmd.so.0 
+ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tpmrm0: Permission denied 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tpm0: Permission denied 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tcm0: No such file or directory 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+WARNING:tcti:src/util-io/io.c:262:socket_connect() Failed to connect to host 127.0.0.1, port 2321: errno 111: Connection refused 
+ERROR:tcti:src/tss2-tcti/tcti-swtpm.c:617:Tss2_Tcti_Swtpm_Init() Cannot connect to swtpm TPM socket 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-swtpm.so.0 
+WARNING:tcti:src/util-io/io.c:262:socket_connect() Failed to connect to host 127.0.0.1, port 2321: errno 111: Connection refused 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-mssim.so.0 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:263:tctildr_get_default() No standard TCTI could be loaded 
+ERROR:tcti:src/tss2-tcti/tctildr.c:477:tctildr_init_context_data() Failed to instantiate TCTI 
+error registering NID for mldsa44
+/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/test_common.c:55: OpenSSL internal error: OSSL_PROVIDER_available(libctx, modulename)
+
+test 3
+    Start 3: oqs_groups
+
+3: Test command: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/oqs_test_groups "oqsprovider" "/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/oqs.cnf" "/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test"
+3: Working Directory: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test
+3: Environment variables: 
+3:  OPENSSL_MODULES=/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/lib
+3: Test timeout computed to be: 1500
+3: 
+3: ** (process:383464): WARNING **: 17:55:51.696: Failed to create connection with service: GDBus.Error:org.freedesktop.DBus.Error.AccessDenied: Sender is not authorized to send message
+3: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-tabrmd.so.0 
+3: ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tpmrm0: Permission denied 
+3: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+3: ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tpm0: Permission denied 
+3: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+3: ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tcm0: No such file or directory 
+3: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+3: WARNING:tcti:src/util-io/io.c:262:socket_connect() Failed to connect to host 127.0.0.1, port 2321: errno 111: Connection refused 
+3: ERROR:tcti:src/tss2-tcti/tcti-swtpm.c:617:Tss2_Tcti_Swtpm_Init() Cannot connect to swtpm TPM socket 
+3: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-swtpm.so.0 
+3: WARNING:tcti:src/util-io/io.c:262:socket_connect() Failed to connect to host 127.0.0.1, port 2321: errno 111: Connection refused 
+3: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-mssim.so.0 
+3: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:263:tctildr_get_default() No standard TCTI could be loaded 
+3: ERROR:tcti:src/tss2-tcti/tctildr.c:477:tctildr_init_context_data() Failed to instantiate TCTI 
+3: error registering NID for mldsa44
+3: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/test_common.c:55: OpenSSL internal error: OSSL_PROVIDER_available(libctx, modulename)
+3/6 Test #3: oqs_groups .......................Subprocess aborted***Exception:   0.68 sec
+
+** (process:383464): WARNING **: 17:55:51.696: Failed to create connection with service: GDBus.Error:org.freedesktop.DBus.Error.AccessDenied: Sender is not authorized to send message
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-tabrmd.so.0 
+ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tpmrm0: Permission denied 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tpm0: Permission denied 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tcm0: No such file or directory 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+WARNING:tcti:src/util-io/io.c:262:socket_connect() Failed to connect to host 127.0.0.1, port 2321: errno 111: Connection refused 
+ERROR:tcti:src/tss2-tcti/tcti-swtpm.c:617:Tss2_Tcti_Swtpm_Init() Cannot connect to swtpm TPM socket 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-swtpm.so.0 
+WARNING:tcti:src/util-io/io.c:262:socket_connect() Failed to connect to host 127.0.0.1, port 2321: errno 111: Connection refused 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-mssim.so.0 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:263:tctildr_get_default() No standard TCTI could be loaded 
+ERROR:tcti:src/tss2-tcti/tctildr.c:477:tctildr_init_context_data() Failed to instantiate TCTI 
+error registering NID for mldsa44
+/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/test_common.c:55: OpenSSL internal error: OSSL_PROVIDER_available(libctx, modulename)
+
+test 4
+    Start 4: oqs_tlssig
+
+4: Test command: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/oqs_test_tlssig "oqsprovider" "/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/openssl-ca.cnf" "/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp"
+4: Working Directory: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build
+4: Environment variables: 
+4:  OPENSSL_MODULES=/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/lib
+4: Test timeout computed to be: 1500
+4: 
+4: ** (process:383477): WARNING **: 17:55:52.378: Failed to create connection with service: GDBus.Error:org.freedesktop.DBus.Error.AccessDenied: Sender is not authorized to send message
+4: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-tabrmd.so.0 
+4: ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tpmrm0: Permission denied 
+4: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+4: ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tpm0: Permission denied 
+4: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+4: ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tcm0: No such file or directory 
+4: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+4: WARNING:tcti:src/util-io/io.c:262:socket_connect() Failed to connect to host 127.0.0.1, port 2321: errno 111: Connection refused 
+4: ERROR:tcti:src/tss2-tcti/tcti-swtpm.c:617:Tss2_Tcti_Swtpm_Init() Cannot connect to swtpm TPM socket 
+4: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-swtpm.so.0 
+4: WARNING:tcti:src/util-io/io.c:262:socket_connect() Failed to connect to host 127.0.0.1, port 2321: errno 111: Connection refused 
+4: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-mssim.so.0 
+4: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:263:tctildr_get_default() No standard TCTI could be loaded 
+4: ERROR:tcti:src/tss2-tcti/tctildr.c:477:tctildr_init_context_data() Failed to instantiate TCTI 
+4: error registering NID for mldsa44
+4: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/test_common.c:55: OpenSSL internal error: OSSL_PROVIDER_available(libctx, modulename)
+4/6 Test #4: oqs_tlssig .......................Subprocess aborted***Exception:   0.69 sec
+
+** (process:383477): WARNING **: 17:55:52.378: Failed to create connection with service: GDBus.Error:org.freedesktop.DBus.Error.AccessDenied: Sender is not authorized to send message
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-tabrmd.so.0 
+ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tpmrm0: Permission denied 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tpm0: Permission denied 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tcm0: No such file or directory 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+WARNING:tcti:src/util-io/io.c:262:socket_connect() Failed to connect to host 127.0.0.1, port 2321: errno 111: Connection refused 
+ERROR:tcti:src/tss2-tcti/tcti-swtpm.c:617:Tss2_Tcti_Swtpm_Init() Cannot connect to swtpm TPM socket 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-swtpm.so.0 
+WARNING:tcti:src/util-io/io.c:262:socket_connect() Failed to connect to host 127.0.0.1, port 2321: errno 111: Connection refused 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-mssim.so.0 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:263:tctildr_get_default() No standard TCTI could be loaded 
+ERROR:tcti:src/tss2-tcti/tctildr.c:477:tctildr_init_context_data() Failed to instantiate TCTI 
+error registering NID for mldsa44
+/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/test_common.c:55: OpenSSL internal error: OSSL_PROVIDER_available(libctx, modulename)
+
+test 5
+    Start 5: oqs_endecode
+
+5: Test command: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/oqs_test_endecode "oqsprovider" "/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/openssl-ca.cnf"
+5: Working Directory: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test
+5: Environment variables: 
+5:  OPENSSL_MODULES=/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/lib
+5: Test timeout computed to be: 1500
+5: 
+5: ** (process:383491): WARNING **: 17:55:53.084: Failed to create connection with service: GDBus.Error:org.freedesktop.DBus.Error.AccessDenied: Sender is not authorized to send message
+5: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-tabrmd.so.0 
+5: ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tpmrm0: Permission denied 
+5: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+5: ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tpm0: Permission denied 
+5: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+5: ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tcm0: No such file or directory 
+5: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+5: WARNING:tcti:src/util-io/io.c:262:socket_connect() Failed to connect to host 127.0.0.1, port 2321: errno 111: Connection refused 
+5: ERROR:tcti:src/tss2-tcti/tcti-swtpm.c:617:Tss2_Tcti_Swtpm_Init() Cannot connect to swtpm TPM socket 
+5: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-swtpm.so.0 
+5: WARNING:tcti:src/util-io/io.c:262:socket_connect() Failed to connect to host 127.0.0.1, port 2321: errno 111: Connection refused 
+5: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-mssim.so.0 
+5: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:263:tctildr_get_default() No standard TCTI could be loaded 
+5: ERROR:tcti:src/tss2-tcti/tctildr.c:477:tctildr_init_context_data() Failed to instantiate TCTI 
+5: error registering NID for mldsa44
+5: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/test_common.c:55: OpenSSL internal error: OSSL_PROVIDER_available(libctx, modulename)
+5/6 Test #5: oqs_endecode .....................Subprocess aborted***Exception:   0.71 sec
+
+** (process:383491): WARNING **: 17:55:53.084: Failed to create connection with service: GDBus.Error:org.freedesktop.DBus.Error.AccessDenied: Sender is not authorized to send message
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-tabrmd.so.0 
+ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tpmrm0: Permission denied 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tpm0: Permission denied 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tcm0: No such file or directory 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+WARNING:tcti:src/util-io/io.c:262:socket_connect() Failed to connect to host 127.0.0.1, port 2321: errno 111: Connection refused 
+ERROR:tcti:src/tss2-tcti/tcti-swtpm.c:617:Tss2_Tcti_Swtpm_Init() Cannot connect to swtpm TPM socket 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-swtpm.so.0 
+WARNING:tcti:src/util-io/io.c:262:socket_connect() Failed to connect to host 127.0.0.1, port 2321: errno 111: Connection refused 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-mssim.so.0 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:263:tctildr_get_default() No standard TCTI could be loaded 
+ERROR:tcti:src/tss2-tcti/tctildr.c:477:tctildr_init_context_data() Failed to instantiate TCTI 
+error registering NID for mldsa44
+/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/test_common.c:55: OpenSSL internal error: OSSL_PROVIDER_available(libctx, modulename)
+
+test 6
+    Start 6: oqs_evp_pkey_params
+
+6: Test command: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/oqs_test_evp_pkey_params "oqsprovider" "/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/openssl-ca.cnf"
+6: Working Directory: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test
+6: Environment variables: 
+6:  OPENSSL_MODULES=/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/lib
+6: Test timeout computed to be: 1500
+6: 
+6: ** (process:383504): WARNING **: 17:55:53.788: Failed to create connection with service: GDBus.Error:org.freedesktop.DBus.Error.AccessDenied: Sender is not authorized to send message
+6: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-tabrmd.so.0 
+6: ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tpmrm0: Permission denied 
+6: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+6: ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tpm0: Permission denied 
+6: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+6: ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tcm0: No such file or directory 
+6: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+6: WARNING:tcti:src/util-io/io.c:262:socket_connect() Failed to connect to host 127.0.0.1, port 2321: errno 111: Connection refused 
+6: ERROR:tcti:src/tss2-tcti/tcti-swtpm.c:617:Tss2_Tcti_Swtpm_Init() Cannot connect to swtpm TPM socket 
+6: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-swtpm.so.0 
+6: WARNING:tcti:src/util-io/io.c:262:socket_connect() Failed to connect to host 127.0.0.1, port 2321: errno 111: Connection refused 
+6: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-mssim.so.0 
+6: ERROR:tcti:src/tss2-tcti/tctildr-dl.c:263:tctildr_get_default() No standard TCTI could be loaded 
+6: ERROR:tcti:src/tss2-tcti/tctildr.c:477:tctildr_init_context_data() Failed to instantiate TCTI 
+6: error registering NID for mldsa44
+6: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/test_common.c:55: OpenSSL internal error: OSSL_PROVIDER_available(libctx, modulename)
+6/6 Test #6: oqs_evp_pkey_params ..............Subprocess aborted***Exception:   0.70 sec
+
+** (process:383504): WARNING **: 17:55:53.788: Failed to create connection with service: GDBus.Error:org.freedesktop.DBus.Error.AccessDenied: Sender is not authorized to send message
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-tabrmd.so.0 
+ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tpmrm0: Permission denied 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tpm0: Permission denied 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+ERROR:tcti:src/tss2-tcti/tcti-device.c:455:Tss2_Tcti_Device_Init() Failed to open specified TCTI device file /dev/tcm0: No such file or directory 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-device.so.0 
+WARNING:tcti:src/util-io/io.c:262:socket_connect() Failed to connect to host 127.0.0.1, port 2321: errno 111: Connection refused 
+ERROR:tcti:src/tss2-tcti/tcti-swtpm.c:617:Tss2_Tcti_Swtpm_Init() Cannot connect to swtpm TPM socket 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-swtpm.so.0 
+WARNING:tcti:src/util-io/io.c:262:socket_connect() Failed to connect to host 127.0.0.1, port 2321: errno 111: Connection refused 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:149:tcti_from_file() Could not initialize TCTI file: libtss2-tcti-mssim.so.0 
+ERROR:tcti:src/tss2-tcti/tctildr-dl.c:263:tctildr_get_default() No standard TCTI could be loaded 
+ERROR:tcti:src/tss2-tcti/tctildr.c:477:tctildr_init_context_data() Failed to instantiate TCTI 
+error registering NID for mldsa44
+/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/test_common.c:55: OpenSSL internal error: OSSL_PROVIDER_available(libctx, modulename)
+
+
+0% tests passed, 6 tests failed out of 6
+
+Total Test time (real) =   4.18 sec
+
+The following tests FAILED:
+	  1 - oqs_signatures (Subprocess aborted)
+	  2 - oqs_kems (Subprocess aborted)
+	  3 - oqs_groups (Subprocess aborted)
+	  4 - oqs_tlssig (Subprocess aborted)
+	  5 - oqs_endecode (Subprocess aborted)
+	  6 - oqs_evp_pkey_params (Subprocess aborted)

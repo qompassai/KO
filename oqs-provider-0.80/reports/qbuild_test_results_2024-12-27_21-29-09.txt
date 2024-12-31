@@ -1,0 +1,107 @@
+UpdateCTestConfiguration  from :/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/DartConfiguration.tcl
+Parse Config file:/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/DartConfiguration.tcl
+Parse Config file:/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/DartConfiguration.tcl
+Test project /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+    Start 1: oqs_signatures
+
+1: Test command: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/oqs_test_signatures "oqsprovider" "/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/oqs.cnf"
+1: Working Directory: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test
+1: Environment variables: 
+1:  OPENSSL_MODULES=/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/lib
+1: Test timeout computed to be: 1500
+1: error registering NID for mldsa44
+1: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/test_common.c:55: OpenSSL internal error: OSSL_PROVIDER_available(libctx, modulename)
+1/6 Test #1: oqs_signatures ...................Subprocess aborted***Exception:   0.66 sec
+error registering NID for mldsa44
+/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/test_common.c:55: OpenSSL internal error: OSSL_PROVIDER_available(libctx, modulename)
+
+test 2
+    Start 2: oqs_kems
+
+2: Test command: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/oqs_test_kems "oqsprovider" "/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/oqs.cnf"
+2: Working Directory: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test
+2: Environment variables: 
+2:  OPENSSL_MODULES=/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/lib
+2: Test timeout computed to be: 1500
+2: error registering NID for mldsa44
+2: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/test_common.c:55: OpenSSL internal error: OSSL_PROVIDER_available(libctx, modulename)
+2/6 Test #2: oqs_kems .........................Subprocess aborted***Exception:   0.63 sec
+error registering NID for mldsa44
+/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/test_common.c:55: OpenSSL internal error: OSSL_PROVIDER_available(libctx, modulename)
+
+test 3
+    Start 3: oqs_groups
+
+3: Test command: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/oqs_test_groups "oqsprovider" "/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/oqs.cnf" "/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test"
+3: Working Directory: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test
+3: Environment variables: 
+3:  OPENSSL_MODULES=/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/lib
+3: Test timeout computed to be: 1500
+3: error registering NID for mldsa44
+3: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/test_common.c:55: OpenSSL internal error: OSSL_PROVIDER_available(libctx, modulename)
+3/6 Test #3: oqs_groups .......................Subprocess aborted***Exception:   0.65 sec
+error registering NID for mldsa44
+/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/test_common.c:55: OpenSSL internal error: OSSL_PROVIDER_available(libctx, modulename)
+
+test 4
+    Start 4: oqs_tlssig
+
+4: Test command: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/oqs_test_tlssig "oqsprovider" "/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/openssl-ca.cnf" "/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp"
+4: Working Directory: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build
+4: Environment variables: 
+4:  OPENSSL_MODULES=/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/lib
+4: Test timeout computed to be: 1500
+4: error registering NID for mldsa44
+4: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/test_common.c:55: OpenSSL internal error: OSSL_PROVIDER_available(libctx, modulename)
+4/6 Test #4: oqs_tlssig .......................Subprocess aborted***Exception:   0.66 sec
+error registering NID for mldsa44
+/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/test_common.c:55: OpenSSL internal error: OSSL_PROVIDER_available(libctx, modulename)
+
+test 5
+    Start 5: oqs_endecode
+
+5: Test command: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/oqs_test_endecode "oqsprovider" "/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/openssl-ca.cnf"
+5: Working Directory: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test
+5: Environment variables: 
+5:  OPENSSL_MODULES=/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/lib
+5: Test timeout computed to be: 1500
+5: error registering NID for mldsa44
+5: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/test_common.c:55: OpenSSL internal error: OSSL_PROVIDER_available(libctx, modulename)
+5/6 Test #5: oqs_endecode .....................Subprocess aborted***Exception:   0.68 sec
+error registering NID for mldsa44
+/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/test_common.c:55: OpenSSL internal error: OSSL_PROVIDER_available(libctx, modulename)
+
+test 6
+    Start 6: oqs_evp_pkey_params
+
+6: Test command: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/oqs_test_evp_pkey_params "oqsprovider" "/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/openssl-ca.cnf"
+6: Working Directory: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test
+6: Environment variables: 
+6:  OPENSSL_MODULES=/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/lib
+6: Test timeout computed to be: 1500
+6: error registering NID for mldsa44
+6: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/test_common.c:55: OpenSSL internal error: OSSL_PROVIDER_available(libctx, modulename)
+6/6 Test #6: oqs_evp_pkey_params ..............Subprocess aborted***Exception:   0.64 sec
+error registering NID for mldsa44
+/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/test_common.c:55: OpenSSL internal error: OSSL_PROVIDER_available(libctx, modulename)
+
+
+0% tests passed, 6 tests failed out of 6
+
+Total Test time (real) =   3.93 sec
+
+The following tests FAILED:
+	  1 - oqs_signatures (Subprocess aborted)
+	  2 - oqs_kems (Subprocess aborted)
+	  3 - oqs_groups (Subprocess aborted)
+	  4 - oqs_tlssig (Subprocess aborted)
+	  5 - oqs_endecode (Subprocess aborted)
+	  6 - oqs_evp_pkey_params (Subprocess aborted)

@@ -1,0 +1,6 @@
+UpdateCTestConfiguration  from :/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/DartConfiguration.tcl
+Parse Config file:/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/DartConfiguration.tcl
+Parse Config file:/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/DartConfiguration.tcl
+Test project /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build
+Constructing a list of tests

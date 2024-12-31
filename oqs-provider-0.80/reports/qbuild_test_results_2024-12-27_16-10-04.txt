@@ -1,0 +1,926 @@
+UpdateCTestConfiguration  from :/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/DartConfiguration.tcl
+Parse Config file:/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/DartConfiguration.tcl
+Parse Config file:/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/DartConfiguration.tcl
+Test project /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+    Start 1: oqs_signatures
+
+1: Test command: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/oqs_test_signatures "oqsprovider" "/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/oqs.cnf"
+1: Working Directory: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test
+1: Environment variables: 
+1:  OPENSSL_MODULES=/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/lib
+1: Test timeout computed to be: 1500
+1/6 Test #1: oqs_signatures ...................***Exception: SegFault  0.10 sec
+
+test 2
+    Start 2: oqs_kems
+
+2: Test command: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/oqs_test_kems "oqsprovider" "/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/oqs.cnf"
+2: Working Directory: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test
+2: Environment variables: 
+2:  OPENSSL_MODULES=/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/lib
+2: Test timeout computed to be: 1500
+2: [1;32m  KEM test succeeded: frodo640aes[m
+2: [1;32m  KEM test succeeded: p256_frodo640aes[m
+2: [1;32m  KEM test succeeded: x25519_frodo640aes[m
+2: [1;32m  KEM test succeeded: frodo640shake[m
+2: [1;32m  KEM test succeeded: p256_frodo640shake[m
+2: [1;32m  KEM test succeeded: x25519_frodo640shake[m
+2: [1;32m  KEM test succeeded: frodo976aes[m
+2: [1;32m  KEM test succeeded: p384_frodo976aes[m
+2: [1;32m  KEM test succeeded: x448_frodo976aes[m
+2: [1;32m  KEM test succeeded: frodo976shake[m
+2: [1;32m  KEM test succeeded: p384_frodo976shake[m
+2: [1;32m  KEM test succeeded: x448_frodo976shake[m
+2: [1;32m  KEM test succeeded: frodo1344aes[m
+2: [1;32m  KEM test succeeded: p521_frodo1344aes[m
+2: [1;32m  KEM test succeeded: frodo1344shake[m
+2: [1;32m  KEM test succeeded: p521_frodo1344shake[m
+2: [1;32m  KEM test succeeded: kyber512[m
+2: [1;32m  KEM test succeeded: p256_kyber512[m
+2: [1;32m  KEM test succeeded: x25519_kyber512[m
+2: [1;32m  KEM test succeeded: kyber768[m
+2: [1;32m  KEM test succeeded: p384_kyber768[m
+2: [1;32m  KEM test succeeded: x448_kyber768[m
+2: [1;32m  KEM test succeeded: x25519_kyber768[m
+2: [1;32m  KEM test succeeded: p256_kyber768[m
+2: [1;32m  KEM test succeeded: kyber1024[m
+2: [1;32m  KEM test succeeded: p521_kyber1024[m
+2: [1;32m  KEM test succeeded: mlkem512[m
+2: [1;32m  KEM test succeeded: p256_mlkem512[m
+2: [1;32m  KEM test succeeded: x25519_mlkem512[m
+2: [1;32m  KEM test succeeded: mlkem768[m
+2: [1;32m  KEM test succeeded: p384_mlkem768[m
+2: [1;32m  KEM test succeeded: x448_mlkem768[m
+2: [1;32m  KEM test succeeded: X25519MLKEM768[m
+2: [1;32m  KEM test succeeded: SecP256r1MLKEM768[m
+2: [1;32m  KEM test succeeded: mlkem1024[m
+2: [1;32m  KEM test succeeded: p521_mlkem1024[m
+2: [1;32m  KEM test succeeded: p384_mlkem1024[m
+2: [1;32m  KEM test succeeded: bikel1[m
+2: [1;32m  KEM test succeeded: p256_bikel1[m
+2: [1;32m  KEM test succeeded: x25519_bikel1[m
+2: [1;32m  KEM test succeeded: bikel3[m
+2: [1;32m  KEM test succeeded: p384_bikel3[m
+2: [1;32m  KEM test succeeded: x448_bikel3[m
+2: [1;32m  KEM test succeeded: bikel5[m
+2: [1;32m  KEM test succeeded: p521_bikel5[m
+2: [1;32m  KEM test succeeded: hqc128[m
+2: [1;32m  KEM test succeeded: p256_hqc128[m
+2: [1;32m  KEM test succeeded: x25519_hqc128[m
+2: [1;32m  KEM test succeeded: hqc192[m
+2: [1;32m  KEM test succeeded: p384_hqc192[m
+2: [1;32m  KEM test succeeded: x448_hqc192[m
+2: [1;32m  KEM test succeeded: hqc256[m
+2: [1;32m  KEM test succeeded: p521_hqc256[m
+2: [1;32m  Test passed[m
+2/6 Test #2: oqs_kems .........................   Passed    0.78 sec
+test 3
+    Start 3: oqs_groups
+
+3: Test command: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/oqs_test_groups "oqsprovider" "/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/oqs.cnf" "/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test"
+3: Working Directory: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test
+3: Environment variables: 
+3:  OPENSSL_MODULES=/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/lib
+3: Test timeout computed to be: 1500
+3: [1;32m  TLS-KEM handshake test succeeded: frodo640aes[m
+3: [1;32m  TLS-KEM handshake test succeeded: p256_frodo640aes[m
+3: [1;32m  TLS-KEM handshake test succeeded: x25519_frodo640aes[m
+3: [1;32m  TLS-KEM handshake test succeeded: frodo640shake[m
+3: [1;32m  TLS-KEM handshake test succeeded: p256_frodo640shake[m
+3: [1;32m  TLS-KEM handshake test succeeded: x25519_frodo640shake[m
+3: [1;32m  TLS-KEM handshake test succeeded: frodo976aes[m
+3: [1;32m  TLS-KEM handshake test succeeded: p384_frodo976aes[m
+3: [1;32m  TLS-KEM handshake test succeeded: x448_frodo976aes[m
+3: [1;32m  TLS-KEM handshake test succeeded: frodo976shake[m
+3: [1;32m  TLS-KEM handshake test succeeded: p384_frodo976shake[m
+3: [1;32m  TLS-KEM handshake test succeeded: x448_frodo976shake[m
+3: [1;32m  TLS-KEM handshake test succeeded: frodo1344aes[m
+3: [1;32m  TLS-KEM handshake test succeeded: p521_frodo1344aes[m
+3: [1;32m  TLS-KEM handshake test succeeded: frodo1344shake[m
+3: [1;32m  TLS-KEM handshake test succeeded: p521_frodo1344shake[m
+3: [1;32m  TLS-KEM handshake test succeeded: kyber512[m
+3: [1;32m  TLS-KEM handshake test succeeded: p256_kyber512[m
+3: [1;32m  TLS-KEM handshake test succeeded: x25519_kyber512[m
+3: [1;32m  TLS-KEM handshake test succeeded: kyber768[m
+3: [1;32m  TLS-KEM handshake test succeeded: p384_kyber768[m
+3: [1;32m  TLS-KEM handshake test succeeded: x448_kyber768[m
+3: [1;32m  TLS-KEM handshake test succeeded: x25519_kyber768[m
+3: [1;32m  TLS-KEM handshake test succeeded: p256_kyber768[m
+3: [1;32m  TLS-KEM handshake test succeeded: kyber1024[m
+3: [1;32m  TLS-KEM handshake test succeeded: p521_kyber1024[m
+3: [1;32m  TLS-KEM handshake test succeeded: mlkem512[m
+3: [1;32m  TLS-KEM handshake test succeeded: p256_mlkem512[m
+3: [1;32m  TLS-KEM handshake test succeeded: x25519_mlkem512[m
+3: [1;32m  TLS-KEM handshake test succeeded: mlkem768[m
+3: [1;32m  TLS-KEM handshake test succeeded: p384_mlkem768[m
+3: [1;32m  TLS-KEM handshake test succeeded: x448_mlkem768[m
+3: [1;32m  TLS-KEM handshake test succeeded: X25519MLKEM768[m
+3: [1;32m  TLS-KEM handshake test succeeded: SecP256r1MLKEM768[m
+3: [1;32m  TLS-KEM handshake test succeeded: mlkem1024[m
+3: [1;32m  TLS-KEM handshake test succeeded: p521_mlkem1024[m
+3: [1;32m  TLS-KEM handshake test succeeded: p384_mlkem1024[m
+3: [1;32m  TLS-KEM handshake test succeeded: bikel1[m
+3: [1;32m  TLS-KEM handshake test succeeded: p256_bikel1[m
+3: [1;32m  TLS-KEM handshake test succeeded: x25519_bikel1[m
+3: [1;32m  TLS-KEM handshake test succeeded: bikel3[m
+3: [1;32m  TLS-KEM handshake test succeeded: p384_bikel3[m
+3: [1;32m  TLS-KEM handshake test succeeded: x448_bikel3[m
+3: [1;32m  TLS-KEM handshake test succeeded: bikel5[m
+3: [1;32m  TLS-KEM handshake test succeeded: p521_bikel5[m
+3: [1;32m  TLS-KEM handshake test succeeded: hqc128[m
+3: [1;32m  TLS-KEM handshake test succeeded: p256_hqc128[m
+3: [1;32m  TLS-KEM handshake test succeeded: x25519_hqc128[m
+3: [1;32m  TLS-KEM handshake test succeeded: hqc192[m
+3: [1;32m  TLS-KEM handshake test succeeded: p384_hqc192[m
+3: [1;32m  TLS-KEM handshake test succeeded: x448_hqc192[m
+3: [1;32m  TLS-KEM handshake test succeeded: hqc256[m
+3: [1;32m  TLS-KEM handshake test succeeded: p521_hqc256[m
+3: [1;32m  Test passed[m
+3/6 Test #3: oqs_groups .......................   Passed    1.07 sec
+test 4
+    Start 4: oqs_tlssig
+
+4: Test command: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/oqs_test_tlssig "oqsprovider" "/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/openssl-ca.cnf" "/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp"
+4: Working Directory: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build
+4: Environment variables: 
+4:  OPENSSL_MODULES=/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/lib
+4: Test timeout computed to be: 1500
+4: Cert/keygen failed for dilithium2 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/dilithium2_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/dilithium2_srv.key
+4: [1;31m  TLS-SIG handshake test failed: dilithium2, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for p256_dilithium2 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_dilithium2_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_dilithium2_srv.key
+4: [1;31m  TLS-SIG handshake test failed: p256_dilithium2, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for rsa3072_dilithium2 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_dilithium2_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_dilithium2_srv.key
+4: [1;31m  TLS-SIG handshake test failed: rsa3072_dilithium2, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for dilithium3 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/dilithium3_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/dilithium3_srv.key
+4: [1;31m  TLS-SIG handshake test failed: dilithium3, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for p384_dilithium3 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p384_dilithium3_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p384_dilithium3_srv.key
+4: [1;31m  TLS-SIG handshake test failed: p384_dilithium3, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for dilithium5 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/dilithium5_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/dilithium5_srv.key
+4: [1;31m  TLS-SIG handshake test failed: dilithium5, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for p521_dilithium5 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_dilithium5_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_dilithium5_srv.key
+4: [1;31m  TLS-SIG handshake test failed: p521_dilithium5, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for mldsa44 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa44_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa44_srv.key
+4: [1;31m  TLS-SIG handshake test failed: mldsa44, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for p256_mldsa44 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_mldsa44_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_mldsa44_srv.key
+4: [1;31m  TLS-SIG handshake test failed: p256_mldsa44, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for rsa3072_mldsa44 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_mldsa44_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_mldsa44_srv.key
+4: [1;31m  TLS-SIG handshake test failed: rsa3072_mldsa44, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for mldsa44_pss2048 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa44_pss2048_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa44_pss2048_srv.key
+4: [1;31m  TLS-SIG handshake test failed: mldsa44_pss2048, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:535:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for mldsa44_rsa2048 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa44_rsa2048_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa44_rsa2048_srv.key
+4: [1;31m  TLS-SIG handshake test failed: mldsa44_rsa2048, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:535:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for mldsa44_ed25519 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa44_ed25519_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa44_ed25519_srv.key
+4: [1;31m  TLS-SIG handshake test failed: mldsa44_ed25519, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:535:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for mldsa44_p256 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa44_p256_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa44_p256_srv.key
+4: [1;31m  TLS-SIG handshake test failed: mldsa44_p256, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:535:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for mldsa44_bp256 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa44_bp256_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa44_bp256_srv.key
+4: [1;31m  TLS-SIG handshake test failed: mldsa44_bp256, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:535:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for mldsa65 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa65_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa65_srv.key
+4: [1;31m  TLS-SIG handshake test failed: mldsa65, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for p384_mldsa65 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p384_mldsa65_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p384_mldsa65_srv.key
+4: [1;31m  TLS-SIG handshake test failed: p384_mldsa65, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for mldsa65_pss3072 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa65_pss3072_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa65_pss3072_srv.key
+4: [1;31m  TLS-SIG handshake test failed: mldsa65_pss3072, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:535:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for mldsa65_rsa3072 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa65_rsa3072_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa65_rsa3072_srv.key
+4: [1;31m  TLS-SIG handshake test failed: mldsa65_rsa3072, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:535:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for mldsa65_p256 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa65_p256_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa65_p256_srv.key
+4: [1;31m  TLS-SIG handshake test failed: mldsa65_p256, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:535:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for mldsa65_bp256 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa65_bp256_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa65_bp256_srv.key
+4: [1;31m  TLS-SIG handshake test failed: mldsa65_bp256, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:535:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for mldsa65_ed25519 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa65_ed25519_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa65_ed25519_srv.key
+4: [1;31m  TLS-SIG handshake test failed: mldsa65_ed25519, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:535:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for mldsa87 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa87_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa87_srv.key
+4: [1;31m  TLS-SIG handshake test failed: mldsa87, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for p521_mldsa87 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_mldsa87_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_mldsa87_srv.key
+4: [1;31m  TLS-SIG handshake test failed: p521_mldsa87, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for mldsa87_p384 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa87_p384_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa87_p384_srv.key
+4: [1;31m  TLS-SIG handshake test failed: mldsa87_p384, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:535:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for mldsa87_bp384 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa87_bp384_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa87_bp384_srv.key
+4: [1;31m  TLS-SIG handshake test failed: mldsa87_bp384, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:535:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for mldsa87_ed448 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa87_ed448_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa87_ed448_srv.key
+4: [1;31m  TLS-SIG handshake test failed: mldsa87_ed448, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:535:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for falcon512 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/falcon512_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/falcon512_srv.key
+4: [1;31m  TLS-SIG handshake test failed: falcon512, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for p256_falcon512 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_falcon512_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_falcon512_srv.key
+4: [1;31m  TLS-SIG handshake test failed: p256_falcon512, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for rsa3072_falcon512 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_falcon512_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_falcon512_srv.key
+4: [1;31m  TLS-SIG handshake test failed: rsa3072_falcon512, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for falconpadded512 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/falconpadded512_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/falconpadded512_srv.key
+4: [1;31m  TLS-SIG handshake test failed: falconpadded512, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for p256_falconpadded512 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_falconpadded512_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_falconpadded512_srv.key
+4: [1;31m  TLS-SIG handshake test failed: p256_falconpadded512, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for rsa3072_falconpadded512 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_falconpadded512_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_falconpadded512_srv.key
+4: [1;31m  TLS-SIG handshake test failed: rsa3072_falconpadded512, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for falcon1024 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/falcon1024_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/falcon1024_srv.key
+4: [1;31m  TLS-SIG handshake test failed: falcon1024, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for p521_falcon1024 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_falcon1024_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_falcon1024_srv.key
+4: [1;31m  TLS-SIG handshake test failed: p521_falcon1024, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for falconpadded1024 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/falconpadded1024_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/falconpadded1024_srv.key
+4: [1;31m  TLS-SIG handshake test failed: falconpadded1024, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for p521_falconpadded1024 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_falconpadded1024_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_falconpadded1024_srv.key
+4: [1;31m  TLS-SIG handshake test failed: p521_falconpadded1024, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for sphincssha2128fsimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincssha2128fsimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincssha2128fsimple_srv.key
+4: [1;31m  TLS-SIG handshake test failed: sphincssha2128fsimple, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for p256_sphincssha2128fsimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_sphincssha2128fsimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_sphincssha2128fsimple_srv.key
+4: [1;31m  TLS-SIG handshake test failed: p256_sphincssha2128fsimple, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for rsa3072_sphincssha2128fsimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_sphincssha2128fsimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_sphincssha2128fsimple_srv.key
+4: [1;31m  TLS-SIG handshake test failed: rsa3072_sphincssha2128fsimple, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for sphincssha2128ssimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincssha2128ssimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincssha2128ssimple_srv.key
+4: [1;31m  TLS-SIG handshake test failed: sphincssha2128ssimple, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for p256_sphincssha2128ssimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_sphincssha2128ssimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_sphincssha2128ssimple_srv.key
+4: [1;31m  TLS-SIG handshake test failed: p256_sphincssha2128ssimple, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for rsa3072_sphincssha2128ssimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_sphincssha2128ssimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_sphincssha2128ssimple_srv.key
+4: [1;31m  TLS-SIG handshake test failed: rsa3072_sphincssha2128ssimple, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for sphincssha2192fsimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincssha2192fsimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincssha2192fsimple_srv.key
+4: [1;31m  TLS-SIG handshake test failed: sphincssha2192fsimple, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for p384_sphincssha2192fsimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p384_sphincssha2192fsimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p384_sphincssha2192fsimple_srv.key
+4: [1;31m  TLS-SIG handshake test failed: p384_sphincssha2192fsimple, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for sphincssha2192ssimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincssha2192ssimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincssha2192ssimple_srv.key
+4: [1;31m  TLS-SIG handshake test failed: sphincssha2192ssimple, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for p384_sphincssha2192ssimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p384_sphincssha2192ssimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p384_sphincssha2192ssimple_srv.key
+4: [1;31m  TLS-SIG handshake test failed: p384_sphincssha2192ssimple, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for sphincssha2256fsimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincssha2256fsimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincssha2256fsimple_srv.key
+4: [1;31m  TLS-SIG handshake test failed: sphincssha2256fsimple, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for p521_sphincssha2256fsimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_sphincssha2256fsimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_sphincssha2256fsimple_srv.key
+4: [1;31m  TLS-SIG handshake test failed: p521_sphincssha2256fsimple, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for sphincssha2256ssimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincssha2256ssimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincssha2256ssimple_srv.key
+4: [1;31m  TLS-SIG handshake test failed: sphincssha2256ssimple, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for p521_sphincssha2256ssimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_sphincssha2256ssimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_sphincssha2256ssimple_srv.key
+4: [1;31m  TLS-SIG handshake test failed: p521_sphincssha2256ssimple, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for sphincsshake128fsimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincsshake128fsimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincsshake128fsimple_srv.key
+4: [1;31m  TLS-SIG handshake test failed: sphincsshake128fsimple, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for p256_sphincsshake128fsimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_sphincsshake128fsimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_sphincsshake128fsimple_srv.key
+4: [1;31m  TLS-SIG handshake test failed: p256_sphincsshake128fsimple, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for rsa3072_sphincsshake128fsimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_sphincsshake128fsimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_sphincsshake128fsimple_srv.key
+4: [1;31m  TLS-SIG handshake test failed: rsa3072_sphincsshake128fsimple, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for sphincsshake128ssimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincsshake128ssimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincsshake128ssimple_srv.key
+4: [1;31m  TLS-SIG handshake test failed: sphincsshake128ssimple, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for p256_sphincsshake128ssimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_sphincsshake128ssimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_sphincsshake128ssimple_srv.key
+4: [1;31m  TLS-SIG handshake test failed: p256_sphincsshake128ssimple, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for rsa3072_sphincsshake128ssimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_sphincsshake128ssimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_sphincsshake128ssimple_srv.key
+4: [1;31m  TLS-SIG handshake test failed: rsa3072_sphincsshake128ssimple, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for sphincsshake192fsimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincsshake192fsimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincsshake192fsimple_srv.key
+4: [1;31m  TLS-SIG handshake test failed: sphincsshake192fsimple, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for p384_sphincsshake192fsimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p384_sphincsshake192fsimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p384_sphincsshake192fsimple_srv.key
+4: [1;31m  TLS-SIG handshake test failed: p384_sphincsshake192fsimple, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for sphincsshake192ssimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincsshake192ssimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincsshake192ssimple_srv.key
+4: [1;31m  TLS-SIG handshake test failed: sphincsshake192ssimple, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for p384_sphincsshake192ssimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p384_sphincsshake192ssimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p384_sphincsshake192ssimple_srv.key
+4: [1;31m  TLS-SIG handshake test failed: p384_sphincsshake192ssimple, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for sphincsshake256fsimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincsshake256fsimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincsshake256fsimple_srv.key
+4: [1;31m  TLS-SIG handshake test failed: sphincsshake256fsimple, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for p521_sphincsshake256fsimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_sphincsshake256fsimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_sphincsshake256fsimple_srv.key
+4: [1;31m  TLS-SIG handshake test failed: p521_sphincsshake256fsimple, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for sphincsshake256ssimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincsshake256ssimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincsshake256ssimple_srv.key
+4: [1;31m  TLS-SIG handshake test failed: sphincsshake256ssimple, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for p521_sphincsshake256ssimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_sphincsshake256ssimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_sphincsshake256ssimple_srv.key
+4: [1;31m  TLS-SIG handshake test failed: p521_sphincsshake256ssimple, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for mayo1 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mayo1_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mayo1_srv.key
+4: [1;31m  TLS-SIG handshake test failed: mayo1, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for p256_mayo1 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_mayo1_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_mayo1_srv.key
+4: [1;31m  TLS-SIG handshake test failed: p256_mayo1, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for mayo2 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mayo2_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mayo2_srv.key
+4: [1;31m  TLS-SIG handshake test failed: mayo2, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for p256_mayo2 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_mayo2_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_mayo2_srv.key
+4: [1;31m  TLS-SIG handshake test failed: p256_mayo2, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for mayo3 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mayo3_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mayo3_srv.key
+4: [1;31m  TLS-SIG handshake test failed: mayo3, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for p384_mayo3 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p384_mayo3_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p384_mayo3_srv.key
+4: [1;31m  TLS-SIG handshake test failed: p384_mayo3, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for mayo5 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mayo5_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mayo5_srv.key
+4: [1;31m  TLS-SIG handshake test failed: mayo5, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4: Cert/keygen failed for p521_mayo5 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_mayo5_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_mayo5_srv.key
+4: [1;31m  TLS-SIG handshake test failed: p521_mayo5, return code: -1[m
+4: 80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+4: 80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+4/6 Test #4: oqs_tlssig .......................***Exception: SegFault  3.06 sec
+Cert/keygen failed for dilithium2 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/dilithium2_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/dilithium2_srv.key
+[1;31m  TLS-SIG handshake test failed: dilithium2, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for p256_dilithium2 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_dilithium2_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_dilithium2_srv.key
+[1;31m  TLS-SIG handshake test failed: p256_dilithium2, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for rsa3072_dilithium2 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_dilithium2_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_dilithium2_srv.key
+[1;31m  TLS-SIG handshake test failed: rsa3072_dilithium2, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for dilithium3 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/dilithium3_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/dilithium3_srv.key
+[1;31m  TLS-SIG handshake test failed: dilithium3, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for p384_dilithium3 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p384_dilithium3_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p384_dilithium3_srv.key
+[1;31m  TLS-SIG handshake test failed: p384_dilithium3, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for dilithium5 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/dilithium5_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/dilithium5_srv.key
+[1;31m  TLS-SIG handshake test failed: dilithium5, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for p521_dilithium5 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_dilithium5_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_dilithium5_srv.key
+[1;31m  TLS-SIG handshake test failed: p521_dilithium5, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for mldsa44 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa44_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa44_srv.key
+[1;31m  TLS-SIG handshake test failed: mldsa44, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for p256_mldsa44 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_mldsa44_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_mldsa44_srv.key
+[1;31m  TLS-SIG handshake test failed: p256_mldsa44, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for rsa3072_mldsa44 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_mldsa44_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_mldsa44_srv.key
+[1;31m  TLS-SIG handshake test failed: rsa3072_mldsa44, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for mldsa44_pss2048 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa44_pss2048_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa44_pss2048_srv.key
+[1;31m  TLS-SIG handshake test failed: mldsa44_pss2048, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:535:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for mldsa44_rsa2048 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa44_rsa2048_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa44_rsa2048_srv.key
+[1;31m  TLS-SIG handshake test failed: mldsa44_rsa2048, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:535:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for mldsa44_ed25519 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa44_ed25519_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa44_ed25519_srv.key
+[1;31m  TLS-SIG handshake test failed: mldsa44_ed25519, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:535:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for mldsa44_p256 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa44_p256_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa44_p256_srv.key
+[1;31m  TLS-SIG handshake test failed: mldsa44_p256, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:535:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for mldsa44_bp256 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa44_bp256_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa44_bp256_srv.key
+[1;31m  TLS-SIG handshake test failed: mldsa44_bp256, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:535:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for mldsa65 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa65_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa65_srv.key
+[1;31m  TLS-SIG handshake test failed: mldsa65, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for p384_mldsa65 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p384_mldsa65_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p384_mldsa65_srv.key
+[1;31m  TLS-SIG handshake test failed: p384_mldsa65, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for mldsa65_pss3072 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa65_pss3072_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa65_pss3072_srv.key
+[1;31m  TLS-SIG handshake test failed: mldsa65_pss3072, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:535:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for mldsa65_rsa3072 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa65_rsa3072_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa65_rsa3072_srv.key
+[1;31m  TLS-SIG handshake test failed: mldsa65_rsa3072, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:535:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for mldsa65_p256 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa65_p256_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa65_p256_srv.key
+[1;31m  TLS-SIG handshake test failed: mldsa65_p256, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:535:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for mldsa65_bp256 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa65_bp256_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa65_bp256_srv.key
+[1;31m  TLS-SIG handshake test failed: mldsa65_bp256, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:535:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for mldsa65_ed25519 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa65_ed25519_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa65_ed25519_srv.key
+[1;31m  TLS-SIG handshake test failed: mldsa65_ed25519, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:535:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for mldsa87 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa87_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa87_srv.key
+[1;31m  TLS-SIG handshake test failed: mldsa87, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for p521_mldsa87 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_mldsa87_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_mldsa87_srv.key
+[1;31m  TLS-SIG handshake test failed: p521_mldsa87, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for mldsa87_p384 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa87_p384_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa87_p384_srv.key
+[1;31m  TLS-SIG handshake test failed: mldsa87_p384, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:535:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for mldsa87_bp384 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa87_bp384_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa87_bp384_srv.key
+[1;31m  TLS-SIG handshake test failed: mldsa87_bp384, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:535:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for mldsa87_ed448 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa87_ed448_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mldsa87_ed448_srv.key
+[1;31m  TLS-SIG handshake test failed: mldsa87_ed448, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:535:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for falcon512 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/falcon512_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/falcon512_srv.key
+[1;31m  TLS-SIG handshake test failed: falcon512, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for p256_falcon512 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_falcon512_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_falcon512_srv.key
+[1;31m  TLS-SIG handshake test failed: p256_falcon512, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for rsa3072_falcon512 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_falcon512_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_falcon512_srv.key
+[1;31m  TLS-SIG handshake test failed: rsa3072_falcon512, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for falconpadded512 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/falconpadded512_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/falconpadded512_srv.key
+[1;31m  TLS-SIG handshake test failed: falconpadded512, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for p256_falconpadded512 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_falconpadded512_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_falconpadded512_srv.key
+[1;31m  TLS-SIG handshake test failed: p256_falconpadded512, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for rsa3072_falconpadded512 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_falconpadded512_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_falconpadded512_srv.key
+[1;31m  TLS-SIG handshake test failed: rsa3072_falconpadded512, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for falcon1024 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/falcon1024_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/falcon1024_srv.key
+[1;31m  TLS-SIG handshake test failed: falcon1024, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for p521_falcon1024 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_falcon1024_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_falcon1024_srv.key
+[1;31m  TLS-SIG handshake test failed: p521_falcon1024, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for falconpadded1024 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/falconpadded1024_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/falconpadded1024_srv.key
+[1;31m  TLS-SIG handshake test failed: falconpadded1024, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for p521_falconpadded1024 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_falconpadded1024_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_falconpadded1024_srv.key
+[1;31m  TLS-SIG handshake test failed: p521_falconpadded1024, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for sphincssha2128fsimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincssha2128fsimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincssha2128fsimple_srv.key
+[1;31m  TLS-SIG handshake test failed: sphincssha2128fsimple, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for p256_sphincssha2128fsimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_sphincssha2128fsimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_sphincssha2128fsimple_srv.key
+[1;31m  TLS-SIG handshake test failed: p256_sphincssha2128fsimple, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for rsa3072_sphincssha2128fsimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_sphincssha2128fsimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_sphincssha2128fsimple_srv.key
+[1;31m  TLS-SIG handshake test failed: rsa3072_sphincssha2128fsimple, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for sphincssha2128ssimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincssha2128ssimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincssha2128ssimple_srv.key
+[1;31m  TLS-SIG handshake test failed: sphincssha2128ssimple, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for p256_sphincssha2128ssimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_sphincssha2128ssimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_sphincssha2128ssimple_srv.key
+[1;31m  TLS-SIG handshake test failed: p256_sphincssha2128ssimple, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for rsa3072_sphincssha2128ssimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_sphincssha2128ssimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_sphincssha2128ssimple_srv.key
+[1;31m  TLS-SIG handshake test failed: rsa3072_sphincssha2128ssimple, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for sphincssha2192fsimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincssha2192fsimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincssha2192fsimple_srv.key
+[1;31m  TLS-SIG handshake test failed: sphincssha2192fsimple, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for p384_sphincssha2192fsimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p384_sphincssha2192fsimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p384_sphincssha2192fsimple_srv.key
+[1;31m  TLS-SIG handshake test failed: p384_sphincssha2192fsimple, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for sphincssha2192ssimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincssha2192ssimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincssha2192ssimple_srv.key
+[1;31m  TLS-SIG handshake test failed: sphincssha2192ssimple, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for p384_sphincssha2192ssimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p384_sphincssha2192ssimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p384_sphincssha2192ssimple_srv.key
+[1;31m  TLS-SIG handshake test failed: p384_sphincssha2192ssimple, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for sphincssha2256fsimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincssha2256fsimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincssha2256fsimple_srv.key
+[1;31m  TLS-SIG handshake test failed: sphincssha2256fsimple, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for p521_sphincssha2256fsimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_sphincssha2256fsimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_sphincssha2256fsimple_srv.key
+[1;31m  TLS-SIG handshake test failed: p521_sphincssha2256fsimple, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for sphincssha2256ssimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincssha2256ssimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincssha2256ssimple_srv.key
+[1;31m  TLS-SIG handshake test failed: sphincssha2256ssimple, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for p521_sphincssha2256ssimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_sphincssha2256ssimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_sphincssha2256ssimple_srv.key
+[1;31m  TLS-SIG handshake test failed: p521_sphincssha2256ssimple, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for sphincsshake128fsimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincsshake128fsimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincsshake128fsimple_srv.key
+[1;31m  TLS-SIG handshake test failed: sphincsshake128fsimple, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for p256_sphincsshake128fsimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_sphincsshake128fsimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_sphincsshake128fsimple_srv.key
+[1;31m  TLS-SIG handshake test failed: p256_sphincsshake128fsimple, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for rsa3072_sphincsshake128fsimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_sphincsshake128fsimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_sphincsshake128fsimple_srv.key
+[1;31m  TLS-SIG handshake test failed: rsa3072_sphincsshake128fsimple, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for sphincsshake128ssimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincsshake128ssimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincsshake128ssimple_srv.key
+[1;31m  TLS-SIG handshake test failed: sphincsshake128ssimple, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for p256_sphincsshake128ssimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_sphincsshake128ssimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_sphincsshake128ssimple_srv.key
+[1;31m  TLS-SIG handshake test failed: p256_sphincsshake128ssimple, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for rsa3072_sphincsshake128ssimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_sphincsshake128ssimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/rsa3072_sphincsshake128ssimple_srv.key
+[1;31m  TLS-SIG handshake test failed: rsa3072_sphincsshake128ssimple, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for sphincsshake192fsimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincsshake192fsimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincsshake192fsimple_srv.key
+[1;31m  TLS-SIG handshake test failed: sphincsshake192fsimple, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for p384_sphincsshake192fsimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p384_sphincsshake192fsimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p384_sphincsshake192fsimple_srv.key
+[1;31m  TLS-SIG handshake test failed: p384_sphincsshake192fsimple, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for sphincsshake192ssimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincsshake192ssimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincsshake192ssimple_srv.key
+[1;31m  TLS-SIG handshake test failed: sphincsshake192ssimple, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for p384_sphincsshake192ssimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p384_sphincsshake192ssimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p384_sphincsshake192ssimple_srv.key
+[1;31m  TLS-SIG handshake test failed: p384_sphincsshake192ssimple, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for sphincsshake256fsimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincsshake256fsimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincsshake256fsimple_srv.key
+[1;31m  TLS-SIG handshake test failed: sphincsshake256fsimple, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for p521_sphincsshake256fsimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_sphincsshake256fsimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_sphincsshake256fsimple_srv.key
+[1;31m  TLS-SIG handshake test failed: p521_sphincsshake256fsimple, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for sphincsshake256ssimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincsshake256ssimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/sphincsshake256ssimple_srv.key
+[1;31m  TLS-SIG handshake test failed: sphincsshake256ssimple, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for p521_sphincsshake256ssimple at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_sphincsshake256ssimple_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_sphincsshake256ssimple_srv.key
+[1;31m  TLS-SIG handshake test failed: p521_sphincsshake256ssimple, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for mayo1 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mayo1_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mayo1_srv.key
+[1;31m  TLS-SIG handshake test failed: mayo1, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for p256_mayo1 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_mayo1_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_mayo1_srv.key
+[1;31m  TLS-SIG handshake test failed: p256_mayo1, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for mayo2 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mayo2_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mayo2_srv.key
+[1;31m  TLS-SIG handshake test failed: mayo2, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for p256_mayo2 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_mayo2_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p256_mayo2_srv.key
+[1;31m  TLS-SIG handshake test failed: p256_mayo2, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for mayo3 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mayo3_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mayo3_srv.key
+[1;31m  TLS-SIG handshake test failed: mayo3, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for p384_mayo3 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p384_mayo3_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p384_mayo3_srv.key
+[1;31m  TLS-SIG handshake test failed: p384_mayo3, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for mayo5 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mayo5_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/mayo5_srv.key
+[1;31m  TLS-SIG handshake test failed: mayo5, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+Cert/keygen failed for p521_mayo5 at /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_mayo5_srv.crt//home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/tmp/p521_mayo5_srv.key
+[1;31m  TLS-SIG handshake test failed: p521_mayo5, return code: -1[m
+80CF8CEA89080000:error:4000000C:lib(128):oqs_sig_sign:reason(12):/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/oqsprov/oqs_sig.c:692:
+80CF8CEA89080000:error:06880006:asn1 encoding routines:ASN1_item_sign_ctx:EVP lib:crypto/asn1/a_sign.c:277:
+
+test 5
+    Start 5: oqs_endecode
+
+5: Test command: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/oqs_test_endecode "oqsprovider" "/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/openssl-ca.cnf"
+5: Working Directory: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test
+5: Environment variables: 
+5:  OPENSSL_MODULES=/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/lib
+5: Test timeout computed to be: 1500
+5: [1;32m  Encoding/Decoding test succeeded: dilithium2[m
+5: [1;32m  Encoding/Decoding test succeeded: p256_dilithium2[m
+5: [1;32m  Encoding/Decoding test succeeded: rsa3072_dilithium2[m
+5: [1;32m  Encoding/Decoding test succeeded: dilithium3[m
+5: [1;32m  Encoding/Decoding test succeeded: p384_dilithium3[m
+5: [1;32m  Encoding/Decoding test succeeded: dilithium5[m
+5: [1;32m  Encoding/Decoding test succeeded: p521_dilithium5[m
+5: [1;32m  Encoding/Decoding test succeeded: mldsa44[m
+5: [1;32m  Encoding/Decoding test succeeded: p256_mldsa44[m
+5: [1;32m  Encoding/Decoding test succeeded: rsa3072_mldsa44[m
+5: [1;32m  Encoding/Decoding test succeeded: mldsa44_pss2048[m
+5: [1;32m  Encoding/Decoding test succeeded: mldsa44_rsa2048[m
+5: [1;32m  Encoding/Decoding test succeeded: mldsa44_ed25519[m
+5: [1;32m  Encoding/Decoding test succeeded: mldsa44_p256[m
+5: [1;32m  Encoding/Decoding test succeeded: mldsa44_bp256[m
+5: [1;32m  Encoding/Decoding test succeeded: mldsa65[m
+5: [1;32m  Encoding/Decoding test succeeded: p384_mldsa65[m
+5: [1;32m  Encoding/Decoding test succeeded: mldsa65_pss3072[m
+5: [1;32m  Encoding/Decoding test succeeded: mldsa65_rsa3072[m
+5: [1;32m  Encoding/Decoding test succeeded: mldsa65_p256[m
+5: [1;32m  Encoding/Decoding test succeeded: mldsa65_bp256[m
+5: [1;32m  Encoding/Decoding test succeeded: mldsa65_ed25519[m
+5: [1;32m  Encoding/Decoding test succeeded: mldsa87[m
+5: [1;32m  Encoding/Decoding test succeeded: p521_mldsa87[m
+5: [1;32m  Encoding/Decoding test succeeded: mldsa87_p384[m
+5: [1;32m  Encoding/Decoding test succeeded: mldsa87_bp384[m
+5: [1;32m  Encoding/Decoding test succeeded: mldsa87_ed448[m
+5: [1;32m  Encoding/Decoding test succeeded: falcon512[m
+5: [1;32m  Encoding/Decoding test succeeded: p256_falcon512[m
+5: [1;32m  Encoding/Decoding test succeeded: rsa3072_falcon512[m
+5: [1;32m  Encoding/Decoding test succeeded: falconpadded512[m
+5: [1;32m  Encoding/Decoding test succeeded: p256_falconpadded512[m
+5: [1;32m  Encoding/Decoding test succeeded: rsa3072_falconpadded512[m
+5: [1;32m  Encoding/Decoding test succeeded: falcon1024[m
+5: [1;32m  Encoding/Decoding test succeeded: p521_falcon1024[m
+5: [1;32m  Encoding/Decoding test succeeded: falconpadded1024[m
+5: [1;32m  Encoding/Decoding test succeeded: p521_falconpadded1024[m
+5: [1;32m  Encoding/Decoding test succeeded: sphincssha2128fsimple[m
+5: [1;32m  Encoding/Decoding test succeeded: p256_sphincssha2128fsimple[m
+5: [1;32m  Encoding/Decoding test succeeded: rsa3072_sphincssha2128fsimple[m
+5: [1;32m  Encoding/Decoding test succeeded: sphincssha2128ssimple[m
+5: [1;32m  Encoding/Decoding test succeeded: p256_sphincssha2128ssimple[m
+5: [1;32m  Encoding/Decoding test succeeded: rsa3072_sphincssha2128ssimple[m
+5: [1;32m  Encoding/Decoding test succeeded: sphincssha2192fsimple[m
+5: [1;32m  Encoding/Decoding test succeeded: p384_sphincssha2192fsimple[m
+5: [1;32m  Encoding/Decoding test succeeded: sphincssha2192ssimple[m
+5: [1;32m  Encoding/Decoding test succeeded: p384_sphincssha2192ssimple[m
+5: [1;32m  Encoding/Decoding test succeeded: sphincssha2256fsimple[m
+5: [1;32m  Encoding/Decoding test succeeded: p521_sphincssha2256fsimple[m
+5: [1;32m  Encoding/Decoding test succeeded: sphincssha2256ssimple[m
+5: [1;32m  Encoding/Decoding test succeeded: p521_sphincssha2256ssimple[m
+5: [1;32m  Encoding/Decoding test succeeded: sphincsshake128fsimple[m
+5: [1;32m  Encoding/Decoding test succeeded: p256_sphincsshake128fsimple[m
+5: [1;32m  Encoding/Decoding test succeeded: rsa3072_sphincsshake128fsimple[m
+5: [1;32m  Encoding/Decoding test succeeded: sphincsshake128ssimple[m
+5: [1;32m  Encoding/Decoding test succeeded: p256_sphincsshake128ssimple[m
+5: [1;32m  Encoding/Decoding test succeeded: rsa3072_sphincsshake128ssimple[m
+5: [1;32m  Encoding/Decoding test succeeded: sphincsshake192fsimple[m
+5: [1;32m  Encoding/Decoding test succeeded: p384_sphincsshake192fsimple[m
+5: [1;32m  Encoding/Decoding test succeeded: sphincsshake192ssimple[m
+5: [1;32m  Encoding/Decoding test succeeded: p384_sphincsshake192ssimple[m
+5: [1;32m  Encoding/Decoding test succeeded: sphincsshake256fsimple[m
+5: [1;32m  Encoding/Decoding test succeeded: p521_sphincsshake256fsimple[m
+5: [1;32m  Encoding/Decoding test succeeded: sphincsshake256ssimple[m
+5: [1;32m  Encoding/Decoding test succeeded: p521_sphincsshake256ssimple[m
+5: [1;32m  Encoding/Decoding test succeeded: mayo1[m
+5: [1;32m  Encoding/Decoding test succeeded: p256_mayo1[m
+5: [1;32m  Encoding/Decoding test succeeded: mayo2[m
+5: [1;32m  Encoding/Decoding test succeeded: p256_mayo2[m
+5: [1;32m  Encoding/Decoding test succeeded: mayo3[m
+5: [1;32m  Encoding/Decoding test succeeded: p384_mayo3[m
+5: [1;32m  Encoding/Decoding test succeeded: mayo5[m
+5: [1;32m  Encoding/Decoding test succeeded: p521_mayo5[m
+5: [1;32m  Encoding/Decoding test succeeded: CROSSrsdp128balanced[m
+5: [1;32m  Encoding/Decoding test succeeded: CROSSrsdp128fast[m
+5: [1;32m  Encoding/Decoding test succeeded: CROSSrsdp128small[m
+5: [1;32m  Encoding/Decoding test succeeded: CROSSrsdp192balanced[m
+5: [1;32m  Encoding/Decoding test succeeded: CROSSrsdp192fast[m
+5: [1;32m  Encoding/Decoding test succeeded: CROSSrsdp192small[m
+5: [1;32m  Encoding/Decoding test succeeded: CROSSrsdp256small[m
+5: [1;32m  Encoding/Decoding test succeeded: CROSSrsdpg128balanced[m
+5: [1;32m  Encoding/Decoding test succeeded: CROSSrsdpg128fast[m
+5: [1;32m  Encoding/Decoding test succeeded: CROSSrsdpg128small[m
+5: [1;32m  Encoding/Decoding test succeeded: CROSSrsdpg192balanced[m
+5: [1;32m  Encoding/Decoding test succeeded: CROSSrsdpg192fast[m
+5: [1;32m  Encoding/Decoding test succeeded: CROSSrsdpg192small[m
+5: [1;32m  Encoding/Decoding test succeeded: CROSSrsdpg256balanced[m
+5: [1;32m  Encoding/Decoding test succeeded: CROSSrsdpg256fast[m
+5: [1;32m  Encoding/Decoding test succeeded: CROSSrsdpg256small[m
+5: [1;32m  Test passed[m
+5/6 Test #5: oqs_endecode .....................   Passed   17.16 sec
+test 6
+    Start 6: oqs_evp_pkey_params
+
+6: Test command: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test/oqs_test_evp_pkey_params "oqsprovider" "/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/test/openssl-ca.cnf"
+6: Working Directory: /home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/test
+6: Environment variables: 
+6:  OPENSSL_MODULES=/home/phaedrus/.GH/Qompass/KO/oqs-provider-0.80/build/lib
+6: Test timeout computed to be: 1500
+6: [1;32mp256_dilithium2 succeeded[m
+6: [1;32mrsa3072_dilithium2 succeeded[m
+6: [1;32mp384_dilithium3 succeeded[m
+6: [1;32mp521_dilithium5 succeeded[m
+6: [1;32mp256_mldsa44 succeeded[m
+6: [1;32mrsa3072_mldsa44 succeeded[m
+6: [1;32mp384_mldsa65 succeeded[m
+6: [1;32mp521_mldsa87 succeeded[m
+6: [1;32mp256_falcon512 succeeded[m
+6: [1;32mrsa3072_falcon512 succeeded[m
+6: [1;32mp256_falconpadded512 succeeded[m
+6: [1;32mrsa3072_falconpadded512 succeeded[m
+6: [1;32mp521_falcon1024 succeeded[m
+6: [1;32mp521_falconpadded1024 succeeded[m
+6: [1;32mp256_sphincssha2128fsimple succeeded[m
+6: [1;32mrsa3072_sphincssha2128fsimple succeeded[m
+6: [1;32mp256_sphincssha2128ssimple succeeded[m
+6: [1;32mrsa3072_sphincssha2128ssimple succeeded[m
+6: [1;32mp384_sphincssha2192fsimple succeeded[m
+6: [1;32mp384_sphincssha2192ssimple succeeded[m
+6: [1;32mp521_sphincssha2256fsimple succeeded[m
+6: [1;32mp521_sphincssha2256ssimple succeeded[m
+6: [1;32mp256_sphincsshake128fsimple succeeded[m
+6: [1;32mrsa3072_sphincsshake128fsimple succeeded[m
+6: [1;32mp256_sphincsshake128ssimple succeeded[m
+6: [1;32mrsa3072_sphincsshake128ssimple succeeded[m
+6: [1;32mp384_sphincsshake192fsimple succeeded[m
+6: [1;32mp384_sphincsshake192ssimple succeeded[m
+6: [1;32mp521_sphincsshake256fsimple succeeded[m
+6: [1;32mp521_sphincsshake256ssimple succeeded[m
+6: [1;32mp256_mayo1 succeeded[m
+6: [1;32mp256_mayo2 succeeded[m
+6: [1;32mp384_mayo3 succeeded[m
+6: [1;32mp521_mayo5 succeeded[m
+6: [1;32mp256_frodo640aes succeeded[m
+6: [1;32mx25519_frodo640aes succeeded[m
+6: [1;32mp256_frodo640shake succeeded[m
+6: [1;32mx25519_frodo640shake succeeded[m
+6: [1;32mp384_frodo976aes succeeded[m
+6: [1;32mx448_frodo976aes succeeded[m
+6: [1;32mp384_frodo976shake succeeded[m
+6: [1;32mx448_frodo976shake succeeded[m
+6: [1;32mp521_frodo1344aes succeeded[m
+6: [1;32mp521_frodo1344shake succeeded[m
+6: [1;32mp256_kyber512 succeeded[m
+6: [1;32mx25519_kyber512 succeeded[m
+6: [1;32mp384_kyber768 succeeded[m
+6: [1;32mx448_kyber768 succeeded[m
+6: [1;32mx25519_kyber768 succeeded[m
+6: [1;32mp256_kyber768 succeeded[m
+6: [1;32mp521_kyber1024 succeeded[m
+6: [1;32mp256_mlkem512 succeeded[m
+6: [1;32mx25519_mlkem512 succeeded[m
+6: [1;32mp384_mlkem768 succeeded[m
+6: [1;32mx448_mlkem768 succeeded[m
+6: [1;32mX25519MLKEM768 succeeded[m
+6: [1;32mSecP256r1MLKEM768 succeeded[m
+6: [1;32mp521_mlkem1024 succeeded[m
+6: [1;32mp384_mlkem1024 succeeded[m
+6: [1;32mp256_bikel1 succeeded[m
+6: [1;32mx25519_bikel1 succeeded[m
+6: [1;32mp384_bikel3 succeeded[m
+6: [1;32mx448_bikel3 succeeded[m
+6: [1;32mp521_bikel5 succeeded[m
+6: [1;32mp256_hqc128 succeeded[m
+6: [1;32mx25519_hqc128 succeeded[m
+6: [1;32mp384_hqc192 succeeded[m
+6: [1;32mx448_hqc192 succeeded[m
+6: [1;32mp521_hqc256 succeeded[m
+6/6 Test #6: oqs_evp_pkey_params ..............   Passed    4.81 sec
+
+67% tests passed, 2 tests failed out of 6
+
+Total Test time (real) =  26.98 sec
+
+The following tests FAILED:
+	  1 - oqs_signatures (SEGFAULT)
+	  4 - oqs_tlssig (SEGFAULT)
