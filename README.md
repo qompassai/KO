@@ -1,3 +1,6 @@
+
+![Repository Views](https://komarev.com/ghpvc/?username=qompassai-KO)
+
 # Kyber Odyssey: Charting a course for secure innovation in a post-Crowdstrike world
 ## Authors
 
