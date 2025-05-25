@@ -3,10 +3,11 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# C extensions
 *.so
-
-# Distribution / packaging
+/liboqs-0.11/
+/oqs-provider-0.72/
+/QompassL-332/
+/qompassl-340/
 .Python
 build/
 develop-eggs/
@@ -36,7 +37,6 @@ MANIFEST
 pip-log.txt
 pip-delete-this-directory.txt
 
-# Unit test / coverage reports
 htmlcov/
 .tox/
 .nox/
@@ -51,7 +51,6 @@ coverage.xml
 .pytest_cache/
 cover/
 
-# Translations
 *.mo
 *.pot
 
