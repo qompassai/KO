@@ -1,22 +1,67 @@
+<!-- /qompassai/KO/README.md -->
+<!-- ---------------------------- -->
+<!-- Copyright (C) 2025 Qompass AI, All rights reserved -->
 
 ![Repository Views](https://komarev.com/ghpvc/?username=qompassai-KO)
+![GitHub all releases](https://img.shields.io/github/downloads/qompassai/KO/total?style=flat-square)
+<a href="https://www.openssl.org/">
+  <img src="https://img.shields.io/badge/OpenSSL-721412?style=for-the-badge&logo=openssl&logoColor=white" alt="OpenSSL">
+</a>
+<br>
+<a href="https://www.openssl.org/docs/">
+  <img src="https://img.shields.io/badge/OpenSSL_Documentation-blue?style=flat-square" alt="OpenSSL Documentation">
+</a>
+<a href="https://openquantumsafe.org/">
+  <img src="https://img.shields.io/badge/Post--Quantum_Tutorials-green?style=flat-square" alt="Post-Quantum SSL Tutorials">
+</a>
+<br>
+<a href="https://www.nist.gov/">
+  <img src="https://img.shields.io/badge/NIST-003366?style=for-the-badge&logo=shield&logoColor=white" alt="NIST">
+</a>
+<br>
+<a href="https://www.nist.gov/cyberframework">
+  <img src="https://img.shields.io/badge/Cybersecurity_Framework-0066CC?style=flat-square" alt="NIST Cybersecurity Framework">
+</a>
+<a href="https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final">
+  <img src="https://img.shields.io/badge/SP_800--53-blue?style=flat-square" alt="NIST SP 800-53 Security Controls">
+</a>
+<a href="https://csrc.nist.gov/publications/detail/sp/800-115/final">
+  <img src="https://img.shields.io/badge/SP_800--115-red?style=flat-square" alt="Technical Guide to Information Security Testing">
+</a>
+<br>
+<a href="https://www.nist.gov/itl/applied-cybersecurity/nice">
+  <img src="https://img.shields.io/badge/NICE_Framework-purple?style=flat-square" alt="NIST NICE Cybersecurity Workforce Framework">
+</a>
+<a href="https://csrc.nist.gov/projects/risk-management">
+  <img src="https://img.shields.io/badge/Risk_Management-orange?style=flat-square" alt="NIST Risk Management Framework">
+</a>
+<a href="https://www.nist.gov/privacy-framework">
+  <img src="https://img.shields.io/badge/Privacy_Framework-green?style=flat-square" alt="NIST Privacy Framework">
+</a>
+  <a href="https://www.gnu.org/licenses/agpl-3.0"><img src="https://img.shields.io/badge/License-AGPL%20v3-blue.svg" alt="License: AGPL v3"></a>
+  <a href="./LICENSE-QCDA"><img src="https://img.shields.io/badge/license-Q--CDA-lightgrey.svg" alt="License: Q-CDA"></a>
+</p>
 
-# Kyber Odyssey: Charting a course for secure innovation in a post-Crowdstrike world
-## Authors
+<h2> Kyber Odyssey: Charting a course for secure innovation in a post-Crowdstrike world </h2>
 
+<h3> Authors </h3>
 Matt A. Porter, B.S<sup>1</sup>, Marcheta J. Hill, DO<sup>2</sup>, Dawn L. Laporte, MD<sup>3</sup>, Amiethab A. Aiyer, MD<sup>3</sup>
-
 
 <sup>1</sup>Qompass, Spokane, WA  
 <sup>2</sup>Arnot Ogden Medical Center Emergency Medicine Residency Program, Elmira, NY  
 <sup>3</sup>The Johns Hopkins University School of Medicine, Department of Orthopaedic Surgery, Baltimore, MD
+
 ## 2025 AMA Research Challenge Poster
+
 [Kyber Odyssey](./KO_MAP_AMA_2025_Turnin.pdf)
 
 ## Abstract
+
 ### Background
 The catastrophic Crowdstrike patch failure of July 19, 2024, exposed critical vulnerabilities in global healthcare systems, stemming from a memory safety issue in C++ code. This null pointer error, a common pitfall in languages without automatic memory management, led to system-wide failures in Microsoft-based environments while Linux/GNU and Apple systems remained unaffected. This event underscores the urgent need for robust, quantum-resistant cryptographic solutions in healthcare IT infrastructure.
+
 ### Methods
+
 We developed a protocol for building and benchmarking National Institute of
 Standards and Technology (NIST)-endorsed classical and post-quantum encryption algorithms
 on-premesis, using consumer grade Linux computers to prioritize viability for underserved
@@ -33,8 +78,10 @@ classical, quantum, and hybrid KEM implementations. We evaluated the KEMs on the
 and rate of key generations (keygen), key encapsulation (encap) rate, and key decapsulations
 (decap) and rated their NIST post-quantum security level according to NIST advanced
 encryption standard (AES) exaustic key search levels. 
+
 ### Results
- We successfully benchmarked all 24 KEM protocols, producing an example
+
+We successfully benchmarked all 24 KEM protocols, producing an example
 public/private key pair following the evaluation. The 24 KEM protocols are evenly split across
 NIST security levels 1, 3, and 5, with 8 protocols at each.We made all relevant code, regulatory
 information, and the example cryptographic key pairs available on the Qompass AI Github page.
