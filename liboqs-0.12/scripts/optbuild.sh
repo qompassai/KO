@@ -1,17 +1,8 @@
 #!/bin/bash
-# Use: sudo -E ./scripts/optbuild2.sh
-# Script to build and install liboqs for OQS-Provider compatibility
-
 set -euo pipefail
-
-# Ensure that this script is run from the liboqs directory (not the scripts directory)
 LIBOQS_DIR=$(pwd)
 BUILD_DIR="${LIBOQS_DIR}/build"
-
-# Create build directory
 mkdir -p "${BUILD_DIR}"
-
-# Run cmake to configure the build
 cmake -GNinja \
     -DBUILD_SHARED_LIBS=ON \
     -DCMAKE_BUILD_TYPE=Release \
@@ -96,4 +87,3 @@ To use Qompass liboqs, you may want to source the environment variables for your
 Alternatively, you can use the commands in the script above in a terminal when needed.
 
 EOF
-
