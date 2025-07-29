@@ -1,7 +1,7 @@
 # /qompassai/yaml/dependabot/dependabot.yml
-# ------------------------------------
+# Qompass AI Dependabot Template
 # Copyright (C) 2025 Qompass AI, All rights reserved
-
+####################################################
 version: 2
 updates:
   - package-ecosystem: "github-actions"
