@@ -1,4 +1,4 @@
-# flake.nix
+# /qompassai/ko/flake.nix
 # Qompass AI 
 # Copyright (C) 2025 Qompass AI, All rights reserved
 # ----------------------------------------
@@ -9,12 +9,23 @@
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
-    in {
+    in
+    {
       devShells.${system}.default = pkgs.mkShell {
         name = "Qompass AI KO Dev Shell";
         buildInputs = with pkgs; [
-          git gcc gnumake cmake ninja perl python3
-          pkg-config zlib openssl curl jq
+          git
+          gcc
+          gnumake
+          cmake
+          ninja
+          perl
+          python3
+          pkg-config
+          zlib
+          openssl
+          curl
+          jq
           zig
           lld
           perl
@@ -52,7 +63,6 @@
           export LDLIBS="-lm -ldl -lpthread -lc -lrt"
           export OPENSSL_TEST_EXTERNAL="1"
           export BUILD_DIR="$PWD/build"
-          # ... echo instructions as before ...
         '';
       };
     };
