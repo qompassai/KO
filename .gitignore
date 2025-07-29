@@ -5,6 +5,7 @@ __pycache__/
 /openssl/
 *.so
 /liboqs-0.11/
+/oqs-provider/
 /oqs-provider-0.72/
 /QompassL-332/
 /qompassl-340/
